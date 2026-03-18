@@ -228,14 +228,7 @@
 
                 <h2>The Student Need</h2>
 
-                <p>Students at the University of Westminster frequently asked: <strong>"What degree classification am I on track to achieve?"</strong> While the university provides final results, there was no easy way for students to:</p>
-
-                <ul>
-                    <li>Estimate their current standing based on completed modules</li>
-                    <li>Model "what-if" scenarios with predicted grades</li>
-                    <li>Understand how the complex classification algorithms work</li>
-                    <li>Access these calculations on any device, including mobile</li>
-                </ul>
+                <p>Students at the University of Westminster frequently asked: <strong>"What degree classification am I on track to achieve?"</strong> While the university provides final results, there was no easy way for students to estimate their current standing based on completed modules, model "what-if" scenarios with predicted grades, understand how the complex classification algorithms work, or access these calculations on any device including mobile.</p>
 
                 <div class="highlight-box">
                     <p><strong>Why it matters:</strong> Giving students visibility into their academic progress empowers them to make informed decisions about their studies, set realistic goals, and seek support when needed. Transparency in assessment criteria builds trust and reduces anxiety.</p>
@@ -260,15 +253,7 @@
 
                 <h3>Accessibility Requirements</h3>
 
-                <p>The calculators needed to meet WCAG 2.1 AA standards to ensure all students could use them, regardless of disability. This included:</p>
-
-                <ul>
-                    <li>Screen reader compatibility with proper ARIA labels</li>
-                    <li>Sufficient colour contrast (minimum 4.5:1 for text, 3:1 for UI elements)</li>
-                    <li>Keyboard navigation support</li>
-                    <li>Text reflow at 500% zoom without overlap</li>
-                    <li>Semantic HTML with proper heading hierarchy</li>
-                </ul>
+                <p>The calculators needed to meet WCAG 2.1 AA standards to ensure all students could use them regardless of disability, requiring screen reader compatibility with proper ARIA labels, sufficient colour contrast (minimum 4.5:1 for text, 3:1 for UI elements), keyboard navigation support, text reflow at 500% zoom without overlap, and semantic HTML with proper heading hierarchy.</p>
 
                 <h2>The Solution</h2>
 
@@ -276,30 +261,11 @@
 
                 <h3>Core Features</h3>
 
-                <ul>
-                    <li><strong>Dynamic Module Management:</strong> Add/remove modules with automatic recalculation</li>
-                    <li><strong>Visual Feedback:</strong> Color-coded sliders and results that change based on mark ranges</li>
-                    <li><strong>Data Persistence:</strong> Save/load functionality using localStorage so students can track progress</li>
-                    <li><strong>Dark Mode:</strong> Theme toggle for user preference and reduced eye strain</li>
-                    <li><strong>Real-time Validation:</strong> Automatic checking for credit requirements and mark ranges</li>
-                    <li><strong>Mobile Responsive:</strong> Fully functional on phones, tablets, and desktops</li>
-                    <li><strong>Analytics Tracking:</strong> Google Analytics 4 integration to understand usage patterns</li>
-                </ul>
+                <p>The calculators provide dynamic module management with add/remove functionality and automatic recalculation, visual feedback through color-coded sliders and results that change based on mark ranges, and data persistence using localStorage so students can save and track their progress over time. A dark mode toggle accommodates user preference and reduces eye strain, while real-time validation automatically checks credit requirements and mark ranges. The interface is fully responsive across phones, tablets, and desktops, with Google Analytics 4 integration to understand usage patterns and inform future improvements.</p>
 
                 <h3>Accessibility Implementation</h3>
 
-                <p>Achieved WCAG 2.1 AA compliance through:</p>
-
-                <ul>
-                    <li>Proper <code>aria-label</code> attributes on all interactive sliders</li>
-                    <li>Improved delete icon contrast (slate-600/300 for 3:1+ ratio)</li>
-                    <li>Enhanced result text contrast (-800/-300 colours for 4.5:1+ ratio)</li>
-                    <li>H1 semantic heading for proper document structure</li>
-                    <li>Descriptive link text ("Switch to Postgraduate Calculator" instead of "Click here")</li>
-                    <li>Permanent underlines on links for colour-independent identification</li>
-                    <li>Word-breaking in headings to prevent overlap at extreme zoom</li>
-                    <li>Right padding to reserve space for theme toggle button</li>
-                </ul>
+                <p>I achieved WCAG 2.1 AA compliance through proper <code>aria-label</code> attributes on all interactive sliders, improved delete icon contrast (slate-600/300 for 3:1+ ratio), enhanced result text contrast (-800/-300 colours for 4.5:1+ ratio), H1 semantic headings for proper document structure, descriptive link text ("Switch to Postgraduate Calculator" instead of generic "Click here"), permanent underlines on links for colour-independent identification, word-breaking in headings to prevent overlap at extreme zoom levels, and right padding to reserve space for the theme toggle button.</p>
 
                 <h2>Key Technical Challenges</h2>
 
@@ -364,77 +330,25 @@
 
                 <h2>Analytics & Insights</h2>
 
-                <p>Integrated Google Analytics 4 to track:</p>
-
-                <ul>
-                    <li><strong>Page views:</strong> Understanding which calculator is used more frequently</li>
-                    <li><strong>Save/load events:</strong> Monitoring student engagement with data persistence</li>
-                    <li><strong>Sequence tracking:</strong> Debounced events to track calculation usage patterns</li>
-                    <li><strong>Award type distribution:</strong> Anonymised data on classification estimates</li>
-                </ul>
-
-                <div class="highlight-box">
-                    <p><strong>Privacy First:</strong> All analytics are anonymised. No personal data or module details are collected, only usage patterns to improve the tool.</p>
-                </div>
+                <p>I integrated Google Analytics 4 to track page views (understanding which calculator is used more frequently), save/load events (monitoring student engagement with data persistence), calculation sequences (debounced events to track usage patterns), and award type distribution (anonymised data on classification estimates). All analytics are fully anonymised—no personal data or module details are collected, only usage patterns to improve the tool.</p>
 
                 <h2>Development Journey</h2>
 
-                <h3>Iteration 1: Core Functionality</h3>
-                <ul>
-                    <li>Built React components with state management</li>
-                    <li>Implemented classification algorithms with test cases</li>
-                    <li>Created visual feedback system with colour-coded sliders</li>
-                    <li>Added dark mode toggle</li>
-                </ul>
+                <p>Development proceeded through four iterative phases. <strong>Core functionality</strong> involved building React components with state management, implementing classification algorithms with test cases, creating a visual feedback system with colour-coded sliders, and adding a dark mode toggle. An <strong>accessibility audit</strong> led to fixing 9 identified WCAG issues, adding ARIA labels to sliders for screen reader support, improving colour contrast for text and icons, implementing proper heading hierarchy and semantic HTML, and enhancing link text with permanent underlines.</p>
 
-                <h3>Iteration 2: Accessibility Audit</h3>
-                <ul>
-                    <li>Conducted WCAG 2.1 AA accessibility audit</li>
-                    <li>Fixed 9 identified issues across Medium, Low, and Weakness categories</li>
-                    <li>Added ARIA labels to sliders for screen reader support</li>
-                    <li>Improved colour contrast for text and icons</li>
-                    <li>Implemented proper heading hierarchy and semantic HTML</li>
-                    <li>Enhanced link text and added permanent underlines</li>
-                </ul>
-
-                <h3>Iteration 3: Analytics & Persistence</h3>
-                <ul>
-                    <li>Integrated Google Analytics 4 with event tracking</li>
-                    <li>Added save/load functionality with localStorage</li>
-                    <li>Implemented debounced sequence tracking</li>
-                    <li>Added award type tracking for usage insights</li>
-                </ul>
-
-                <h3>Iteration 4: Deployment & Export</h3>
-                <ul>
-                    <li>Created automated build process for GitHub Pages</li>
-                    <li>Developed standalone HTML file generator for embedding</li>
-                    <li>Configured custom domain and HTTPS</li>
-                    <li>Prepared for university server hosting</li>
-                </ul>
+                <p>The <strong>analytics and persistence phase</strong> integrated Google Analytics 4 with event tracking, added save/load functionality with localStorage, implemented debounced sequence tracking, and added award type tracking for usage insights. Finally, <strong>deployment and export</strong> involved creating an automated build process for GitHub Pages, developing a standalone HTML file generator for embedding in university pages, configuring custom domain and HTTPS, and preparing the system for hosting on university servers.</p>
 
                 <h2>Impact & Future Plans</h2>
 
                 <p>The calculators are currently deployed on GitHub Pages and being prepared for hosting on university infrastructure for official embedding in course pages.</p>
 
                 <h3>Planned Enhancements</h3>
-                <ul>
-                    <li>Export results as PDF for student records</li>
-                    <li>Multiple "what-if" scenarios with comparison view</li>
-                    <li>Integration with university's Student Information System for auto-populated data</li>
-                    <li>Historical tracking of progress over terms</li>
-                    <li>Accessibility testing with assistive technology users</li>
-                </ul>
+
+                <p>Future enhancements include exporting results as PDF for student records, supporting multiple "what-if" scenarios with comparison view, integrating with the university's Student Information System for auto-populated data, enabling historical tracking of progress over terms, and conducting accessibility testing with assistive technology users to further refine the experience.</p>
 
                 <h2>Lessons Learned</h2>
 
-                <ul>
-                    <li><strong>Accessibility from Day One:</strong> Building with WCAG standards from the start is far easier than retrofitting, but thorough auditing still revealed issues that required iteration</li>
-                    <li><strong>User Testing is Essential:</strong> Edge cases like extreme zoom levels and screen reader navigation only became apparent through comprehensive testing</li>
-                    <li><strong>Build Processes Save Time:</strong> Automating the export of standalone files eliminated manual work and reduced deployment errors</li>
-                    <li><strong>Analytics Inform Design:</strong> Tracking usage patterns helps understand how students actually use the tool vs. how we assumed they would</li>
-                    <li><strong>Transparency Builds Trust:</strong> Clearly explaining the classification algorithms helps students understand and trust the results</li>
-                </ul>
+                <p>Building with WCAG standards from the start is far easier than retrofitting, though thorough auditing still revealed issues requiring iteration. Edge cases like extreme zoom levels and screen reader navigation only became apparent through comprehensive testing, reinforcing that user testing is essential. Automating the export of standalone files eliminated manual work and reduced deployment errors, while tracking usage patterns through analytics revealed how students actually use the tool versus initial assumptions. Clearly explaining the classification algorithms helps students understand and trust the results, demonstrating that transparency builds confidence.</p>
 
                 <div class="highlight-box">
                     <p><strong>Open to Collaboration:</strong> If your institution needs similar tools or you'd like to adapt these calculators for your university's classification scheme, I'd be happy to discuss collaboration opportunities.</p>

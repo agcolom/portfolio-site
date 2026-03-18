@@ -256,16 +256,7 @@
 
                 <h2>The Strategic Problem</h2>
 
-                <p>Business improvement projects across the university faced several interconnected challenges:</p>
-
-                <ul>
-                    <li><strong>Fragmented Documentation:</strong> Project information was scattered across emails, SharePoint sites, Teams channels, and Word documents, making it difficult to get an overview of ongoing work</li>
-                    <li><strong>Lack of Visibility:</strong> Senior leadership and stakeholders couldn't easily see what projects were in progress, their status, or their impact</li>
-                    <li><strong>Lost Knowledge:</strong> When staff members moved to different roles, project context and learning often disappeared with them</li>
-                    <li><strong>Inconsistent Quality:</strong> Without a standard approach, documentation quality varied significantly across projects</li>
-                    <li><strong>Manual Updates:</strong> Publishing project updates required manual copying, formatting, and uploading, leading to outdated information</li>
-                    <li><strong>Poor Governance:</strong> Difficult to demonstrate value, support decision-making, or report on portfolio health</li>
-                </ul>
+                <p>Business improvement projects across the university faced several interconnected challenges. Project information was fragmented across emails, SharePoint sites, Teams channels, and Word documents, making it difficult to get an overview of ongoing work. Senior leadership and stakeholders couldn't easily see what projects were in progress, their status, or their impact. When staff members moved to different roles, project context and learning often disappeared with them, and without a standard approach, documentation quality varied significantly. Publishing project updates required manual copying, formatting, and uploading, leading to outdated information and making it difficult to demonstrate value, support decision-making, or report on portfolio health.</p>
 
                 <h2>The Solution: Automated Project Portfolio</h2>
 
@@ -357,88 +348,17 @@
 
                 <h2>Key Features</h2>
 
-                <h3>Multi-Dimensional Filtering</h3>
-                <ul>
-                    <li>Filter by <strong>Category</strong>: Projects can be categorized by functional area or strategic theme</li>
-                    <li>Filter by <strong>Status</strong>: Not Started, In Progress, Beta Testing, Complete</li>
-                    <li>Filter by <strong>Team</strong>: Track which teams or departments initiated each project</li>
-                    <li>All filters work together - combine category, status, and team simultaneously</li>
-                </ul>
+                <p>The dashboard provides <strong>multi-dimensional filtering</strong> that allows users to filter projects by category (functional area or strategic theme), status (Not Started, In Progress, Beta Testing, Complete), and team (which departments initiated each project). All filters work together simultaneously for precise navigation. A <strong>real-time search</strong> function searches across all project fields—name, challenge, solution, impact, and development notes—updating results as you type with instant feedback and a result count display.</p>
 
-                <h3>Real-Time Search</h3>
-                <ul>
-                    <li>Search across all project fields: name, challenge, solution, impact, development notes</li>
-                    <li>Updates results as you type with instant feedback</li>
-                    <li>Shows result count (e.g., "4 of 16 projects")</li>
-                    <li>Clear button to reset search instantly</li>
-                </ul>
+                <p><strong>Smart impact highlighting</strong> automatically detects and emphasizes measurable impacts like time savings, percentages, and quantifiable metrics in colored boxes, with a manual override option using the <code>!!</code> prefix. Multi-line impacts are displayed as clean paragraph text or lists. <strong>Color-coded organization</strong> uses distinct colors for each category and team, with consistent status indicators throughout the interface and accessibility-friendly contrast ratios.</p>
 
-                <h3>Smart Impact Highlighting</h3>
-                <ul>
-                    <li>Automatically highlights measurable impacts in colored boxes for emphasis</li>
-                    <li>Detects time savings, percentages, and quantifiable metrics</li>
-                    <li>Manual override with <code>!!</code> prefix for custom highlighting</li>
-                    <li>Multi-line impacts displayed as clean paragraph text or lists</li>
-                </ul>
-
-                <h3>Color-Coded Organisation</h3>
-                <ul>
-                    <li>Each category has a distinct color for quick visual identification</li>
-                    <li>Project teams displayed as colored badges for clear ownership</li>
-                    <li>Status indicators with consistent color scheme across the interface</li>
-                    <li>Accessibility-friendly color contrast throughout</li>
-                </ul>
-
-                <h3>Rich Content Support</h3>
-                <ul>
-                    <li>Markdown links: <code>[Link text](https://url.com)</code> renders as clickable links</li>
-                    <li>Markdown images: <code>![Description](image-url)</code> embeds images inline</li>
-                    <li>Click-to-zoom lightbox for all images with captions</li>
-                    <li>Automatic escaping prevents XSS attacks while supporting rich formatting</li>
-                </ul>
-
-                <h3>Responsive & Accessible Design</h3>
-                <ul>
-                    <li>Fully responsive layout works on desktop, tablet, and mobile</li>
-                    <li>Semantic HTML structure for screen readers</li>
-                    <li>Keyboard navigation support</li>
-                    <li>Clean, professional institutional branding</li>
-                </ul>
+                <p>The system supports <strong>rich content</strong> through markdown syntax—<code>[Link text](url)</code> for clickable links and <code>![Description](url)</code> for embedded images—with a click-to-zoom lightbox and automatic escaping to prevent XSS attacks. The entire interface is fully responsive across desktop, tablet, and mobile devices, with semantic HTML structure for screen readers, keyboard navigation support, and clean professional branding.</p>
 
                 <h2>Development Journey</h2>
 
-                <h3>Phase 1: Data Model & Agreement</h3>
-                <ul>
-                    <li>Consulted with stakeholders to define what information should be captured</li>
-                    <li>Created simple, structured data model: Challenge, Solution, Impact, Development Notes</li>
-                    <li>Established SharePoint as the single authoritative source</li>
-                </ul>
+                <p>Development began by consulting with stakeholders to define what information should be captured, creating a simple structured data model (Challenge, Solution, Impact, Development Notes), and establishing SharePoint as the single authoritative source. I then built a Power Automate flow to export SharePoint data to JSON, developed a Python script for secure S3 pre-signed URL generation, and integrated the flow with AWS to automatically publish on every SharePoint update, debugging flow stability issues with intermediate Compose steps.</p>
 
-                <h3>Phase 2: Automation Pipeline</h3>
-                <ul>
-                    <li>Built Power Automate flow to export SharePoint data to JSON</li>
-                    <li>Developed Python script for secure S3 pre-signed URL generation</li>
-                    <li>Integrated flow with AWS to automatically publish on every SharePoint update</li>
-                    <li>Debugged flow stability issues with intermediate Compose steps</li>
-                </ul>
-
-                <h3>Phase 3: Web Interface Development</h3>
-                <ul>
-                    <li>Created static website with expandable project cards</li>
-                    <li>Implemented filtering and search functionality</li>
-                    <li>Added markdown parsing for links and images</li>
-                    <li>Designed smart impact highlighting with flexible pattern matching</li>
-                    <li>Applied responsive design and institutional branding</li>
-                </ul>
-
-                <h3>Phase 4: Refinement & Features</h3>
-                <ul>
-                    <li>Added team/department filtering after stakeholder feedback</li>
-                    <li>Implemented color coding for project categories and teams</li>
-                    <li>Created image lightbox for better content viewing</li>
-                    <li>Fixed search security and performance issues</li>
-                    <li>Added version control with Git and deployed to private GitHub repository</li>
-                </ul>
+                <p>The web interface phase involved creating a static website with expandable project cards, implementing filtering and search functionality, adding markdown parsing for links and images, and designing smart impact highlighting with flexible pattern matching. After initial deployment, I refined the system based on stakeholder feedback by adding team filtering, implementing color coding for visual organization, creating an image lightbox for better content viewing, fixing search security and performance issues, and establishing version control with Git and deployment to a private GitHub repository.</p>
 
                 <h2>Impact & Benefits</h2>
 
@@ -447,57 +367,17 @@
                     <p>Improved visibility and transparency across the project portfolio. Colleagues can quickly understand what projects are underway, their purpose, and current status, supporting clearer communication, better governance, and reuse of learning across teams.</p>
                 </div>
 
-                <h3>For Project Managers</h3>
-                <ul>
-                    <li>Update project information directly in SharePoint - no technical skills required</li>
-                    <li>Changes appear on the live site within seconds automatically</li>
-                    <li>Rich formatting options without learning HTML or Markdown</li>
-                </ul>
+                <p><strong>Project managers</strong> can update project information directly in SharePoint without technical skills, with changes appearing on the live site within seconds automatically and rich formatting options available through simple syntax. <strong>Senior leadership</strong> gains an at-a-glance portfolio view showing all ongoing work, can filter by status to see what's complete or in progress, and has an evidence base for reporting and decision-making.</p>
 
-                <h3>For Senior Leadership</h3>
-                <ul>
-                    <li>At-a-glance portfolio view showing all ongoing work</li>
-                    <li>Filter by status to see what's complete, in progress, or not started</li>
-                    <li>Evidence base for reporting and decision-making</li>
-                </ul>
-
-                <h3>For Stakeholders</h3>
-                <ul>
-                    <li>Search for projects relevant to their area or category</li>
-                    <li>Understand the challenges being addressed and solutions being developed</li>
-                    <li>See measurable impacts and success stories</li>
-                </ul>
-
-                <h3>For Future Teams</h3>
-                <ul>
-                    <li>Knowledge preserved when staff move roles</li>
-                    <li>Learning can be reused and built upon</li>
-                    <li>Patterns and approaches become visible and shareable</li>
-                </ul>
+                <p><strong>Stakeholders</strong> can search for projects relevant to their area or category, understand the challenges being addressed and solutions being developed, and see measurable impacts and success stories. <strong>Future teams</strong> benefit from preserved knowledge when staff move roles, with learning that can be reused and built upon, and patterns and approaches that become visible and shareable across the organization.</p>
 
                 <h2>Lessons Learned</h2>
 
-                <ul>
-                    <li><strong>Start with Data Model:</strong> Agreeing on structure first made everything else easier. Simple, clear fields beat complex taxonomies.</li>
-                    <li><strong>Automation Requires Resilience:</strong> Power Automate flows need defensive programming—use intermediate steps, explicit waits, and prevent self-triggering.</li>
-                    <li><strong>Security by Design:</strong> Pre-signed URLs solved the credential exposure problem elegantly without complex infrastructure.</li>
-                    <li><strong>User Experience Matters:</strong> The best automation is invisible. Staff just update SharePoint; the system handles the rest.</li>
-                    <li><strong>Iterative Development Works:</strong> Started simple (static data) then added features (search, images, colors) based on usage and feedback.</li>
-                    <li><strong>Markdown is Powerful:</strong> Enabling links and images through simple syntax gave non-technical users rich formatting capabilities.</li>
-                </ul>
+                <p>Agreeing on the data model structure first made everything else easier—simple, clear fields beat complex taxonomies every time. Power Automate flows need defensive programming with intermediate steps, explicit waits, and logic to prevent self-triggering, while pre-signed URLs solved the credential exposure problem elegantly without complex infrastructure. The best automation is invisible to users; staff just update SharePoint and the system handles the rest. Starting simple with static data then iteratively adding features like search, images, and color coding based on usage and feedback proved more effective than trying to build everything upfront. Enabling rich content through simple markdown syntax gave non-technical users powerful formatting capabilities without requiring HTML knowledge.</p>
 
                 <h2>Future Development</h2>
 
-                <p>This project is work in progress with several enhancements planned:</p>
-
-                <ul>
-                    <li>Analytics integration to track which projects are most viewed</li>
-                    <li>Export functionality (PDF reports, data exports)</li>
-                    <li>Project timeline visualisation showing progression over time</li>
-                    <li>Advanced search with boolean operators and saved searches</li>
-                    <li>Integration with other university systems for automatic status updates</li>
-                    <li>Public GitHub repository (currently private during development)</li>
-                </ul>
+                <p>This project is work in progress with several enhancements planned, including analytics integration to track which projects are most viewed, export functionality for PDF reports and data downloads, project timeline visualization showing progression over time, advanced search with boolean operators and saved searches, integration with other university systems for automatic status updates, and eventual migration to a public GitHub repository once development stabilizes.</p>
 
                 <div class="highlight-box">
                     <p><strong>Technical Philosophy:</strong> This project embodies my approach of Learning & Teaching + Coding + Strategy = Real-World Impact. It combines pedagogical understanding (how people learn and share knowledge), practical technical solutions (automation, web development), and strategic thinking (governance, transparency, evidence) to solve real institutional challenges.</p>
