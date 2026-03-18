@@ -289,78 +289,20 @@
                 </div>
 
                 <div class="highlight-box">
-                    <p><strong>My Philosophy:</strong> Learning & Teaching + Coding + Strategy = Real-World Impact in Education. This tool embodies that approach by combining pedagogical understanding with practical technical solutions.</p>
+                    <p><strong>Core Philosophy:</strong> Learning & Teaching + Coding + Strategy = Real-World Impact in Education. This tool embodies that approach by combining pedagogical understanding with practical technical solutions.</p>
                 </div>
 
                 <h2>The Technical Problem</h2>
 
-                <p>The University of Westminster uses SITS (Student Information Technology System) for managing student records. When the university updated their SITS implementation to use DataTables with server-side pagination, several challenges emerged:</p>
-
-                <ul>
-                    <li><strong>Complex Pagination:</strong> Student lists were split across multiple pages (10 students per page), requiring manual navigation through dozens of pages for large classes</li>
-                    <li><strong>Two-Level Pagination:</strong> For classes with 100+ students, there was a top-level navigation (groups of 100) and bottom-level navigation (pages of 10), making data extraction extremely tedious</li>
-                    <li><strong>Multiple Data Sources:</strong> Staff needed to access student data from three different SITS views (module lists, seminar groups, and student search results), each with different HTML structures</li>
-                    <li><strong>Time-Consuming Manual Process:</strong> Creating student cards manually meant copying data, formatting images, and creating documents for potentially hundreds of students</li>
-                </ul>
+                <p>The University of Westminster uses SITS (Student Information Technology System) for managing student records. When the university updated their SITS implementation to use DataTables with server-side pagination, several challenges emerged. Student lists were split across multiple pages (10 students per page), requiring manual navigation through dozens of pages for large classes. For classes with 100+ students, there was a top-level navigation (groups of 100) and bottom-level navigation (pages of 10), making data extraction extremely tedious. Staff needed to access student data from three different SITS views (module lists, seminar groups, and student search results), each with different HTML structures. Creating student cards manually meant copying data, formatting images, and creating documents for potentially hundreds of students.</p>
 
                 <h2>The Solution</h2>
 
-                <p>I developed a Chrome extension that automatically:</p>
+                <p>The Chrome extension automatically detects the current SITS page type and adapts extraction accordingly, navigates through DataTables pagination to collect all student records (up to 100 per group), extracts student photos, names, IDs, courses, and enrolment status, and generates professional PDF cards with 20 cards per page in landscape format. The extension includes intelligent headers showing module information, group numbers, and page numbers, and handles groups larger than 100 students by providing clear instructions for manual navigation.</p>
 
-                <ul>
-                    <li>Detects the current SITS page type and adapts extraction accordingly</li>
-                    <li>Automatically navigates through DataTables pagination to collect all student records (up to 100 per group)</li>
-                    <li>Extracts student photos, names, IDs, courses, and enrolment status</li>
-                    <li>Generates professional PDF cards with 20 cards per page in landscape format</li>
-                    <li>Includes intelligent headers showing module information, group numbers, and page numbers</li>
-                    <li>Handles groups larger than 100 students by providing clear instructions for manual navigation</li>
-                </ul>
+                <h2>Technical Highlights</h2>
 
-                <h2>Key Technical Challenges</h2>
-
-                <div class="challenge-solution">
-                    <div class="challenge">
-                        <h4>Challenge: DataTables Pagination</h4>
-                        <p>SITS uses DataTables with AJAX pagination, showing only 10 students at a time. The extension needed to automatically click through all pages and detect when pagination was complete.</p>
-                    </div>
-                    <div class="solution">
-                        <h4>Solution: Smart Polling</h4>
-                        <p>Implemented a polling mechanism that tracks the first student ID on each page, automatically clicks "next," waits for the page to reload, and continues until all pages are processed. Includes safety limits and proper wait times to handle network latency.</p>
-                    </div>
-                </div>
-
-                <div class="challenge-solution">
-                    <div class="challenge">
-                        <h4>Challenge: Two-Level Navigation</h4>
-                        <p>For large modules (100+ students), there's a top navigation that triggers full page reloads, which would kill the content script's state and execution context.</p>
-                    </div>
-                    <div class="solution">
-                        <h4>Solution: User-Guided Approach</h4>
-                        <p>Automatically handles bottom pagination (AJAX) but provides clear instructions for manual top navigation. The extension processes up to 100 students per run and includes group/page tracking in PDFs for easy organisation.</p>
-                    </div>
-                </div>
-
-                <div class="challenge-solution">
-                    <div class="challenge">
-                        <h4>Challenge: Multiple Page Structures</h4>
-                        <p>Three different SITS views had completely different HTML structures, column orders, and field naming conventions, requiring flexible extraction logic.</p>
-                    </div>
-                    <div class="solution">
-                        <h4>Solution: Adaptive Detection</h4>
-                        <p>Implemented page type detection based on <code>document.title</code> with specialised extraction logic for each view. Handles field prefixes, column indices, and layout variations gracefully.</p>
-                    </div>
-                </div>
-
-                <div class="challenge-solution">
-                    <div class="challenge">
-                        <h4>Challenge: Image Format Compatibility</h4>
-                        <p>Student photos from SITS come in various formats, but jsPDF has specific requirements. Some images were causing PDF generation to fail.</p>
-                    </div>
-                    <div class="solution">
-                        <h4>Solution: Canvas Conversion</h4>
-                        <p>All images are converted to base64 JPEG format using an HTML canvas before being embedded in the PDF, ensuring consistent format and compatibility.</p>
-                    </div>
-                </div>
+                <p>The extension implements a smart polling mechanism that tracks student IDs to automatically navigate through DataTables AJAX pagination while detecting when all pages have been processed, with safety limits and proper wait times to handle network latency. For large modules with two-level navigation, the extension automatically handles bottom-level pagination while providing clear instructions for manual top-level navigation. Page type detection based on document title enables specialized extraction logic for three different SITS views with varying HTML structures, handling field prefixes, column indices, and layout variations. All student photos are converted to base64 JPEG format using canvas before being embedded in the PDF, ensuring consistent format and compatibility across different image sources.</p>
 
                 <h2>Technology Stack</h2>
 
@@ -377,83 +319,23 @@
                     <span class="tech-item">Base64 Encoding</span>
                 </div>
 
-                <h2>Features</h2>
+                <h2>Key Features</h2>
 
-                <h3>Smart Data Extraction</h3>
-                <ul>
-                    <li>Automatically detects page type: "Students on Module", "Evision Module List photo retrieve", or "Student Search"</li>
-                    <li>Extracts module code, module name, session, and CMIS group information</li>
-                    <li>Handles field prefixes and cleans up data automatically</li>
-                    <li>Gracefully handles missing photos and incomplete data</li>
-                </ul>
+                <p>The extension provides <strong>smart data extraction</strong> by automatically detecting the page type ("Students on Module", "Evision Module List photo retrieve", or "Student Search"), extracting module code, module name, session, and CMIS group information, and handling field prefixes while gracefully managing missing photos and incomplete data. <strong>Automatic pagination handling</strong> resets DataTables to the first page before extraction, clicks through all available pages, detects completion by tracking student IDs, and includes safety limits to prevent infinite loops.</p>
 
-                <h3>Automatic Pagination Handling</h3>
-                <ul>
-                    <li>Resets DataTables to first page before extraction to ensure consistency</li>
-                    <li>Automatically clicks through all available pages</li>
-                    <li>Detects when pagination is complete by tracking student IDs</li>
-                    <li>Includes safety limits (max 100 pages) to prevent infinite loops</li>
-                </ul>
-
-                <h3>Professional PDF Generation</h3>
-                <ul>
-                    <li>Landscape A4 format with 20 cards per page (5 columns × 4 rows)</li>
-                    <li>Intelligent headers with module info, group numbers, and page numbers</li>
-                    <li>Automatic photo sizing and positioning with aspect ratio preservation</li>
-                    <li>Handles long names and course titles with smart text wrapping</li>
-                    <li>Descriptive filenames: <code>ModuleCode_GroupName_page1.pdf</code></li>
-                </ul>
-
-                <h3>User Experience</h3>
-                <ul>
-                    <li>Simple one-click operation from browser toolbar</li>
-                    <li>Clear "About" section with usage instructions</li>
-                    <li>Comprehensive console logging for debugging</li>
-                    <li>Error handling with fallbacks for missing data</li>
-                </ul>
+                <p><strong>Professional PDF generation</strong> uses landscape A4 format with 20 cards per page (5 columns × 4 rows), intelligent headers with module info, group numbers, and page numbers, automatic photo sizing with aspect ratio preservation, smart text wrapping for long names and course titles, and descriptive filenames. The <strong>user experience</strong> features simple one-click operation from the browser toolbar, clear usage instructions, comprehensive console logging for debugging, and error handling with fallbacks for missing data.</p>
 
                 <h2>Development Journey</h2>
 
-                <p>This project evolved significantly based on real-world usage and university system updates:</p>
-
-                <h3>v1.4 → v1.5: Student Search Support</h3>
-                <ul>
-                    <li>Added support for "Student Search" page type</li>
-                    <li>Implemented enrolment status display</li>
-                    <li>Fixed field prefix issues in extracted data</li>
-                </ul>
-
-                <h3>v1.5 → v1.6: Pagination Overhaul</h3>
-                <ul>
-                    <li>Rewrote pagination logic to handle DataTables AJAX properly</li>
-                    <li>Fixed duplicate script injection causing double execution</li>
-                    <li>Added group/page tracking to PDF headers and filenames</li>
-                    <li>Updated column indices after university SITS layout changes</li>
-                    <li>Improved wait times and page change detection to prevent skipped pages</li>
-                </ul>
+                <p>This project evolved significantly based on real-world usage and university system updates. Version 1.5 added support for the "Student Search" page type, implemented enrolment status display, and fixed field prefix issues in extracted data. Version 1.6 brought a pagination overhaul that rewrote the logic to handle DataTables AJAX properly, fixed duplicate script injection causing double execution, added group/page tracking to PDF headers and filenames, updated column indices after university SITS layout changes, and improved wait times and page change detection to prevent skipped pages.</p>
 
                 <h2>Future Expansion</h2>
 
-                <p>SITS is used by approximately 70% of UK universities, representing over 100 potential institutions. Future development could include:</p>
-
-                <ul>
-                    <li>Making the extension configurable for different universities' SITS customisations</li>
-                    <li>Adding institution-specific branding (logos, colors)</li>
-                    <li>Supporting additional SITS page types</li>
-                    <li>Implementing chrome.storage for cross-page state management</li>
-                    <li>Creating a feedback mechanism for compatibility issues</li>
-                    <li>Exploring integration with other university systems beyond SITS</li>
-                </ul>
+                <p>SITS is used by approximately 70% of UK universities, representing over 100 potential institutions. Future development could include making the extension configurable for different universities' SITS customisations, adding institution-specific branding (logos, colors), supporting additional SITS page types, implementing chrome.storage for cross-page state management, creating a feedback mechanism for compatibility issues, and exploring integration with other university systems beyond SITS.</p>
 
                 <h2>Lessons Learned</h2>
 
-                <ul>
-                    <li><strong>User Research is Essential:</strong> Understanding how university staff actually use SITS revealed edge cases (like two-level pagination) that weren't initially apparent</li>
-                    <li><strong>System Updates Require Flexibility:</strong> University systems change frequently; building adaptive selectors and detection logic is crucial for longevity</li>
-                    <li><strong>Timing Matters:</strong> AJAX pagination requires careful timing; too fast causes skipped pages, too slow frustrates users</li>
-                    <li><strong>Real-World Testing:</strong> Testing with actual university data revealed issues (duplicate injection, wrong column indices) that wouldn't appear in controlled environments</li>
-                    <li><strong>Documentation for Non-Technical Users:</strong> Clear usage instructions are as important as the code itself when your users are academics, not developers</li>
-                </ul>
+                <p>Understanding how university staff actually use SITS revealed edge cases (like two-level pagination) that weren't initially apparent, reinforcing that user research is essential. University systems change frequently, making adaptive selectors and detection logic crucial for longevity. AJAX pagination requires careful timing—too fast causes skipped pages, too slow frustrates users. Testing with actual university data revealed issues (duplicate injection, wrong column indices) that wouldn't appear in controlled environments. Clear usage instructions are as important as the code itself when your users are academics, not developers.</p>
 
                 <div class="highlight-box">
                     <p><strong>Want to collaborate?</strong> If your institution uses SITS and you'd like to test this extension or discuss expanding it to other universities, I'd love to hear from you!</p>
