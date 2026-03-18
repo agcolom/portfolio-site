@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Degree Classification Calculators - Anne-Gaelle Colom</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .project-detail {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #1e40af;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .project-detail h1 {
+            font-size: 2.5rem;
+            color: #1e40af;
+            margin-bottom: 1rem;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-badge {
+            background: #667eea;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .project-detail h2 {
+            font-size: 1.8rem;
+            color: #1e40af;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        .project-detail h3 {
+            font-size: 1.3rem;
+            color: #555;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-detail p, .project-detail li {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .project-detail ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .impact-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e40af;
+            display: block;
+        }
+
+        .impact-label {
+            color: #555;
+            margin-top: 0.5rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+        }
+
+        .tech-item {
+            background: #e8f4f8;
+            color: #2980b9;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        .challenge-solution {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .challenge, .solution {
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .challenge {
+            background: #fff5f5;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .solution {
+            background: #f0fff4;
+            border-left: 4px solid #27ae60;
+        }
+
+        .challenge h4, .solution h4 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .challenge h4 {
+            color: #e74c3c;
+        }
+
+        .solution h4 {
+            color: #27ae60;
+        }
+
+        .external-links {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .project-detail {
+                padding: 1.5rem;
+            }
+
+            .challenge-solution {
+                grid-template-columns: 1fr;
+            }
+
+            .project-detail h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1 class="logo">Anne-Gaelle Colom</h1>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../cv.html">CV</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main style="padding: 4rem 0; background: #f8f9fa;">
+        <div class="container">
+            <div class="project-detail">
+                <a href="../index.html#projects" class="back-link">← Back to Projects</a>
+
+                <h1>Degree Classification Calculators</h1>
+
+                <div class="project-meta">
+                    <span class="meta-badge">React Web App</span>
+                    <span class="meta-badge">WCAG 2.1 AA Accessible</span>
+                    <span class="meta-badge">Live in Production</span>
+                </div>
+
+                <p class="lead">Interactive calculators that help students estimate their final degree classifications for undergraduate and postgraduate programmes. Built with accessibility at the core, featuring real-time calculations, dark mode, data persistence, and analytics tracking.</p>
+
+                <div class="external-links">
+                    <a href="https://agcolom.github.io/westminster-degree-calc/" class="btn btn-primary" target="_blank">Try Undergraduate Calculator</a>
+                    <a href="https://agcolom.github.io/westminster-degree-calc/postgraduate" class="btn btn-secondary" target="_blank">Try Postgraduate Calculator</a>
+                </div>
+
+                <h2>The Student Need</h2>
+
+                <p>Students at the University of Westminster frequently asked: <strong>"What degree classification am I on track to achieve?"</strong> While the university provides final results, there was no easy way for students to:</p>
+
+                <ul>
+                    <li>Estimate their current standing based on completed modules</li>
+                    <li>Model "what-if" scenarios with predicted grades</li>
+                    <li>Understand how the complex classification algorithms work</li>
+                    <li>Access these calculations on any device, including mobile</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <p><strong>Why it matters:</strong> Giving students visibility into their academic progress empowers them to make informed decisions about their studies, set realistic goals, and seek support when needed. Transparency in assessment criteria builds trust and reduces anxiety.</p>
+                </div>
+
+                <h2>The Technical Challenge</h2>
+
+                <h3>Complex Classification Algorithms</h3>
+
+                <p>Both undergraduate and postgraduate degree classifications use sophisticated algorithms that aren't immediately intuitive:</p>
+
+                <div class="challenge-solution">
+                    <div class="challenge">
+                        <h4>Undergraduate Algorithm</h4>
+                        <p>Requires minimum 120 credits at Levels 5 and 6. Calculates two provisional scores (excluding lowest Level 5 or Level 6 module), uses the higher score, with Level 5 weighted 1/3 and Level 6 weighted 2/3 of the best 220 credits.</p>
+                    </div>
+                    <div class="challenge">
+                        <h4>Postgraduate Algorithm</h4>
+                        <p>Computes credit-weighted averages across Level 6 and Level 7 modules, requires different minimum marks for passing (40% vs 50%), and uses boundary thresholds for Pass, Merit, and Distinction classifications.</p>
+                    </div>
+                </div>
+
+                <h3>Accessibility Requirements</h3>
+
+                <p>The calculators needed to meet WCAG 2.1 AA standards to ensure all students could use them, regardless of disability. This included:</p>
+
+                <ul>
+                    <li>Screen reader compatibility with proper ARIA labels</li>
+                    <li>Sufficient colour contrast (minimum 4.5:1 for text, 3:1 for UI elements)</li>
+                    <li>Keyboard navigation support</li>
+                    <li>Text reflow at 500% zoom without overlap</li>
+                    <li>Semantic HTML with proper heading hierarchy</li>
+                </ul>
+
+                <h2>The Solution</h2>
+
+                <p>I developed two separate React-based calculators using Next.js, each tailored to its respective classification algorithm:</p>
+
+                <h3>Core Features</h3>
+
+                <ul>
+                    <li><strong>Dynamic Module Management:</strong> Add/remove modules with automatic recalculation</li>
+                    <li><strong>Visual Feedback:</strong> Color-coded sliders and results that change based on mark ranges</li>
+                    <li><strong>Data Persistence:</strong> Save/load functionality using localStorage so students can track progress</li>
+                    <li><strong>Dark Mode:</strong> Theme toggle for user preference and reduced eye strain</li>
+                    <li><strong>Real-time Validation:</strong> Automatic checking for credit requirements and mark ranges</li>
+                    <li><strong>Mobile Responsive:</strong> Fully functional on phones, tablets, and desktops</li>
+                    <li><strong>Analytics Tracking:</strong> Google Analytics 4 integration to understand usage patterns</li>
+                </ul>
+
+                <h3>Accessibility Implementation</h3>
+
+                <p>Achieved WCAG 2.1 AA compliance through:</p>
+
+                <ul>
+                    <li>Proper <code>aria-label</code> attributes on all interactive sliders</li>
+                    <li>Improved delete icon contrast (slate-600/300 for 3:1+ ratio)</li>
+                    <li>Enhanced result text contrast (-800/-300 colours for 4.5:1+ ratio)</li>
+                    <li>H1 semantic heading for proper document structure</li>
+                    <li>Descriptive link text ("Switch to Postgraduate Calculator" instead of "Click here")</li>
+                    <li>Permanent underlines on links for colour-independent identification</li>
+                    <li>Word-breaking in headings to prevent overlap at extreme zoom</li>
+                    <li>Right padding to reserve space for theme toggle button</li>
+                </ul>
+
+                <h2>Key Technical Challenges</h2>
+
+                <div class="challenge-solution">
+                    <div class="challenge">
+                        <h4>Challenge: Complex State Management</h4>
+                        <p>Managing multiple modules with different credit levels, marks, and validation rules while ensuring real-time calculations and data persistence.</p>
+                    </div>
+                    <div class="solution">
+                        <h4>Solution: React State + localStorage</h4>
+                        <p>Used React hooks for state management with automatic localStorage sync. Debounced analytics tracking to avoid excessive events while maintaining accurate usage data.</p>
+                    </div>
+                </div>
+
+                <div class="challenge-solution">
+                    <div class="challenge">
+                        <h4>Challenge: Accessibility + Visual Appeal</h4>
+                        <p>Creating an interface that's both visually engaging with colour-coded feedback and fully accessible to screen reader users and those with colour blindness.</p>
+                    </div>
+                    <div class="solution">
+                        <h4>Solution: Multi-layered Feedback</h4>
+                        <p>Combined colour coding with text labels, ARIA attributes, and semantic HTML. Tested contrast ratios to meet WCAG standards while maintaining brand aesthetics.</p>
+                    </div>
+                </div>
+
+                <div class="challenge-solution">
+                    <div class="challenge">
+                        <h4>Challenge: Static Export for Embedding</h4>
+                        <p>University web team needed standalone HTML files without external dependencies for embedding in existing pages.</p>
+                    </div>
+                    <div class="solution">
+                        <h4>Solution: Build Process Automation</h4>
+                        <p>Created custom Node.js script to inline all CSS and JavaScript into single-file HTML documents. Automated with <code>npm run export</code> command.</p>
+                    </div>
+                </div>
+
+                <div class="challenge-solution">
+                    <div class="challenge">
+                        <h4>Challenge: Reflow at Extreme Zoom</h4>
+                        <p>At 500% zoom, long words like "Undergraduate" overlapped with the theme toggle button, failing WCAG 1.4.10 Reflow requirements.</p>
+                    </div>
+                    <div class="solution">
+                        <h4>Solution: CSS Word Breaking</h4>
+                        <p>Added <code>break-words</code> utility class and right padding to allow headings to wrap mid-word when necessary, preventing overlap at all zoom levels.</p>
+                    </div>
+                </div>
+
+                <h2>Technology Stack</h2>
+
+                <div class="tech-stack">
+                    <span class="tech-item">React 18</span>
+                    <span class="tech-item">Next.js 15</span>
+                    <span class="tech-item">TypeScript</span>
+                    <span class="tech-item">Tailwind CSS</span>
+                    <span class="tech-item">shadcn/ui Components</span>
+                    <span class="tech-item">Radix UI Primitives</span>
+                    <span class="tech-item">Google Analytics 4</span>
+                    <span class="tech-item">GitHub Pages</span>
+                    <span class="tech-item">Node.js Build Scripts</span>
+                    <span class="tech-item">localStorage API</span>
+                </div>
+
+                <h2>Analytics & Insights</h2>
+
+                <p>Integrated Google Analytics 4 to track:</p>
+
+                <ul>
+                    <li><strong>Page views:</strong> Understanding which calculator is used more frequently</li>
+                    <li><strong>Save/load events:</strong> Monitoring student engagement with data persistence</li>
+                    <li><strong>Sequence tracking:</strong> Debounced events to track calculation usage patterns</li>
+                    <li><strong>Award type distribution:</strong> Anonymised data on classification estimates</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <p><strong>Privacy First:</strong> All analytics are anonymised. No personal data or module details are collected, only usage patterns to improve the tool.</p>
+                </div>
+
+                <h2>Development Journey</h2>
+
+                <h3>Iteration 1: Core Functionality</h3>
+                <ul>
+                    <li>Built React components with state management</li>
+                    <li>Implemented classification algorithms with test cases</li>
+                    <li>Created visual feedback system with colour-coded sliders</li>
+                    <li>Added dark mode toggle</li>
+                </ul>
+
+                <h3>Iteration 2: Accessibility Audit</h3>
+                <ul>
+                    <li>Conducted WCAG 2.1 AA accessibility audit</li>
+                    <li>Fixed 9 identified issues across Medium, Low, and Weakness categories</li>
+                    <li>Added ARIA labels to sliders for screen reader support</li>
+                    <li>Improved colour contrast for text and icons</li>
+                    <li>Implemented proper heading hierarchy and semantic HTML</li>
+                    <li>Enhanced link text and added permanent underlines</li>
+                </ul>
+
+                <h3>Iteration 3: Analytics & Persistence</h3>
+                <ul>
+                    <li>Integrated Google Analytics 4 with event tracking</li>
+                    <li>Added save/load functionality with localStorage</li>
+                    <li>Implemented debounced sequence tracking</li>
+                    <li>Added award type tracking for usage insights</li>
+                </ul>
+
+                <h3>Iteration 4: Deployment & Export</h3>
+                <ul>
+                    <li>Created automated build process for GitHub Pages</li>
+                    <li>Developed standalone HTML file generator for embedding</li>
+                    <li>Configured custom domain and HTTPS</li>
+                    <li>Prepared for university server hosting</li>
+                </ul>
+
+                <h2>Impact & Future Plans</h2>
+
+                <p>The calculators are currently deployed on GitHub Pages and being prepared for hosting on university infrastructure for official embedding in course pages.</p>
+
+                <h3>Planned Enhancements</h3>
+                <ul>
+                    <li>Export results as PDF for student records</li>
+                    <li>Multiple "what-if" scenarios with comparison view</li>
+                    <li>Integration with university's Student Information System for auto-populated data</li>
+                    <li>Historical tracking of progress over terms</li>
+                    <li>Accessibility testing with assistive technology users</li>
+                </ul>
+
+                <h2>Lessons Learned</h2>
+
+                <ul>
+                    <li><strong>Accessibility from Day One:</strong> Building with WCAG standards from the start is far easier than retrofitting, but thorough auditing still revealed issues that required iteration</li>
+                    <li><strong>User Testing is Essential:</strong> Edge cases like extreme zoom levels and screen reader navigation only became apparent through comprehensive testing</li>
+                    <li><strong>Build Processes Save Time:</strong> Automating the export of standalone files eliminated manual work and reduced deployment errors</li>
+                    <li><strong>Analytics Inform Design:</strong> Tracking usage patterns helps understand how students actually use the tool vs. how we assumed they would</li>
+                    <li><strong>Transparency Builds Trust:</strong> Clearly explaining the classification algorithms helps students understand and trust the results</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <p><strong>Open to Collaboration:</strong> If your institution needs similar tools or you'd like to adapt these calculators for your university's classification scheme, I'd be happy to discuss collaboration opportunities.</p>
+                </div>
+
+                <div class="external-links">
+                    <a href="https://github.com/agcolom/westminster-degree-calc" class="btn btn-primary" target="_blank">View on GitHub</a>
+                    <a href="../index.html#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Anne-Gaelle Colom. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
