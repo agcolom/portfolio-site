@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Risk Factor Analytics System - Anne-Gaelle Colom</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .project-detail {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #1e40af;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .project-detail h1 {
+            font-size: 2.5rem;
+            color: #1e40af;
+            margin-bottom: 1rem;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-badge {
+            background: #667eea;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .project-detail h2 {
+            font-size: 1.8rem;
+            color: #1e40af;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        .project-detail h3 {
+            font-size: 1.3rem;
+            color: #555;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-detail p, .project-detail li {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .project-detail ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .impact-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e40af;
+            display: block;
+        }
+
+        .impact-label {
+            color: #555;
+            margin-top: 0.5rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+        }
+
+        .tech-item {
+            background: #e8f4f8;
+            color: #2980b9;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        .challenge-solution {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .challenge, .solution {
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .challenge {
+            background: #fff5f5;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .solution {
+            background: #f0fff4;
+            border-left: 4px solid #27ae60;
+        }
+
+        .challenge h4, .solution h4 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .challenge h4 {
+            color: #e74c3c;
+        }
+
+        .solution h4 {
+            color: #27ae60;
+        }
+
+        .external-links {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+        }
+
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .screenshot-item {
+            text-align: center;
+        }
+
+        .screenshot-item img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            margin-bottom: 1rem;
+        }
+
+        .screenshot-caption {
+            color: #555;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .project-detail {
+                padding: 1.5rem;
+            }
+
+            .challenge-solution {
+                grid-template-columns: 1fr;
+            }
+
+            .project-detail h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1 class="logo">Anne-Gaelle Colom</h1>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../cv.html">CV</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main style="padding: 4rem 0; background: #f8f9fa;">
+        <div class="container">
+            <div class="project-detail">
+                <a href="../index.html#projects" class="back-link">← Back to Projects</a>
+
+                <h1>Student Risk Factor Analytics System</h1>
+
+                <div class="project-meta">
+                    <span class="meta-badge">Data Science</span>
+                    <span class="meta-badge">Python</span>
+                    <span class="meta-badge">Machine Learning</span>
+                    <span class="meta-badge">University-Wide Impact</span>
+                </div>
+
+                <p class="lead">A comprehensive data analytics system that examines relationships between student attendance, online engagement, and academic performance across all levels (3-7). Using advanced statistical analysis and machine learning, the system identifies at-risk students and provides evidence-based insights for targeted interventions, enabling proactive support strategies that improve student outcomes.</p>
+
+                <h2>Impact & Scale</h2>
+
+                <div class="impact-grid">
+                    <div class="impact-item">
+                        <span class="impact-number">2</span>
+                        <p class="impact-label">Schools Analysed</p>
+                    </div>
+                    <div class="impact-item">
+                        <span class="impact-number">5</span>
+                        <p class="impact-label">Academic Levels (3-7)</p>
+                    </div>
+                    <div class="impact-item">
+                        <span class="impact-number">28.4%</span>
+                        <p class="impact-label">Fail Rate Identified</p>
+                    </div>
+                    <div class="impact-item">
+                        <span class="impact-number">0.442</span>
+                        <p class="impact-label">Attendance Correlation</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <p><strong>Project Scope:</strong> Developed for the School of Computer Science and Engineering and Westminster Law School in collaboration with Luke Mason, Head of Westminster Law School. Analysis period: September 2024 - May 2025. This system provides actionable insights that inform university-wide student support strategies and early intervention programmes.</p>
+                </div>
+
+                <h2>The Challenge</h2>
+
+                <p>Universities collect vast amounts of data about student attendance, online engagement, and academic performance, but this data often exists in siloed systems making it difficult to identify patterns and at-risk students. Traditional approaches to student support are reactive rather than proactive, with interventions often coming too late to make a difference.</p>
+
+                <h3>Key Challenges Addressed</h3>
+
+                <ul>
+                    <li><strong>Data Fragmentation:</strong> Student data scattered across three systems (SEAT for attendance, Blackboard for engagement, Clickview for performance)</li>
+                    <li><strong>Reactive Support:</strong> Lack of early warning systems to identify struggling students before they fail</li>
+                    <li><strong>EDI Gaps:</strong> No systematic analysis of how different demographic groups perform and engage</li>
+                    <li><strong>Manual Analysis:</strong> Time-consuming manual processes to analyse patterns across hundreds of students and multiple levels</li>
+                    <li><strong>Limited Insights:</strong> No correlation analysis between attendance, engagement, and performance to inform evidence-based interventions</li>
+                </ul>
+
+                <h2>The Solution</h2>
+
+                <p>I developed an end-to-end data analytics system using Python that automatically integrates data from multiple university systems, performs comprehensive statistical analysis, applies machine learning for risk prediction, and generates interactive HTML reports with actionable insights.</p>
+
+                <h3>Core Components</h3>
+
+                <div class="challenge-solution">
+                    <div style="background: #f8f9fa; border-left: 4px solid #1e40af; padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="color: #1e40af; margin-top: 0;">Data Integration Pipeline</h4>
+                        <p style="margin-bottom: 0;">Automated extraction and merging of data from SEAT (attendance CSV), Blackboard (engagement Excel), and Clickview (performance Excel) with intelligent student ID matching and data quality validation.</p>
+                    </div>
+                    <div style="background: #f8f9fa; border-left: 4px solid #1e40af; padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="color: #1e40af; margin-top: 0;">Statistical Analysis Engine</h4>
+                        <p style="margin-bottom: 0;">Correlation analysis using Pearson coefficients, multi-dimensional heatmaps, survival analysis curves, and sample size validation to ensure statistical significance.</p>
+                    </div>
+                </div>
+
+                <div class="challenge-solution">
+                    <div style="background: #f8f9fa; border-left: 4px solid #667eea; padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="color: #667eea; margin-top: 0;">Machine Learning Predictor</h4>
+                        <p style="margin-bottom: 0;">Random Forest, Gradient Boosting, and Logistic Regression models to predict student success across levels with feature importance analysis and confidence scoring.</p>
+                    </div>
+                    <div style="background: #f8f9fa; border-left: 4px solid #667eea; padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="color: #667eea; margin-top: 0;">EDI Analysis Framework</h4>
+                        <p style="margin-bottom: 0;">Comprehensive analysis of performance across gender, ethnicity, disability, deprivation indices, and other demographic factors to identify equity gaps.</p>
+                    </div>
+                </div>
+
+                <h2>Technology Stack</h2>
+
+                <div class="tech-stack">
+                    <span class="tech-item">Python 3</span>
+                    <span class="tech-item">pandas</span>
+                    <span class="tech-item">NumPy</span>
+                    <span class="tech-item">scikit-learn</span>
+                    <span class="tech-item">Matplotlib</span>
+                    <span class="tech-item">Seaborn</span>
+                    <span class="tech-item">SciPy</span>
+                    <span class="tech-item">YAML</span>
+                    <span class="tech-item">Excel/CSV Processing</span>
+                    <span class="tech-item">HTML Report Generation</span>
+                </div>
+
+                <h2>Key Findings</h2>
+
+                <ul>
+                    <li><strong>Strong Attendance Correlation:</strong> r = 0.442 correlation between attendance and performance, providing statistical evidence for attendance policies</li>
+                    <li><strong>Engagement Impact:</strong> r = 0.384 correlation between online engagement and performance, validating LMS investment</li>
+                    <li><strong>28.4% Fail Rate:</strong> Overall module failure rate identified, with level-specific breakdowns</li>
+                    <li><strong>Data Coverage:</strong> 70% of students have attendance data, 58% have engagement data</li>
+                    <li><strong>EDI Insights:</strong> Identified demographic groups with higher failure rates requiring targeted support</li>
+                </ul>
+
+                <h2>Sample Visualisations</h2>
+
+                <div class="screenshot-grid">
+                    <div class="screenshot-item">
+                        <img src="../images/RiskAnalysisEDI.png" alt="EDI Analysis showing performance across demographic groups">
+                        <p class="screenshot-caption">EDI Analysis: Performance and failure rates across demographic groups including gender, ethnicity, and deprivation indices</p>
+                    </div>
+
+                    <div class="screenshot-item">
+                        <img src="../images/RiskAnalysisCorrelation.png" alt="Correlation matrix showing relationships between variables">
+                        <p class="screenshot-caption">Correlation Matrix: Statistical relationships between attendance, engagement, performance, and demographic factors</p>
+                    </div>
+
+                    <div class="screenshot-item">
+                        <img src="../images/RiskAnalysisHeatmap.png" alt="Heatmap showing performance by attendance and engagement levels">
+                        <p class="screenshot-caption">Engagement-Attendance Heatmap: Multi-dimensional analysis showing average marks based on combined attendance and engagement levels</p>
+                    </div>
+                </div>
+
+                <h2>Technical Highlights</h2>
+
+                <h3>Intelligent Data Pipeline</h3>
+                <p>The system handles complex data integration challenges including 7-digit student ID matching for engagement data, level-specific engagement file loading, transparent missing data reporting, and YAML-based configuration for module-specific rules. All data processing includes validation checks and quality reporting.</p>
+
+                <h3>Advanced Statistical Methods</h3>
+                <p>Beyond simple averages, the system implements Pearson correlation analysis with significance testing, survival analysis curves for cumulative achievement, multi-dimensional heatmaps for interaction effects, sample size analysis to ensure statistical validity, and confidence intervals for predictions.</p>
+
+                <h3>Machine Learning Pipeline</h3>
+                <p>The student success predictor trains multiple models (Random Forest, Gradient Boosting, Logistic Regression), performs cross-validation for accuracy, ranks feature importance to identify key predictors, generates risk scores for individual students, and provides personalised intervention recommendations.</p>
+
+                <h3>Interactive HTML Reporting</h3>
+                <p>Reports feature tabbed navigation (Overview + Level 3-7), embedded visualisations with explanatory text, executive summaries for senior leadership, technical documentation for analysts, and user guides tailored for Heads of School.</p>
+
+                <h2>Real-World Impact</h2>
+
+                <div class="highlight-box">
+                    <p><strong>Evidence-Based Decision Making:</strong> School leadership now has quantitative evidence to inform attendance policies, engagement strategies, and resource allocation. The system identified specific demographic groups requiring additional support, leading to targeted intervention programmes.</p>
+                </div>
+
+                <h3>Practical Applications</h3>
+
+                <ul>
+                    <li><strong>Early Warning System:</strong> Machine learning models predict at-risk students at the start of term, enabling proactive intervention</li>
+                    <li><strong>Policy Development:</strong> Statistical evidence (r = 0.442) supports attendance requirements and engagement initiatives</li>
+                    <li><strong>Equity Monitoring:</strong> EDI analysis ensures support reaches underperforming demographic groups</li>
+                    <li><strong>Resource Allocation:</strong> Identifies which levels and programmes need additional academic support</li>
+                    <li><strong>Quality Enhancement:</strong> Provides evidence for Teaching Excellence Framework (TEF) submissions</li>
+                </ul>
+
+                <h2>Deployment & Scalability</h2>
+
+                <p>The system is designed for easy adaptation to other schools within the university. Each school simply needs to provide their Excel/CSV data files and update the YAML configuration. The modular Python architecture separates data loading, analysis, visualisation, and reporting, making it straightforward to extend with new analysis types or data sources.</p>
+
+                <h3>Documentation</h3>
+
+                <ul>
+                    <li><strong>Technical Documentation:</strong> Complete data pipeline specification, statistical methodology, and code architecture</li>
+                    <li><strong>Heads of School Guide:</strong> Non-technical explanation of findings and how to interpret graphs</li>
+                    <li><strong>README Files:</strong> Setup instructions and school-specific customisation guidance</li>
+                </ul>
+
+                <h2>Future Enhancements</h2>
+
+                <p>Planned developments include real-time dashboard integration with university systems, automated weekly risk reports for tutors, natural language processing of student feedback data, longitudinal tracking across academic years, and integration with student support case management systems.</p>
+
+                <div class="highlight-box">
+                    <p><strong>Philosophy:</strong> This project exemplifies my approach of combining Learning & Teaching expertise with data science and strategic thinking to create real-world impact. By turning raw data into actionable insights, we can move from reactive to proactive student support, ultimately improving outcomes for all students.</p>
+                </div>
+
+                <div class="external-links">
+                    <a href="../index.html#contact" class="btn btn-secondary">Get in Touch</a>
+                    <a href="../index.html#projects" class="btn btn-secondary">View More Projects</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Anne-Gaelle Colom. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
