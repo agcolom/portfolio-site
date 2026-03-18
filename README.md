@@ -90,7 +90,7 @@ Before deploying, update the following:
 - [x] Update email: Set to `coloma@westminster.ac.uk`
 - [x] Update LinkedIn: Already set to `https://www.linkedin.com/in/annegaellecolom/`
 - [x] Update About Me section: Enhanced with key achievements and roles
-- [ ] Add Chrome Web Store link: Replace `#` with actual extension URL
+- [x] Chrome Web Store link: Added to Student Cards Extension project
 
 ### In `projects/student-cards-extension.html`:
 - [x] Loom demo video: Already added
