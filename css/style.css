@@ -54,16 +54,16 @@ nav .container {
 }
 
 .nav-links a:hover {
-    color: #3498db;
+    color: #667eea;
 }
 
 /* Hero Section */
 #hero {
-    background: #667eea;
+    background: #1e40af;
     color: white;
     padding: 5rem 0 4rem 0;
     text-align: center;
-    border-bottom: 3px solid #5568d3;
+    border-bottom: 3px solid #1e3a8a;
 }
 
 #hero h2 {
@@ -87,7 +87,7 @@ section {
 section h2 {
     font-size: 2.3rem;
     margin-bottom: 2rem;
-    color: #2c3e50;
+    color: #1e40af;
     text-align: center;
     font-weight: 600;
     letter-spacing: -0.5px;
@@ -141,7 +141,7 @@ section h2 {
 
 .project-header h3 {
     font-size: 1.5rem;
-    color: #2c3e50;
+    color: #1e40af;
 }
 
 .project-badge {
@@ -226,14 +226,15 @@ section h2 {
 }
 
 .btn-secondary {
-    background: #f8f9fa;
-    color: #333;
-    border: 2px solid #ddd;
+    background: white;
+    color: #1e40af;
+    border: 2px solid #1e40af;
 }
 
 .btn-secondary:hover {
-    background: #e9ecef;
-    border-color: #ccc;
+    background: #1e40af;
+    color: white;
+    border-color: #1e40af;
 }
 
 /* Skills Section */
@@ -277,11 +278,11 @@ section h2 {
     background: #f8f9fa;
     color: #2c3e50;
     text-align: center;
-    border-top: 3px solid #667eea;
+    border-top: 3px solid #1e40af;
 }
 
 #contact h2 {
-    color: #2c3e50;
+    color: #1e40af;
 }
 
 #contact p {
@@ -301,7 +302,7 @@ section h2 {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background: #667eea;
+    background: #1e40af;
     color: white;
     padding: 1rem 2rem;
     border-radius: 6px;
@@ -312,13 +313,13 @@ section h2 {
 }
 
 .contact-btn:hover {
-    background: #5568d3;
+    background: #1e3a8a;
     box-shadow: 0 4px 8px rgba(0,0,0,0.15);
 }
 
 /* Footer */
 footer {
-    background: #2c3e50;
+    background: #1e40af;
     color: white;
     text-align: center;
     padding: 2rem 0;
