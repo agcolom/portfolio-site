@@ -176,29 +176,6 @@
             font-size: 0.95rem;
         }
 
-        .screenshot-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .screenshot-item {
-            text-align: center;
-        }
-
-        .screenshot-item img {
-            max-width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            margin-bottom: 1rem;
-        }
-
-        .screenshot-caption {
-            color: #555;
-            font-style: italic;
-        }
-
         @media (max-width: 768px) {
             .project-detail {
                 padding: 1.5rem;
@@ -257,17 +234,17 @@
                         <p class="impact-label">Academic Levels (3-7)</p>
                     </div>
                     <div class="impact-item">
-                        <span class="impact-number">28.4%</span>
-                        <p class="impact-label">Fail Rate Identified</p>
+                        <span class="impact-number">Multi-Year</span>
+                        <p class="impact-label">Longitudinal Data</p>
                     </div>
                     <div class="impact-item">
-                        <span class="impact-number">0.442</span>
-                        <p class="impact-label">Attendance Correlation</p>
+                        <span class="impact-number">1000+</span>
+                        <p class="impact-label">Students Analysed</p>
                     </div>
                 </div>
 
                 <div class="highlight-box">
-                    <p><strong>Project Scope:</strong> Developed for the School of Computer Science and Engineering and Westminster Law School in collaboration with Luke Mason, Head of Westminster Law School. Analysis period: September 2024 - May 2025. This system provides actionable insights that inform university-wide student support strategies and early intervention programmes.</p>
+                    <p><strong>Project Scope:</strong> Developed for two schools within the University of Westminster in collaboration with Professor Luke Mason, Head of Westminster Law School. Analysis period: September 2024 - May 2025. This system provides actionable insights that inform university-wide student support strategies and early intervention programmes.</p>
                 </div>
 
                 <h2>The Challenge</h2>
@@ -277,7 +254,7 @@
                 <h3>Key Challenges Addressed</h3>
 
                 <ul>
-                    <li><strong>Data Fragmentation:</strong> Student data scattered across three systems (SEAT for attendance, Blackboard for engagement, Clickview for performance)</li>
+                    <li><strong>Data Fragmentation:</strong> Student data scattered across multiple university systems for attendance tracking, learning management, and student records</li>
                     <li><strong>Reactive Support:</strong> Lack of early warning systems to identify struggling students before they fail</li>
                     <li><strong>EDI Gaps:</strong> No systematic analysis of how different demographic groups perform and engage</li>
                     <li><strong>Manual Analysis:</strong> Time-consuming manual processes to analyse patterns across hundreds of students and multiple levels</li>
@@ -293,7 +270,7 @@
                 <div class="challenge-solution">
                     <div style="background: #f8f9fa; border-left: 4px solid #1e40af; padding: 1.5rem; border-radius: 8px;">
                         <h4 style="color: #1e40af; margin-top: 0;">Data Integration Pipeline</h4>
-                        <p style="margin-bottom: 0;">Automated extraction and merging of data from SEAT (attendance CSV), Blackboard (engagement Excel), and Clickview (performance Excel) with intelligent student ID matching and data quality validation.</p>
+                        <p style="margin-bottom: 0;">Automated extraction and merging of data from attendance tracking systems, learning management platforms, and student records databases with intelligent student ID matching and data quality validation.</p>
                     </div>
                     <div style="background: #f8f9fa; border-left: 4px solid #1e40af; padding: 1.5rem; border-radius: 8px;">
                         <h4 style="color: #1e40af; margin-top: 0;">Statistical Analysis Engine</h4>
@@ -325,35 +302,6 @@
                     <span class="tech-item">YAML</span>
                     <span class="tech-item">Excel/CSV Processing</span>
                     <span class="tech-item">HTML Report Generation</span>
-                </div>
-
-                <h2>Key Findings</h2>
-
-                <ul>
-                    <li><strong>Strong Attendance Correlation:</strong> r = 0.442 correlation between attendance and performance, providing statistical evidence for attendance policies</li>
-                    <li><strong>Engagement Impact:</strong> r = 0.384 correlation between online engagement and performance, validating LMS investment</li>
-                    <li><strong>28.4% Fail Rate:</strong> Overall module failure rate identified, with level-specific breakdowns</li>
-                    <li><strong>Data Coverage:</strong> 70% of students have attendance data, 58% have engagement data</li>
-                    <li><strong>EDI Insights:</strong> Identified demographic groups with higher failure rates requiring targeted support</li>
-                </ul>
-
-                <h2>Sample Visualisations</h2>
-
-                <div class="screenshot-grid">
-                    <div class="screenshot-item">
-                        <img src="../images/RiskAnalysisEDI.png" alt="EDI Analysis showing performance across demographic groups">
-                        <p class="screenshot-caption">EDI Analysis: Performance and failure rates across demographic groups including gender, ethnicity, and deprivation indices</p>
-                    </div>
-
-                    <div class="screenshot-item">
-                        <img src="../images/RiskAnalysisCorrelation.png" alt="Correlation matrix showing relationships between variables">
-                        <p class="screenshot-caption">Correlation Matrix: Statistical relationships between attendance, engagement, performance, and demographic factors</p>
-                    </div>
-
-                    <div class="screenshot-item">
-                        <img src="../images/RiskAnalysisHeatmap.png" alt="Heatmap showing performance by attendance and engagement levels">
-                        <p class="screenshot-caption">Engagement-Attendance Heatmap: Multi-dimensional analysis showing average marks based on combined attendance and engagement levels</p>
-                    </div>
                 </div>
 
                 <h2>Technical Highlights</h2>
