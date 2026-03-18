@@ -261,57 +261,11 @@
 
                 <h3>Core Features</h3>
 
-                <p>The calculators provide dynamic module management with add/remove functionality and automatic recalculation, visual feedback through color-coded sliders and results that change based on mark ranges, and data persistence using localStorage so students can save and track their progress over time. A dark mode toggle accommodates user preference and reduces eye strain, while real-time validation automatically checks credit requirements and mark ranges. The interface is fully responsive across phones, tablets, and desktops, with Google Analytics 4 integration to understand usage patterns and inform future improvements.</p>
+                <p>The calculators provide dynamic module management with add/remove functionality and automatic recalculation, visual feedback through color-coded sliders and results that change based on mark ranges, and data persistence using localStorage so students can save and track their progress over time. A dark mode toggle accommodates user preference and reduces eye strain, while real-time validation automatically checks credit requirements and mark ranges. The interface is fully responsive across phones, tablets, and desktops, with Google Analytics 4 integration to understand usage patterns and inform future improvements. All features meet WCAG 2.1 AA accessibility standards.</p>
 
-                <h3>Accessibility Implementation</h3>
+                <h2>Technical Highlights</h2>
 
-                <p>I achieved WCAG 2.1 AA compliance through proper <code>aria-label</code> attributes on all interactive sliders, improved delete icon contrast (slate-600/300 for 3:1+ ratio), enhanced result text contrast (-800/-300 colours for 4.5:1+ ratio), H1 semantic headings for proper document structure, descriptive link text ("Switch to Postgraduate Calculator" instead of generic "Click here"), permanent underlines on links for colour-independent identification, word-breaking in headings to prevent overlap at extreme zoom levels, and right padding to reserve space for the theme toggle button.</p>
-
-                <h2>Key Technical Challenges</h2>
-
-                <div class="challenge-solution">
-                    <div class="challenge">
-                        <h4>Challenge: Complex State Management</h4>
-                        <p>Managing multiple modules with different credit levels, marks, and validation rules while ensuring real-time calculations and data persistence.</p>
-                    </div>
-                    <div class="solution">
-                        <h4>Solution: React State + localStorage</h4>
-                        <p>Used React hooks for state management with automatic localStorage sync. Debounced analytics tracking to avoid excessive events while maintaining accurate usage data.</p>
-                    </div>
-                </div>
-
-                <div class="challenge-solution">
-                    <div class="challenge">
-                        <h4>Challenge: Accessibility + Visual Appeal</h4>
-                        <p>Creating an interface that's both visually engaging with colour-coded feedback and fully accessible to screen reader users and those with colour blindness.</p>
-                    </div>
-                    <div class="solution">
-                        <h4>Solution: Multi-layered Feedback</h4>
-                        <p>Combined colour coding with text labels, ARIA attributes, and semantic HTML. Tested contrast ratios to meet WCAG standards while maintaining brand aesthetics.</p>
-                    </div>
-                </div>
-
-                <div class="challenge-solution">
-                    <div class="challenge">
-                        <h4>Challenge: Static Export for Embedding</h4>
-                        <p>University web team needed standalone HTML files without external dependencies for embedding in existing pages.</p>
-                    </div>
-                    <div class="solution">
-                        <h4>Solution: Build Process Automation</h4>
-                        <p>Created custom Node.js script to inline all CSS and JavaScript into single-file HTML documents. Automated with <code>npm run export</code> command.</p>
-                    </div>
-                </div>
-
-                <div class="challenge-solution">
-                    <div class="challenge">
-                        <h4>Challenge: Reflow at Extreme Zoom</h4>
-                        <p>At 500% zoom, long words like "Undergraduate" overlapped with the theme toggle button, failing WCAG 1.4.10 Reflow requirements.</p>
-                    </div>
-                    <div class="solution">
-                        <h4>Solution: CSS Word Breaking</h4>
-                        <p>Added <code>break-words</code> utility class and right padding to allow headings to wrap mid-word when necessary, preventing overlap at all zoom levels.</p>
-                    </div>
-                </div>
+                <p>The project involved managing complex state across multiple modules with different credit levels and validation rules while ensuring real-time calculations and data persistence. The interface needed to be both visually engaging and fully accessible, which required combining colour-coded feedback with proper semantic HTML and ARIA attributes. To meet university deployment requirements, I created a custom build process that generates standalone HTML files with all CSS and JavaScript inlined for embedding in existing pages.</p>
 
                 <h2>Technology Stack</h2>
 

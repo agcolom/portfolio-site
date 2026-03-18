@@ -286,51 +286,9 @@
                     </div>
                 </div>
 
-                <h2>Key Technical Challenges</h2>
+                <h2>Technical Highlights</h2>
 
-                <div class="challenge-solution">
-                    <div class="challenge">
-                        <h4>Challenge: Secure AWS Integration</h4>
-                        <p>Power Automate needed to upload files to S3 without exposing AWS credentials in the flow or storing them insecurely.</p>
-                    </div>
-                    <div class="solution">
-                        <h4>Solution: Pre-Signed URLs</h4>
-                        <p>Implemented a Python script that generates time-limited pre-signed S3 upload URLs. Power Automate calls this via HTTP, receives a secure URL, and uploads directly—credentials never exposed.</p>
-                    </div>
-                </div>
-
-                <div class="challenge-solution">
-                    <div class="challenge">
-                        <h4>Challenge: Flow Stability</h4>
-                        <p>Power Automate flows would fail silently or trigger themselves recursively, creating infinite loops and unreliable publishing.</p>
-                    </div>
-                    <div class="solution">
-                        <h4>Solution: Defensive Automation</h4>
-                        <p>Used intermediate Compose steps to stabilise API responses, added explicit waits, prevented self-triggering with conditional logic, and implemented comprehensive error logging.</p>
-                    </div>
-                </div>
-
-                <div class="challenge-solution">
-                    <div class="challenge">
-                        <h4>Challenge: Client-Side Performance</h4>
-                        <p>Loading and rendering 16+ projects with rich content, images, and multiple filters could slow down the interface, especially on mobile.</p>
-                    </div>
-                    <div class="solution">
-                        <h4>Solution: Optimised JavaScript</h4>
-                        <p>Implemented efficient filtering with data attributes, lazy loading for images, CSS animations instead of JavaScript for card transitions, and debounced search input.</p>
-                    </div>
-                </div>
-
-                <div class="challenge-solution">
-                    <div class="challenge">
-                        <h4>Challenge: Rich Content Support</h4>
-                        <p>Project descriptions needed to include links and images without requiring staff to learn HTML or risk XSS vulnerabilities.</p>
-                    </div>
-                    <div class="solution">
-                        <h4>Solution: Markdown Parsing</h4>
-                        <p>Implemented secure markdown parsing for links <code>[text](url)</code> and images <code>![alt](url)</code> with automatic conversion to HTML while escaping unsafe content. Added click-to-zoom lightbox for images.</p>
-                    </div>
-                </div>
+                <p>The project required solving several technical challenges to create a robust, automated system. Security was paramount—I implemented a Python-based pre-signed URL solution to enable Power Automate to upload files to AWS S3 without exposing credentials. Power Automate flows needed defensive programming techniques to prevent silent failures and recursive triggering. The client-side interface was optimized for performance with efficient filtering, lazy loading for images, and CSS-based animations. To enable rich content without requiring HTML knowledge, I implemented secure markdown parsing that converts simple syntax into formatted links and images while preventing XSS vulnerabilities.</p>
 
                 <h2>Technology Stack</h2>
 
