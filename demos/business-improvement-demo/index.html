@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Business Improvement Projects - Demo</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+  <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
+</head>
+
+<body>
+  <header>
+    <div class="header-main">
+      <span class="logo">University <span>of Westminster</span></span>
+    </div>
+  </header>
+
+  <div class="masthead">
+    <div class="masthead-content">
+      <h1>Business Improvement Projects</h1>
+      <p class="intro">
+        A living catalogue of improvement work — capturing the challenge, solution, and impact, so we can reuse learning and scale what works.
+      </p>
+      <p class="intro small" style="margin-top: 1rem; padding: 0.75rem; background: rgba(255,255,255,0.2); border-radius: 4px;">
+        <strong>Demo Version:</strong> This is a demonstration with sample data. The actual implementation uses real project information.
+      </p>
+      <p class="intro small" id="last-updated"></p>
+    </div>
+  </div>
+
+  <div class="stats-row">
+    <div class="stats-container">
+      <div class="stat">
+        <div class="stat-number" id="stat-total">—</div>
+        <div class="stat-label">Projects</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number" id="stat-complete">—</div>
+        <div class="stat-label">Complete</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number" id="stat-beta">—</div>
+        <div class="stat-label">Beta Testing</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number" id="stat-progress">—</div>
+        <div class="stat-label">In Progress</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number" id="stat-not-started">—</div>
+        <div class="stat-label">Not Started</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number" id="stat-themes">—</div>
+        <div class="stat-label">Themes</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content-wrapper">
+    <aside class="sidebar">
+      <div class="search-box">
+        <h2 class="filter-heading">Search projects</h2>
+        <div class="search-input-wrapper">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search by keyword..."
+            aria-label="Search projects"
+          >
+          <button id="search-clear" aria-label="Clear search" style="display: none;">&times;</button>
+        </div>
+      </div>
+
+      <h2 class="filter-heading">Filter by theme</h2>
+      <ul class="filter-list" id="theme-filter">
+        <li>
+          <button class="active" data-filter="all">
+            All projects <span class="filter-count" id="count-all">—</span>
+          </button>
+        </li>
+      </ul>
+
+      <div class="status-filter">
+        <h2 class="filter-heading">Filter by status</h2>
+        <div class="status-buttons" id="status-filter">
+          <button class="active" data-status="all">All statuses</button>
+          <button data-status="not-started"><span class="status-dot not-started"></span> Not Started</button>
+          <button data-status="in-progress"><span class="status-dot in-progress"></span> In Progress</button>
+          <button data-status="beta-testing"><span class="status-dot beta-testing"></span> Beta Testing</button>
+          <button data-status="complete"><span class="status-dot complete"></span> Complete</button>
+        </div>
+      </div>
+
+      <div class="originator-filter">
+        <h2 class="filter-heading">Filter by originator</h2>
+        <ul class="filter-list" id="originator-filter">
+          <li>
+            <button class="active" data-originator="all">
+              All originators <span class="filter-count" id="count-all-originators">—</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="cases-list" id="cases-list">
+      <div class="loading">
+        <div class="loading-spinner"></div>
+        <p>Loading projects...</p>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-col">
+        <h3>Contact us</h3>
+        <p>Switchboard: +44 (0)20 7911 5000</p>
+      </div>
+      <div class="footer-col">
+        <h3>Visit us</h3>
+        <p>University of Westminster<br>309 Regent Street<br>London W1B 2HW</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      University of Westminster is a charity and a company limited by guarantee. Reg no. 977818 England
+    </div>
+  </footer>
+
+  <!-- Lightbox for image zoom -->
+  <div id="lightbox" onclick="closeLightbox()">
+    <div id="lightbox-content" onclick="event.stopPropagation()">
+      <button id="lightbox-close" onclick="closeLightbox()">&times;</button>
+      <img id="lightbox-img" src="" alt="">
+      <div id="lightbox-caption"></div>
+    </div>
+  </div>
+</body>
+</html>
