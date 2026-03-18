@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Cards PDF Generator - Anne-Gaelle Colom</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .project-detail {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .project-detail h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-badge {
+            background: #667eea;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .project-detail h2 {
+            font-size: 1.8rem;
+            color: #2c3e50;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        .project-detail h3 {
+            font-size: 1.3rem;
+            color: #555;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-detail p, .project-detail li {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .project-detail ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .impact-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #667eea;
+            display: block;
+        }
+
+        .impact-label {
+            color: #555;
+            margin-top: 0.5rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+        }
+
+        .tech-item {
+            background: #e8f4f8;
+            color: #2980b9;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        .challenge-solution {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .challenge, .solution {
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .challenge {
+            background: #fff5f5;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .solution {
+            background: #f0fff4;
+            border-left: 4px solid #27ae60;
+        }
+
+        .challenge h4, .solution h4 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .challenge h4 {
+            color: #e74c3c;
+        }
+
+        .solution h4 {
+            color: #27ae60;
+        }
+
+        .external-links {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .project-detail {
+                padding: 1.5rem;
+            }
+
+            .challenge-solution {
+                grid-template-columns: 1fr;
+            }
+
+            .project-detail h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1 class="logo">Anne-Gaelle Colom</h1>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../cv.html">CV</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main style="padding: 4rem 0; background: #f8f9fa;">
+        <div class="container">
+            <div class="project-detail">
+                <a href="../index.html#projects" class="back-link">← Back to Projects</a>
+
+                <h1>Student Cards PDF Generator</h1>
+
+                <div class="project-meta">
+                    <span class="meta-badge">Chrome Extension</span>
+                    <span class="meta-badge">v1.6</span>
+                    <span class="meta-badge">Published on Chrome Web Store</span>
+                </div>
+
+                <p class="lead">A Chrome extension that transforms student roster data into printable identification cards, enabling lecturers to learn student names and build meaningful relationships from day one. Because student engagement improves when students feel recognised and valued.</p>
+
+                <div class="external-links">
+                    <a href="https://www.loom.com/share/42e5dd05bb654d3987ba4c251d180125" class="btn btn-primary" target="_blank">Watch Demo Video</a>
+                    <a href="#" class="btn btn-secondary" target="_blank">Chrome Web Store</a>
+                </div>
+
+                <div style="margin: 2rem 0; text-align: center;">
+                    <img src="../images/StudentCardScreenshot.png" alt="Example of generated student cards PDF" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                </div>
+
+                <h2>Impact & Reach</h2>
+
+                <div class="impact-grid">
+                    <div class="impact-item">
+                        <span class="impact-number">124+</span>
+                        <p class="impact-label">Active Users</p>
+                    </div>
+                    <div class="impact-item">
+                        <span class="impact-number">~100</span>
+                        <p class="impact-label">Potential UK Universities</p>
+                    </div>
+                    <div class="impact-item">
+                        <span class="impact-number">70%</span>
+                        <p class="impact-label">UK HE Market Using SITS</p>
+                    </div>
+                    <div class="impact-item">
+                        <span class="impact-number">3</span>
+                        <p class="impact-label">Different Page Types Supported</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <p><strong>Why it matters:</strong> Student engagement improves when lecturers and tutors build strong relationships with their students. This tool enables instructors to address students personally from day one, creating an inclusive environment where every student feels recognised and valued.</p>
+                </div>
+
+                <h2>The Pedagogical Purpose</h2>
+
+                <p>This extension is grounded in a simple but powerful principle: <strong>student engagement improves when lecturers and tutors build strong relationships with their students.</strong> By enabling instructors to learn student names quickly and address them personally from the first class, the tool supports several key educational outcomes:</p>
+
+                <h3>Five Key Benefits for Student Engagement</h3>
+
+                <div class="challenge-solution" style="grid-template-columns: 1fr 1fr; margin: 2rem 0;">
+                    <div style="background: #f0f9ff; border-left: 4px solid #3b82f6; padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="color: #3b82f6; margin-top: 0;">Recognition</h4>
+                        <p style="margin-bottom: 0;">Students participate more actively when they feel valued and recognised as individuals, not just names on a register.</p>
+                    </div>
+                    <div style="background: #f0fdf4; border-left: 4px solid #22c55e; padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="color: #22c55e; margin-top: 0;">Belonging</h4>
+                        <p style="margin-bottom: 0;">Using students' names creates inclusive classroom environments where everyone feels they belong.</p>
+                    </div>
+                </div>
+
+                <div class="challenge-solution" style="grid-template-columns: 1fr 1fr; margin: 2rem 0;">
+                    <div style="background: #fef3c7; border-left: 4px solid #f59e0b; padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="color: #f59e0b; margin-top: 0;">Early Intervention</h4>
+                        <p style="margin-bottom: 0;">Personal familiarity helps tutors identify struggling learners early and provide timely support.</p>
+                    </div>
+                    <div style="background: #fae8ff; border-left: 4px solid #a855f7; padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="color: #a855f7; margin-top: 0;">Collaboration</h4>
+                        <p style="margin-bottom: 0;">Strong rapport encourages students to ask questions and seek help without hesitation.</p>
+                    </div>
+                </div>
+
+                <div style="background: #f8f9fa; border-left: 4px solid #667eea; padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
+                    <h4 style="color: #667eea; margin-top: 0;">Efficiency</h4>
+                    <p style="margin-bottom: 0;">Having accessible student details reduces administrative overhead during assessments, tutorials, and one-on-one meetings.</p>
+                </div>
+
+                <div class="highlight-box">
+                    <p><strong>My Philosophy:</strong> Learning & Teaching + Coding + Strategy = Real-World Impact in Education. This tool embodies that approach by combining pedagogical understanding with practical technical solutions.</p>
+                </div>
+
+                <h2>The Technical Problem</h2>
+
+                <p>The University of Westminster uses SITS (Student Information Technology System) for managing student records. When the university updated their SITS implementation to use DataTables with server-side pagination, several challenges emerged:</p>
+
+                <ul>
+                    <li><strong>Complex Pagination:</strong> Student lists were split across multiple pages (10 students per page), requiring manual navigation through dozens of pages for large classes</li>
+                    <li><strong>Two-Level Pagination:</strong> For classes with 100+ students, there was a top-level navigation (groups of 100) and bottom-level navigation (pages of 10), making data extraction extremely tedious</li>
+                    <li><strong>Multiple Data Sources:</strong> Staff needed to access student data from three different SITS views (module lists, seminar groups, and student search results), each with different HTML structures</li>
+                    <li><strong>Time-Consuming Manual Process:</strong> Creating student cards manually meant copying data, formatting images, and creating documents for potentially hundreds of students</li>
+                </ul>
+
+                <h2>The Solution</h2>
+
+                <p>I developed a Chrome extension that automatically:</p>
+
+                <ul>
+                    <li>Detects the current SITS page type and adapts extraction accordingly</li>
+                    <li>Automatically navigates through DataTables pagination to collect all student records (up to 100 per group)</li>
+                    <li>Extracts student photos, names, IDs, courses, and enrolment status</li>
+                    <li>Generates professional PDF cards with 20 cards per page in landscape format</li>
+                    <li>Includes intelligent headers showing module information, group numbers, and page numbers</li>
+                    <li>Handles groups larger than 100 students by providing clear instructions for manual navigation</li>
+                </ul>
+
+                <h2>Key Technical Challenges</h2>
+
+                <div class="challenge-solution">
+                    <div class="challenge">
+                        <h4>Challenge: DataTables Pagination</h4>
+                        <p>SITS uses DataTables with AJAX pagination, showing only 10 students at a time. The extension needed to automatically click through all pages and detect when pagination was complete.</p>
+                    </div>
+                    <div class="solution">
+                        <h4>Solution: Smart Polling</h4>
+                        <p>Implemented a polling mechanism that tracks the first student ID on each page, automatically clicks "next," waits for the page to reload, and continues until all pages are processed. Includes safety limits and proper wait times to handle network latency.</p>
+                    </div>
+                </div>
+
+                <div class="challenge-solution">
+                    <div class="challenge">
+                        <h4>Challenge: Two-Level Navigation</h4>
+                        <p>For large modules (100+ students), there's a top navigation that triggers full page reloads, which would kill the content script's state and execution context.</p>
+                    </div>
+                    <div class="solution">
+                        <h4>Solution: User-Guided Approach</h4>
+                        <p>Automatically handles bottom pagination (AJAX) but provides clear instructions for manual top navigation. The extension processes up to 100 students per run and includes group/page tracking in PDFs for easy organisation.</p>
+                    </div>
+                </div>
+
+                <div class="challenge-solution">
+                    <div class="challenge">
+                        <h4>Challenge: Multiple Page Structures</h4>
+                        <p>Three different SITS views had completely different HTML structures, column orders, and field naming conventions, requiring flexible extraction logic.</p>
+                    </div>
+                    <div class="solution">
+                        <h4>Solution: Adaptive Detection</h4>
+                        <p>Implemented page type detection based on <code>document.title</code> with specialised extraction logic for each view. Handles field prefixes, column indices, and layout variations gracefully.</p>
+                    </div>
+                </div>
+
+                <div class="challenge-solution">
+                    <div class="challenge">
+                        <h4>Challenge: Image Format Compatibility</h4>
+                        <p>Student photos from SITS come in various formats, but jsPDF has specific requirements. Some images were causing PDF generation to fail.</p>
+                    </div>
+                    <div class="solution">
+                        <h4>Solution: Canvas Conversion</h4>
+                        <p>All images are converted to base64 JPEG format using an HTML canvas before being embedded in the PDF, ensuring consistent format and compatibility.</p>
+                    </div>
+                </div>
+
+                <h2>Technology Stack</h2>
+
+                <div class="tech-stack">
+                    <span class="tech-item">JavaScript ES6+</span>
+                    <span class="tech-item">Chrome Extension Manifest V3</span>
+                    <span class="tech-item">Chrome Scripting API</span>
+                    <span class="tech-item">Chrome Tabs API</span>
+                    <span class="tech-item">jsPDF Library</span>
+                    <span class="tech-item">DataTables Detection</span>
+                    <span class="tech-item">DOM Manipulation</span>
+                    <span class="tech-item">Async/Await Patterns</span>
+                    <span class="tech-item">Canvas API</span>
+                    <span class="tech-item">Base64 Encoding</span>
+                </div>
+
+                <h2>Features</h2>
+
+                <h3>Smart Data Extraction</h3>
+                <ul>
+                    <li>Automatically detects page type: "Students on Module", "Evision Module List photo retrieve", or "Student Search"</li>
+                    <li>Extracts module code, module name, session, and CMIS group information</li>
+                    <li>Handles field prefixes and cleans up data automatically</li>
+                    <li>Gracefully handles missing photos and incomplete data</li>
+                </ul>
+
+                <h3>Automatic Pagination Handling</h3>
+                <ul>
+                    <li>Resets DataTables to first page before extraction to ensure consistency</li>
+                    <li>Automatically clicks through all available pages</li>
+                    <li>Detects when pagination is complete by tracking student IDs</li>
+                    <li>Includes safety limits (max 100 pages) to prevent infinite loops</li>
+                </ul>
+
+                <h3>Professional PDF Generation</h3>
+                <ul>
+                    <li>Landscape A4 format with 20 cards per page (5 columns × 4 rows)</li>
+                    <li>Intelligent headers with module info, group numbers, and page numbers</li>
+                    <li>Automatic photo sizing and positioning with aspect ratio preservation</li>
+                    <li>Handles long names and course titles with smart text wrapping</li>
+                    <li>Descriptive filenames: <code>ModuleCode_GroupName_page1.pdf</code></li>
+                </ul>
+
+                <h3>User Experience</h3>
+                <ul>
+                    <li>Simple one-click operation from browser toolbar</li>
+                    <li>Clear "About" section with usage instructions</li>
+                    <li>Comprehensive console logging for debugging</li>
+                    <li>Error handling with fallbacks for missing data</li>
+                </ul>
+
+                <h2>Development Journey</h2>
+
+                <p>This project evolved significantly based on real-world usage and university system updates:</p>
+
+                <h3>v1.4 → v1.5: Student Search Support</h3>
+                <ul>
+                    <li>Added support for "Student Search" page type</li>
+                    <li>Implemented enrolment status display</li>
+                    <li>Fixed field prefix issues in extracted data</li>
+                </ul>
+
+                <h3>v1.5 → v1.6: Pagination Overhaul</h3>
+                <ul>
+                    <li>Rewrote pagination logic to handle DataTables AJAX properly</li>
+                    <li>Fixed duplicate script injection causing double execution</li>
+                    <li>Added group/page tracking to PDF headers and filenames</li>
+                    <li>Updated column indices after university SITS layout changes</li>
+                    <li>Improved wait times and page change detection to prevent skipped pages</li>
+                </ul>
+
+                <h2>Future Expansion</h2>
+
+                <p>SITS is used by approximately 70% of UK universities, representing over 100 potential institutions. Future development could include:</p>
+
+                <ul>
+                    <li>Making the extension configurable for different universities' SITS customisations</li>
+                    <li>Adding institution-specific branding (logos, colors)</li>
+                    <li>Supporting additional SITS page types</li>
+                    <li>Implementing chrome.storage for cross-page state management</li>
+                    <li>Creating a feedback mechanism for compatibility issues</li>
+                    <li>Exploring integration with other university systems beyond SITS</li>
+                </ul>
+
+                <h2>Lessons Learned</h2>
+
+                <ul>
+                    <li><strong>User Research is Essential:</strong> Understanding how university staff actually use SITS revealed edge cases (like two-level pagination) that weren't initially apparent</li>
+                    <li><strong>System Updates Require Flexibility:</strong> University systems change frequently; building adaptive selectors and detection logic is crucial for longevity</li>
+                    <li><strong>Timing Matters:</strong> AJAX pagination requires careful timing; too fast causes skipped pages, too slow frustrates users</li>
+                    <li><strong>Real-World Testing:</strong> Testing with actual university data revealed issues (duplicate injection, wrong column indices) that wouldn't appear in controlled environments</li>
+                    <li><strong>Documentation for Non-Technical Users:</strong> Clear usage instructions are as important as the code itself when your users are academics, not developers</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <p><strong>Want to collaborate?</strong> If your institution uses SITS and you'd like to test this extension or discuss expanding it to other universities, I'd love to hear from you!</p>
+                </div>
+
+                <div class="external-links">
+                    <a href="../index.html#contact" class="btn btn-primary">Get in Touch</a>
+                    <a href="../index.html#projects" class="btn btn-secondary">View More Projects</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Anne-Gaelle Colom. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

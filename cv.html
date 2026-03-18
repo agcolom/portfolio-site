@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Anne-Gaelle Colom</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .cv-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem 20px;
+        }
+
+        .cv-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .cv-header h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .cv-header .subtitle {
+            font-size: 1.3rem;
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        .cv-section {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+            border: 1px solid #e9ecef;
+        }
+
+        .cv-section h2 {
+            font-size: 1.8rem;
+            color: #667eea;
+            margin-bottom: 1.5rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        .position {
+            margin-bottom: 2rem;
+        }
+
+        .position-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 0.25rem;
+        }
+
+        .position-org {
+            font-size: 1.05rem;
+            color: #555;
+            font-weight: 600;
+        }
+
+        .position-date {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .position-desc {
+            color: #666;
+            line-height: 1.6;
+            margin-top: 0.5rem;
+        }
+
+        .awards-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .award-item {
+            padding: 1rem;
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            border-radius: 4px;
+        }
+
+        .award-title {
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 0.25rem;
+        }
+
+        .award-org {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .award-year {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .skill-group h4 {
+            color: #667eea;
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .skill-group ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skill-group li {
+            padding: 0.4rem 0;
+            color: #555;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .skill-group li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+        }
+
+        .highlight-box {
+            background: #667eea;
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            text-align: center;
+            border: 3px solid #5568d3;
+        }
+
+        .highlight-box h3 {
+            margin-top: 0;
+            font-size: 1.5rem;
+        }
+
+        .highlight-box p {
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
+            opacity: 0.95;
+        }
+
+        .qual-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .qual-degree {
+            font-weight: 700;
+            color: #2c3e50;
+            font-size: 1.1rem;
+        }
+
+        .qual-school {
+            color: #555;
+            margin-top: 0.25rem;
+        }
+
+        .qual-date {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.25rem;
+        }
+
+        @media (max-width: 768px) {
+            .cv-header h1 {
+                font-size: 2rem;
+            }
+
+            .skills-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1 class="logo">Anne-Gaelle Colom</h1>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#projects">Projects</a></li>
+                    <li><a href="cv.html">CV</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="cv-container">
+            <div class="cv-header">
+                <h1>Anne-Gaelle Colom</h1>
+                <p class="subtitle">Associate Director, Business Improvement Solutions</p>
+                <p style="color: #666; margin-top: 0.5rem;">University of Westminster | Senior Fellow of the Higher Education Academy</p>
+            </div>
+
+            <div class="highlight-box">
+                <h3>Learning & Teaching + Coding + Strategy = Real-World Impact</h3>
+                <p>27 years in higher education | Award-winning educator and open source contributor</p>
+                <p>Specialising in EdTech, AI in Education, and Student Engagement</p>
+            </div>
+
+            <div class="cv-section">
+                <h2>Current Roles</h2>
+
+                <div class="position">
+                    <div class="position-date">January 2026 - Present</div>
+                    <div class="position-title">Associate Director, Business Improvement Solutions & Principal Lecturer</div>
+                    <div class="position-org">University of Westminster</div>
+                    <p class="position-desc">Leading strategic business improvement initiatives across the university, driving operational excellence, process optimisation, and innovative solutions to enhance institutional effectiveness and student experience.</p>
+                </div>
+
+                <div class="position">
+                    <div class="position-date">November 2025 - Present</div>
+                    <div class="position-title">Non-Executive Director</div>
+                    <div class="position-org">Blueshift Education CIC</div>
+                    <p class="position-desc">Contributing strategic guidance to an educational technology social enterprise focused on improving access to quality education.</p>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h2>Previous Roles at University of Westminster</h2>
+
+                <div class="position">
+                    <div class="position-date">February 2022 - December 2025</div>
+                    <div class="position-title">Assistant Head of School, Director for Learning and Teaching & Principal Lecturer</div>
+                    <div class="position-org">School of Computer Science and Engineering</div>
+                    <p class="position-desc">Led strategic initiatives in teaching innovation, student engagement, and AI integration in education. Directed learning and teaching strategy, overseeing curriculum development and quality enhancement across computer science programmes.</p>
+                </div>
+
+                <div class="position">
+                    <div class="position-date">February 2000 - February 2022</div>
+                    <div class="position-title">Senior Lecturer & Lecturer</div>
+                    <div class="position-org">School of Computer Science and Engineering</div>
+                    <p class="position-desc">27 years of teaching and research excellence in computer science, web technologies, and educational innovation. Course Leader for MEng/BEng Mobile and Web Computing (2006-2016), Module Leader for Web Design and Development, Unit Leader for Learning Technologies (2009-2013).</p>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h2>Key Achievements & Recognition</h2>
+
+                <div class="awards-grid">
+                    <div class="award-item">
+                        <div class="award-title">Vice Chancellor Award</div>
+                        <div class="award-org">University of Westminster</div>
+                        <div class="award-year">2025</div>
+                    </div>
+
+                    <div class="award-item">
+                        <div class="award-title">Go Westminster Award - Outstanding Contribution to Our Priorities</div>
+                        <div class="award-org">University of Westminster</div>
+                        <div class="award-year">2024</div>
+                    </div>
+
+                    <div class="award-item">
+                        <div class="award-title">Women of Westminster – STEM</div>
+                        <div class="award-org">University of Westminster</div>
+                        <div class="award-year">2020</div>
+                    </div>
+
+                    <div class="award-item">
+                        <div class="award-title">WISE Award - International Open Source Category</div>
+                        <div class="award-org">Sponsored by Bloomberg</div>
+                        <div class="award-year">2016</div>
+                    </div>
+
+                    <div class="award-item">
+                        <div class="award-title">.net Magazine Award - Innovation of the Year</div>
+                        <div class="award-org">With jQuery Mobile Team</div>
+                        <div class="award-year">2011</div>
+                    </div>
+
+                    <div class="award-item">
+                        <div class="award-title">Outstanding Teacher Award (Multiple Years)</div>
+                        <div class="award-org">University of Westminster</div>
+                        <div class="award-year">2012, 2013, 2014, 2017</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h2>Notable Open Source Contributions</h2>
+
+                <div class="position">
+                    <div class="position-date">April 2013 - October 2016</div>
+                    <div class="position-title">Elected Board Member (At Large Director)</div>
+                    <div class="position-org">jQuery Foundation, USA</div>
+                    <p class="position-desc">Served on the board of directors for one of the world's most widely-used JavaScript libraries, contributing to strategic direction and community governance.</p>
+                </div>
+
+                <div class="position">
+                    <div class="position-date">January 2015 - Present</div>
+                    <div class="position-title">Content Lead</div>
+                    <div class="position-org">jQuery Foundation</div>
+                </div>
+
+                <div class="position">
+                    <div class="position-date">October 2011 - Present</div>
+                    <div class="position-title">jQuery Mobile Team Member & Documentation Lead</div>
+                    <div class="position-org">jQuery Foundation</div>
+                </div>
+
+                <div class="position">
+                    <div class="position-date">Summer 2015 & 2016</div>
+                    <div class="position-title">Google Summer of Code Administrator & Mentor</div>
+                    <div class="position-org">jQuery Foundation</div>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h2>Academic Qualifications</h2>
+
+                <div class="qual-item">
+                    <div class="qual-degree">PGCert in Higher Education (Merit)</div>
+                    <div class="qual-school">University of Westminster</div>
+                </div>
+
+                <div class="qual-item">
+                    <div class="qual-degree">MPhil in Mobile Communications</div>
+                    <div class="qual-school">University of Westminster</div>
+                    <p class="position-desc" style="margin-top: 0.5rem;">Research: "Towards Hand-held Electronic and Mobile Patient Records (THEMPAR)" - Hand-held computers, wireless networks, and healthcare applications</p>
+                </div>
+
+                <div class="qual-item">
+                    <div class="qual-degree">BEng Electronics with Major in Computer Science</div>
+                    <div class="qual-school">École Supérieure de Technologies Électriques, France</div>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h2>Areas of Expertise</h2>
+
+                <div class="skills-list">
+                    <div class="skill-group">
+                        <h4>Teaching & Learning</h4>
+                        <ul>
+                            <li>Pedagogical Design</li>
+                            <li>Student Engagement Strategies</li>
+                            <li>AI in Education</li>
+                            <li>Blended & Mobile Learning</li>
+                            <li>Assessment & Feedback Innovation</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-group">
+                        <h4>Technical Skills</h4>
+                        <ul>
+                            <li>Web Technologies (HTML, CSS, SVG)</li>
+                            <li>JavaScript, jQuery, jQuery UI</li>
+                            <li>Mobile Web Development</li>
+                            <li>HCI/UX Design</li>
+                            <li>Chrome Extension Development</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-group">
+                        <h4>Leadership & Strategy</h4>
+                        <ul>
+                            <li>Curriculum Development</li>
+                            <li>EdTech Strategy</li>
+                            <li>Quality Enhancement</li>
+                            <li>Open Source Governance</li>
+                            <li>Digital Transformation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h2>Selected Grants & Projects</h2>
+
+                <div class="position">
+                    <div class="position-date">2016-Present</div>
+                    <div class="position-title">Code Visualiser – Computer Programming for the Visual Learner</div>
+                    <p class="position-desc">Developing interactive tools to help students understand programming concepts through visual representations.</p>
+                </div>
+
+                <div class="position">
+                    <div class="position-date">2014-2021</div>
+                    <div class="position-title">Mobile Learning Project (Digital Coordinator)</div>
+                    <div class="position-org">Faculty of Science and Technology, University of Westminster</div>
+                </div>
+
+                <div class="position">
+                    <div class="position-date">2013/2014</div>
+                    <div class="position-title">GABRIEL - GAme-Based Rich Interactive Enhanced Learning</div>
+                    <p class="position-desc">ULTDC Grant: £26,000. Collaborative project exploring game-based learning in higher education.</p>
+                </div>
+
+                <div class="position">
+                    <div class="position-date">2011/2012</div>
+                    <div class="position-title">iWestminster: the Westminster Learning Surface</div>
+                    <p class="position-desc">ULTDC Grant: £29,000. Interactive learning platform development.</p>
+                </div>
+
+                <div class="position">
+                    <div class="position-date">2009/2010</div>
+                    <div class="position-title">E-Submission, Marking and Feedback</div>
+                    <p class="position-desc">ULTDC Grant: £31,000. Digital assessment innovation project.</p>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h2>Recent Speaking Engagements</h2>
+
+                <div class="position">
+                    <div class="position-date">2023-2025</div>
+                    <div class="position-title">AI in Education Series</div>
+                    <p class="position-desc">Multiple invited talks and conference presentations on AI integration in higher education, including keynotes at Anthology conferences, University of York, and international webinars for French-speaking universities across Europe and Africa.</p>
+                </div>
+
+                <div class="position">
+                    <div class="position-date">May 2025</div>
+                    <div class="position-title">Panel Expert - Girl Tech London 2025</div>
+                    <div class="position-org">Ahead Partnership</div>
+                    <p class="position-desc">Expert panellist inspiring young women from underrepresented backgrounds to pursue technology careers. Event engaged 64 students from four London schools.</p>
+                </div>
+
+                <div class="position">
+                    <div class="position-date">2012-2015</div>
+                    <div class="position-title">International jQuery Conferences</div>
+                    <p class="position-desc">Regular speaker at jQuery conferences in Vienna, Austin, New York, and Oxford, presenting on mobile web development and open source contribution.</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="index.html#contact" class="btn btn-primary" style="margin-right: 1rem;">Get in Touch</a>
+                <a href="index.html#projects" class="btn btn-secondary">View Projects</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Anne-Gaelle Colom. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
