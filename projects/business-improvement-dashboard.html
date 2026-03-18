@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Improvement Projects Dashboard - Anne-Gaelle Colom</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .project-detail {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #1e40af;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .project-detail h1 {
+            font-size: 2.5rem;
+            color: #1e40af;
+            margin-bottom: 1rem;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-badge {
+            background: #667eea;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .project-detail h2 {
+            font-size: 1.8rem;
+            color: #1e40af;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        .project-detail h3 {
+            font-size: 1.3rem;
+            color: #555;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-detail p, .project-detail li {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .project-detail ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .impact-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e40af;
+            display: block;
+        }
+
+        .impact-label {
+            color: #555;
+            margin-top: 0.5rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+        }
+
+        .tech-item {
+            background: #e8f4f8;
+            color: #2980b9;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        .challenge-solution {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .challenge, .solution {
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .challenge {
+            background: #fff5f5;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .solution {
+            background: #f0fff4;
+            border-left: 4px solid #27ae60;
+        }
+
+        .challenge h4, .solution h4 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .challenge h4 {
+            color: #e74c3c;
+        }
+
+        .solution h4 {
+            color: #27ae60;
+        }
+
+        .external-links {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .project-detail {
+                padding: 1.5rem;
+            }
+
+            .challenge-solution {
+                grid-template-columns: 1fr;
+            }
+
+            .project-detail h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1 class="logo">Anne-Gaelle Colom</h1>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../cv.html">CV</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main style="padding: 4rem 0; background: #f8f9fa;">
+        <div class="container">
+            <div class="project-detail">
+                <a href="../index.html#projects" class="back-link">← Back to Projects</a>
+
+                <h1>Business Improvement Projects Dashboard</h1>
+
+                <div class="project-meta">
+                    <span class="meta-badge">Full-Stack Web Application</span>
+                    <span class="meta-badge">Live in Production</span>
+                    <span class="meta-badge">Work in Progress</span>
+                </div>
+
+                <p class="lead">A living catalogue of improvement work capturing the challenge, solution, and impact for business improvement projects across the University of Westminster. The system demonstrates end-to-end automation, combining SharePoint data management, Power Automate workflows, AWS S3 hosting, and modern web development to create a transparent, searchable project portfolio.</p>
+
+                <div class="external-links">
+                    <a href="http://uw-business-improvement-projects.s3-website.eu-north-1.amazonaws.com/" class="btn btn-primary" target="_blank">View Live Site</a>
+                </div>
+
+                <h2>Impact & Reach</h2>
+
+                <div class="impact-grid">
+                    <div class="impact-item">
+                        <span class="impact-number">16+</span>
+                        <p class="impact-label">Projects Documented</p>
+                    </div>
+                    <div class="impact-item">
+                        <span class="impact-number">7</span>
+                        <p class="impact-label">Themes Covered</p>
+                    </div>
+                    <div class="impact-item">
+                        <span class="impact-number">100%</span>
+                        <p class="impact-label">Automated Publishing</p>
+                    </div>
+                    <div class="impact-item">
+                        <span class="impact-number">5</span>
+                        <p class="impact-label">Stakeholder Groups</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <p><strong>The Vision:</strong> Create a single, authoritative source for business improvement work that enables transparency, supports governance, and allows reuse of learning across teams. No more scattered documentation or lost knowledge when staff move on.</p>
+                </div>
+
+                <h2>The Strategic Problem</h2>
+
+                <p>Business improvement projects across the university faced several interconnected challenges:</p>
+
+                <ul>
+                    <li><strong>Fragmented Documentation:</strong> Project information was scattered across emails, SharePoint sites, Teams channels, and Word documents, making it difficult to get an overview of ongoing work</li>
+                    <li><strong>Lack of Visibility:</strong> Senior leadership and stakeholders couldn't easily see what projects were in progress, their status, or their impact</li>
+                    <li><strong>Lost Knowledge:</strong> When staff members moved to different roles, project context and learning often disappeared with them</li>
+                    <li><strong>Inconsistent Quality:</strong> Without a standard approach, documentation quality varied significantly across projects</li>
+                    <li><strong>Manual Updates:</strong> Publishing project updates required manual copying, formatting, and uploading, leading to outdated information</li>
+                    <li><strong>Poor Governance:</strong> Difficult to demonstrate value, support decision-making, or report on portfolio health</li>
+                </ul>
+
+                <h2>The Solution: Automated Project Portfolio</h2>
+
+                <p>I designed and developed an end-to-end system that addresses these challenges through automation and standardisation:</p>
+
+                <h3>Architecture Overview</h3>
+
+                <div class="challenge-solution">
+                    <div style="background: #f8f9fa; border-left: 4px solid #1e40af; padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="color: #1e40af; margin-top: 0;">Data Source</h4>
+                        <p style="margin-bottom: 0;">SharePoint list serves as the single authoritative source. Project owners update information directly using familiar tools with validation and structure.</p>
+                    </div>
+                    <div style="background: #f8f9fa; border-left: 4px solid #1e40af; padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="color: #1e40af; margin-top: 0;">Automation Layer</h4>
+                        <p style="margin-bottom: 0;">Power Automate flow triggers on SharePoint changes, transforms data to JSON, and publishes to AWS S3 via pre-signed URLs—no manual steps required.</p>
+                    </div>
+                </div>
+
+                <div class="challenge-solution">
+                    <div style="background: #f8f9fa; border-left: 4px solid #1e40af; padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="color: #1e40af; margin-top: 0;">Web Interface</h4>
+                        <p style="margin-bottom: 0;">Static website hosted on S3 with real-time search, multiple filters (theme, status, originator), expandable project cards, and responsive design.</p>
+                    </div>
+                    <div style="background: #f8f9fa; border-left: 4px solid #1e40af; padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="color: #1e40af; margin-top: 0;">Rich Content</h4>
+                        <p style="margin-bottom: 0;">Supports markdown links and images, smart impact highlighting for measurable results, and color-coded themes and originators for quick visual scanning.</p>
+                    </div>
+                </div>
+
+                <h2>Key Technical Challenges</h2>
+
+                <div class="challenge-solution">
+                    <div class="challenge">
+                        <h4>Challenge: Secure AWS Integration</h4>
+                        <p>Power Automate needed to upload files to S3 without exposing AWS credentials in the flow or storing them insecurely.</p>
+                    </div>
+                    <div class="solution">
+                        <h4>Solution: Pre-Signed URLs</h4>
+                        <p>Implemented a Python script that generates time-limited pre-signed S3 upload URLs. Power Automate calls this via HTTP, receives a secure URL, and uploads directly—credentials never exposed.</p>
+                    </div>
+                </div>
+
+                <div class="challenge-solution">
+                    <div class="challenge">
+                        <h4>Challenge: Flow Stability</h4>
+                        <p>Power Automate flows would fail silently or trigger themselves recursively, creating infinite loops and unreliable publishing.</p>
+                    </div>
+                    <div class="solution">
+                        <h4>Solution: Defensive Automation</h4>
+                        <p>Used intermediate Compose steps to stabilise API responses, added explicit waits, prevented self-triggering with conditional logic, and implemented comprehensive error logging.</p>
+                    </div>
+                </div>
+
+                <div class="challenge-solution">
+                    <div class="challenge">
+                        <h4>Challenge: Client-Side Performance</h4>
+                        <p>Loading and rendering 16+ projects with rich content, images, and multiple filters could slow down the interface, especially on mobile.</p>
+                    </div>
+                    <div class="solution">
+                        <h4>Solution: Optimised JavaScript</h4>
+                        <p>Implemented efficient filtering with data attributes, lazy loading for images, CSS animations instead of JavaScript for card transitions, and debounced search input.</p>
+                    </div>
+                </div>
+
+                <div class="challenge-solution">
+                    <div class="challenge">
+                        <h4>Challenge: Rich Content Support</h4>
+                        <p>Project descriptions needed to include links and images without requiring staff to learn HTML or risk XSS vulnerabilities.</p>
+                    </div>
+                    <div class="solution">
+                        <h4>Solution: Markdown Parsing</h4>
+                        <p>Implemented secure markdown parsing for links <code>[text](url)</code> and images <code>![alt](url)</code> with automatic conversion to HTML while escaping unsafe content. Added click-to-zoom lightbox for images.</p>
+                    </div>
+                </div>
+
+                <h2>Technology Stack</h2>
+
+                <div class="tech-stack">
+                    <span class="tech-item">JavaScript ES6+</span>
+                    <span class="tech-item">HTML5 & CSS3</span>
+                    <span class="tech-item">SharePoint REST API</span>
+                    <span class="tech-item">Power Automate</span>
+                    <span class="tech-item">AWS S3</span>
+                    <span class="tech-item">Python (Pre-signed URLs)</span>
+                    <span class="tech-item">JSON</span>
+                    <span class="tech-item">Git & GitHub</span>
+                    <span class="tech-item">Responsive Design</span>
+                </div>
+
+                <h2>Key Features</h2>
+
+                <h3>Multi-Dimensional Filtering</h3>
+                <ul>
+                    <li>Filter by <strong>Theme</strong>: Governance & Compliance, Staff Experience, Curriculum & Quality, Student Experience, etc.</li>
+                    <li>Filter by <strong>Status</strong>: Not Started, In Progress, Beta Testing, Complete</li>
+                    <li>Filter by <strong>Originator</strong>: Business Improvement, Quality & Standards, Safety Health & Wellbeing, UEB, ARD</li>
+                    <li>All filters work together - combine theme, status, and originator simultaneously</li>
+                </ul>
+
+                <h3>Real-Time Search</h3>
+                <ul>
+                    <li>Search across all project fields: name, challenge, solution, impact, development notes</li>
+                    <li>Updates results as you type with instant feedback</li>
+                    <li>Shows result count (e.g., "4 of 16 projects")</li>
+                    <li>Clear button to reset search instantly</li>
+                </ul>
+
+                <h3>Smart Impact Highlighting</h3>
+                <ul>
+                    <li>Automatically highlights measurable impacts in red boxes (e.g., "16 projects documented in 1 location")</li>
+                    <li>Detects time savings, percentages, and quantifiable metrics</li>
+                    <li>Manual override with <code>!!</code> prefix for custom highlighting</li>
+                    <li>Multi-line impacts displayed as clean bullet lists</li>
+                </ul>
+
+                <h3>Color-Coded Organisation</h3>
+                <ul>
+                    <li>Each theme has a distinct color for quick visual identification</li>
+                    <li>Originators displayed as colored badges for clear ownership</li>
+                    <li>Status indicators with consistent color scheme across the interface</li>
+                    <li>Accessibility-friendly color contrast throughout</li>
+                </ul>
+
+                <h3>Rich Content Support</h3>
+                <ul>
+                    <li>Markdown links: <code>[Link text](https://url.com)</code> renders as clickable links</li>
+                    <li>Markdown images: <code>![Description](image-url)</code> embeds images inline</li>
+                    <li>Click-to-zoom lightbox for all images with captions</li>
+                    <li>Automatic escaping prevents XSS attacks while supporting rich formatting</li>
+                </ul>
+
+                <h3>Responsive & Accessible Design</h3>
+                <ul>
+                    <li>Fully responsive layout works on desktop, tablet, and mobile</li>
+                    <li>Semantic HTML structure for screen readers</li>
+                    <li>Keyboard navigation support</li>
+                    <li>Clean, professional University of Westminster branding</li>
+                </ul>
+
+                <h2>Development Journey</h2>
+
+                <h3>Phase 1: Data Model & Agreement</h3>
+                <ul>
+                    <li>Consulted with stakeholders to define what information should be captured</li>
+                    <li>Created simple, structured data model: Challenge, Solution, Impact, Development Notes</li>
+                    <li>Established SharePoint as the single authoritative source</li>
+                </ul>
+
+                <h3>Phase 2: Automation Pipeline</h3>
+                <ul>
+                    <li>Built Power Automate flow to export SharePoint data to JSON</li>
+                    <li>Developed Python script for secure S3 pre-signed URL generation</li>
+                    <li>Integrated flow with AWS to automatically publish on every SharePoint update</li>
+                    <li>Debugged flow stability issues with intermediate Compose steps</li>
+                </ul>
+
+                <h3>Phase 3: Web Interface Development</h3>
+                <ul>
+                    <li>Created static website with expandable project cards</li>
+                    <li>Implemented filtering and search functionality</li>
+                    <li>Added markdown parsing for links and images</li>
+                    <li>Designed smart impact highlighting with flexible pattern matching</li>
+                    <li>Applied responsive design and University branding</li>
+                </ul>
+
+                <h3>Phase 4: Refinement & Features</h3>
+                <ul>
+                    <li>Added originator filtering after stakeholder feedback</li>
+                    <li>Implemented color coding for themes and originators</li>
+                    <li>Created image lightbox for better content viewing</li>
+                    <li>Fixed search security and performance issues</li>
+                    <li>Added version control with Git and deployed to private GitHub repository</li>
+                </ul>
+
+                <h2>Impact & Benefits</h2>
+
+                <div class="highlight-box">
+                    <p><strong>16 projects documented in 1 location</strong></p>
+                    <p>Improved visibility and transparency across the Business Improvement portfolio. Colleagues can quickly understand what projects are underway, their purpose, and current status, supporting clearer communication, better governance, and reuse of learning across teams.</p>
+                </div>
+
+                <h3>For Project Managers</h3>
+                <ul>
+                    <li>Update project information directly in SharePoint - no technical skills required</li>
+                    <li>Changes appear on the live site within seconds automatically</li>
+                    <li>Rich formatting options without learning HTML or Markdown</li>
+                </ul>
+
+                <h3>For Senior Leadership</h3>
+                <ul>
+                    <li>At-a-glance portfolio view showing all ongoing work</li>
+                    <li>Filter by status to see what's complete, in progress, or not started</li>
+                    <li>Evidence base for reporting and decision-making</li>
+                </ul>
+
+                <h3>For Stakeholders</h3>
+                <ul>
+                    <li>Search for projects relevant to their area or theme</li>
+                    <li>Understand the challenges being addressed and solutions being developed</li>
+                    <li>See measurable impacts and success stories</li>
+                </ul>
+
+                <h3>For Future Teams</h3>
+                <ul>
+                    <li>Knowledge preserved when staff move roles</li>
+                    <li>Learning can be reused and built upon</li>
+                    <li>Patterns and approaches become visible and shareable</li>
+                </ul>
+
+                <h2>Lessons Learned</h2>
+
+                <ul>
+                    <li><strong>Start with Data Model:</strong> Agreeing on structure first made everything else easier. Simple, clear fields beat complex taxonomies.</li>
+                    <li><strong>Automation Requires Resilience:</strong> Power Automate flows need defensive programming—use intermediate steps, explicit waits, and prevent self-triggering.</li>
+                    <li><strong>Security by Design:</strong> Pre-signed URLs solved the credential exposure problem elegantly without complex infrastructure.</li>
+                    <li><strong>User Experience Matters:</strong> The best automation is invisible. Staff just update SharePoint; the system handles the rest.</li>
+                    <li><strong>Iterative Development Works:</strong> Started simple (static data) then added features (search, images, colors) based on usage and feedback.</li>
+                    <li><strong>Markdown is Powerful:</strong> Enabling links and images through simple syntax gave non-technical users rich formatting capabilities.</li>
+                </ul>
+
+                <h2>Future Development</h2>
+
+                <p>This project is work in progress with several enhancements planned:</p>
+
+                <ul>
+                    <li>Analytics integration to track which projects are most viewed</li>
+                    <li>Export functionality (PDF reports, data exports)</li>
+                    <li>Project timeline visualisation showing progression over time</li>
+                    <li>Advanced search with boolean operators and saved searches</li>
+                    <li>Integration with other university systems for automatic status updates</li>
+                    <li>Public GitHub repository (currently private during development)</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <p><strong>Technical Philosophy:</strong> This project embodies my approach of Learning & Teaching + Coding + Strategy = Real-World Impact. It combines pedagogical understanding (how people learn and share knowledge), practical technical solutions (automation, web development), and strategic thinking (governance, transparency, evidence) to solve real institutional challenges.</p>
+                </div>
+
+                <div class="external-links">
+                    <a href="http://uw-business-improvement-projects.s3-website.eu-north-1.amazonaws.com/" class="btn btn-primary" target="_blank">View Live Site</a>
+                    <a href="../index.html#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Anne-Gaelle Colom. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
