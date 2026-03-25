@@ -40,6 +40,7 @@ function getStatusClass(status) {
   if (s.includes('complete')) return { cls: 'complete', label: 'Complete' };
   if (s.includes('beta')) return { cls: 'beta-testing', label: 'Beta Testing' };
   if (s.includes('not')) return { cls: 'not-started', label: 'Not Started' };
+  if (s.includes('closed')) return { cls: 'closed', label: 'Closed' };
   return { cls: 'in-progress', label: 'In Progress' };
 }
 
