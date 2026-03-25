@@ -13,6 +13,7 @@
   --status-progress: #c9860a;
   --status-beta: #2563eb;
   --status-not-started: #6b7280;
+  --status-closed: #94a3b8;
 
   /* Originator colors - distinct palette */
   --originator-business-improvement: #0891b2;    /* Teal/Cyan */
@@ -314,6 +315,7 @@ h1 {
 .status-dot.in-progress { background: var(--status-progress); }
 .status-dot.beta-testing { background: var(--status-beta); }
 .status-dot.not-started { background: var(--status-not-started); }
+.status-dot.closed { background: var(--status-closed); }
 
 .cases-list {
   display: flex;
@@ -452,6 +454,7 @@ h1 {
 .case-status.in-progress { background: #fff8e1; color: var(--status-progress); }
 .case-status.beta-testing { background: #dbeafe; color: var(--status-beta); }
 .case-status.not-started { background: #f3f4f6; color: var(--status-not-started); }
+.case-status.closed { background: #f1f5f9; color: var(--status-closed); }
 
 .case-status .status-indicator {
   width: 6px;
@@ -463,6 +466,7 @@ h1 {
 .case-status.in-progress .status-indicator { background: var(--status-progress); }
 .case-status.beta-testing .status-indicator { background: var(--status-beta); }
 .case-status.not-started .status-indicator { background: var(--status-not-started); }
+.case-status.closed .status-indicator { background: var(--status-closed); }
 
 .case-title {
   font-size: 1.15rem;
