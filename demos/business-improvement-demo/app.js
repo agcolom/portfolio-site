@@ -338,6 +338,7 @@ async function loadData() {
     const betaCount = projects.filter(p => getStatusClass(p.status).cls === 'beta-testing').length;
     const inProgressCount = projects.filter(p => getStatusClass(p.status).cls === 'in-progress').length;
     const notStartedCount = projects.filter(p => getStatusClass(p.status).cls === 'not-started').length;
+    const closedCount = projects.filter(p => getStatusClass(p.status).cls === 'closed').length;
 
     const themeCounts = {};
     projects.forEach(p => {
@@ -357,6 +358,7 @@ async function loadData() {
     document.getElementById('stat-beta').textContent = betaCount;
     document.getElementById('stat-progress').textContent = inProgressCount;
     document.getElementById('stat-not-started').textContent = notStartedCount;
+    document.getElementById('stat-closed').textContent = closedCount;
     document.getElementById('stat-themes').textContent = Object.keys(themeCounts).length;
     document.getElementById('count-all').textContent = total;
     document.getElementById('count-all-originators').textContent = total;
