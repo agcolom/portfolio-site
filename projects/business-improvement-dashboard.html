@@ -313,26 +313,11 @@
 
                 <p>The system supports <strong>rich content</strong> through markdown syntax--<code>[Link text](url)</code> for clickable links and <code>![Description](url)</code> for embedded images--with a click-to-zoom lightbox and automatic escaping to prevent XSS attacks. The entire interface is fully responsive across desktop, tablet, and mobile devices, with semantic HTML structure for screen readers, keyboard navigation support, and clean professional branding.</p>
 
-                <h2>Development Journey</h2>
-
-                <p>Development began by consulting with stakeholders to define what information should be captured, creating a simple structured data model (Challenge, Solution, Impact, Development Notes), and establishing SharePoint as the single authoritative source. A Power Automate flow was then built to export SharePoint data to JSON, a Python script was developed for secure S3 pre-signed URL generation, and the flow was integrated with AWS to automatically publish on every SharePoint update, with flow stability issues debugged using intermediate Compose steps.</p>
-
-                <p>The web interface phase involved creating a static website with expandable project cards, implementing filtering and search functionality, adding markdown parsing for links and images, and designing smart impact highlighting with flexible pattern matching. After initial deployment, the system was refined based on stakeholder feedback by adding team filtering, implementing color coding for visual organization, creating an image lightbox for better content viewing, fixing search security and performance issues, and establishing version control with Git and deployment to a private GitHub repository.</p>
-
                 <h2>Impact & Benefits</h2>
 
                 <div class="highlight-box">
-                    <p><strong>Multiple projects documented in a single, searchable location</strong></p>
-                    <p>Improved visibility and transparency across the project portfolio. Colleagues can quickly understand what projects are underway, their purpose, and current status, supporting clearer communication, better governance, and reuse of learning across teams.</p>
+                    <p><strong>Single, searchable project portfolio</strong> providing improved visibility and transparency across business improvement work. Colleagues can quickly understand what projects are underway, their purpose, and current status, supporting clearer communication, better governance, and reuse of learning across teams. Changes appear live within seconds of SharePoint updates.</p>
                 </div>
-
-                <p><strong>Project managers</strong> can update project information directly in SharePoint without technical skills, with changes appearing on the live site within seconds automatically and rich formatting options available through simple syntax. <strong>Senior leadership</strong> gains an at-a-glance portfolio view showing all ongoing work, can filter by status to see what's complete or in progress, and has an evidence base for reporting and decision-making.</p>
-
-                <p><strong>Stakeholders</strong> can search for projects relevant to their area or category, understand the challenges being addressed and solutions being developed, and see measurable impacts and success stories. <strong>Future teams</strong> benefit from preserved knowledge when staff move roles, with learning that can be reused and built upon, and patterns and approaches that become visible and shareable across the organization.</p>
-
-                <h2>Lessons Learned</h2>
-
-                <p>Agreeing on the data model structure first made everything else easier--simple, clear fields beat complex taxonomies every time. Power Automate flows need defensive programming with intermediate steps, explicit waits, and logic to prevent self-triggering, while pre-signed URLs solved the credential exposure problem elegantly without complex infrastructure. The best automation is invisible to users; team members just update SharePoint and the system handles the rest. Starting simple with static data then iteratively adding features like search, images, and color coding based on usage and feedback proved more effective than trying to build everything upfront. Enabling rich content through simple markdown syntax gave non-technical users powerful formatting capabilities without requiring HTML knowledge.</p>
 
                 <div class="external-links">
                     <a href="../index.html#contact" class="btn btn-secondary">Get in Touch</a>
