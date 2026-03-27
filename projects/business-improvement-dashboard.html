@@ -272,7 +272,7 @@
                     </div>
                     <div style="background: #f8f9fa; border-left: 4px solid #1e40af; padding: 1.5rem; border-radius: 8px;">
                         <h4 style="color: #1e40af; margin-top: 0;">Automation Layer</h4>
-                        <p style="margin-bottom: 0;">Power Automate flow triggers on SharePoint changes, transforms data to JSON, and publishes to AWS S3 via pre-signed URLs—no manual steps required.</p>
+                        <p style="margin-bottom: 0;">Power Automate flow triggers on SharePoint changes, transforms data to JSON, and publishes to AWS S3 via pre-signed URLs--no manual steps required.</p>
                     </div>
                 </div>
 
@@ -289,7 +289,7 @@
 
                 <h2>Technical Highlights</h2>
 
-                <p>The project required solving several technical challenges to create a robust, automated system. Security was paramount—a Python-based pre-signed URL solution was implemented to enable Power Automate to upload files to AWS S3 without exposing credentials. Power Automate flows needed defensive programming techniques to prevent silent failures and recursive triggering. The client-side interface was optimized for performance with efficient filtering, lazy loading for images, and CSS-based animations. To enable rich content without requiring HTML knowledge, secure markdown parsing was implemented that converts simple syntax into formatted links and images while preventing XSS vulnerabilities.</p>
+                <p>The project required solving several technical challenges to create a robust, automated system. Security was paramount--a Python-based pre-signed URL solution was implemented to enable Power Automate to upload files to AWS S3 without exposing credentials. Power Automate flows needed defensive programming techniques to prevent silent failures and recursive triggering. The client-side interface was optimized for performance with efficient filtering, lazy loading for images, and CSS-based animations. To enable rich content without requiring HTML knowledge, secure markdown parsing was implemented that converts simple syntax into formatted links and images while preventing XSS vulnerabilities.</p>
 
                 <h2>Technology Stack</h2>
 
@@ -307,11 +307,11 @@
 
                 <h2>Key Features</h2>
 
-                <p>The dashboard provides <strong>multi-dimensional filtering</strong> that allows users to filter projects by category (functional area or strategic theme), status (Not Started, In Progress, Beta Testing, Complete), and team (which departments initiated each project). All filters work together simultaneously for precise navigation. A <strong>real-time search</strong> function searches across all project fields—name, challenge, solution, impact, and development notes—updating results as you type with instant feedback and a result count display.</p>
+                <p>The dashboard provides <strong>multi-dimensional filtering</strong> that allows users to filter projects by category (functional area or strategic theme), status (Not Started, In Progress, Beta Testing, Complete), and team (which departments initiated each project). All filters work together simultaneously for precise navigation. A <strong>real-time search</strong> function searches across all project fields--name, challenge, solution, impact, and development notes--updating results as you type with instant feedback and a result count display.</p>
 
                 <p><strong>Smart impact highlighting</strong> automatically detects and emphasizes measurable impacts like time savings, percentages, and quantifiable metrics in colored boxes, with a manual override option using the <code>!!</code> prefix. Multi-line impacts are displayed as clean paragraph text or lists. <strong>Color-coded organization</strong> uses distinct colors for each category and team, with consistent status indicators throughout the interface and accessibility-friendly contrast ratios.</p>
 
-                <p>The system supports <strong>rich content</strong> through markdown syntax—<code>[Link text](url)</code> for clickable links and <code>![Description](url)</code> for embedded images—with a click-to-zoom lightbox and automatic escaping to prevent XSS attacks. The entire interface is fully responsive across desktop, tablet, and mobile devices, with semantic HTML structure for screen readers, keyboard navigation support, and clean professional branding.</p>
+                <p>The system supports <strong>rich content</strong> through markdown syntax--<code>[Link text](url)</code> for clickable links and <code>![Description](url)</code> for embedded images--with a click-to-zoom lightbox and automatic escaping to prevent XSS attacks. The entire interface is fully responsive across desktop, tablet, and mobile devices, with semantic HTML structure for screen readers, keyboard navigation support, and clean professional branding.</p>
 
                 <h2>Development Journey</h2>
 
@@ -332,7 +332,7 @@
 
                 <h2>Lessons Learned</h2>
 
-                <p>Agreeing on the data model structure first made everything else easier—simple, clear fields beat complex taxonomies every time. Power Automate flows need defensive programming with intermediate steps, explicit waits, and logic to prevent self-triggering, while pre-signed URLs solved the credential exposure problem elegantly without complex infrastructure. The best automation is invisible to users; team members just update SharePoint and the system handles the rest. Starting simple with static data then iteratively adding features like search, images, and color coding based on usage and feedback proved more effective than trying to build everything upfront. Enabling rich content through simple markdown syntax gave non-technical users powerful formatting capabilities without requiring HTML knowledge.</p>
+                <p>Agreeing on the data model structure first made everything else easier--simple, clear fields beat complex taxonomies every time. Power Automate flows need defensive programming with intermediate steps, explicit waits, and logic to prevent self-triggering, while pre-signed URLs solved the credential exposure problem elegantly without complex infrastructure. The best automation is invisible to users; team members just update SharePoint and the system handles the rest. Starting simple with static data then iteratively adding features like search, images, and color coding based on usage and feedback proved more effective than trying to build everything upfront. Enabling rich content through simple markdown syntax gave non-technical users powerful formatting capabilities without requiring HTML knowledge.</p>
 
                 <div class="external-links">
                     <a href="../index.html#contact" class="btn btn-secondary">Get in Touch</a>
