@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module Fair Planning Tool - Anne-Gaelle Colom</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .project-detail {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #1e40af;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .project-detail h1 {
+            font-size: 2.5rem;
+            color: #1e40af;
+            margin-bottom: 1rem;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-badge {
+            background: #667eea;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .project-detail h2 {
+            font-size: 1.8rem;
+            color: #1e40af;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        .project-detail h3 {
+            font-size: 1.3rem;
+            color: #555;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-detail p, .project-detail li {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .project-detail ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .impact-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e40af;
+            display: block;
+        }
+
+        .impact-label {
+            color: #555;
+            margin-top: 0.5rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+        }
+
+        .tech-item {
+            background: #e8f4f8;
+            color: #2980b9;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        .external-links {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .pedagogy-section {
+            background: #f0fff4;
+            border-left: 4px solid #27ae60;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .pedagogy-section h3 {
+            color: #27ae60;
+            margin-top: 0;
+        }
+
+        @media (max-width: 768px) {
+            .project-detail {
+                padding: 1.5rem;
+            }
+
+            .project-detail h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1 class="logo">Anne-Gaelle Colom</h1>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../cv.html">CV</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main style="padding: 4rem 0; background: #f8f9fa;">
+        <div class="container">
+            <div class="project-detail">
+                <a href="../index.html#projects" class="back-link">← Back to Projects</a>
+
+                <h1>Module Fair Planning Tool</h1>
+
+                <div class="project-meta">
+                    <span class="meta-badge">jQuery Mobile Web App</span>
+                    <span class="meta-badge">Used Since 2019</span>
+                    <span class="meta-badge">9 Degree Programmes</span>
+                </div>
+
+                <p class="lead">An interactive module selection planning tool that helps undergraduate students in Computer Science and Engineering make informed decisions about their module choices. Students can explore course structures, view detailed module information including assessments and prerequisites, and plan balanced semesters whilst tracking credit requirements in real-time.</p>
+
+                <h2>The Student Need</h2>
+
+                <p>Choosing modules is one of the most significant decisions students make during their university journey, yet the process can be overwhelming. Students often face challenges understanding complex course structures across multiple academic levels, evaluating module options without clear information about content and assessments, planning balanced semesters whilst meeting credit requirements, and visualising how their choices fit into their overall degree pathway.</p>
+
+                <div class="pedagogy-section">
+                    <h3>The Pedagogical Foundation</h3>
+                    <p><strong>Student Agency and Informed Decision-Making:</strong> Research in higher education consistently shows that students who feel in control of their learning journey demonstrate higher engagement, persistence, and satisfaction. The Module Fair Planning Tool is grounded in self-determination theory, which emphasises autonomy, competence, and relatedness as key drivers of intrinsic motivation.</p>
+
+                    <p><strong>Transparency in Assessment:</strong> Making assessment patterns visible upfront reduces anxiety and helps students make strategic choices aligned with their learning preferences and strengths. This transparency builds trust and helps students take ownership of their academic planning.</p>
+
+                    <p><strong>Cognitive Load Management:</strong> By presenting complex information in an interactive, progressively disclosed format, the tool reduces cognitive overload. Students can explore at their own pace, adding and removing modules to see immediate feedback on their choices without needing to process all information at once.</p>
+
+                    <p><strong>Supporting Balanced Learning:</strong> The credit tracking and visual feedback system encourages students to create balanced semesters, promoting sustainable workload distribution—a key factor in student wellbeing and academic success.</p>
+                </div>
+
+                <h2>Key Features</h2>
+
+                <h3>Interactive Course Structure Visualisation</h3>
+
+                <p>Students select their degree programme from 9 available courses and instantly see their complete course structure organised by academic level (4, 5, 6) and semester. Core modules are clearly distinguished from optional modules, with pathway badges (e.g., "Mobile & Web Computing", "Data Science") helping students understand module specialisms.</p>
+
+                <h3>Comprehensive Module Information</h3>
+
+                <p>Each module card displays essential details including module code, name, credits, and semester. Swiping left reveals detailed assessment patterns (coursework, exams, practicals with weightings and qualifying marks), whilst swiping right shows quick-add buttons for optional modules. Clicking "more info" opens a full module description including learning outcomes, prerequisites, and module leader contact details.</p>
+
+                <h3>Real-Time Planning and Validation</h3>
+
+                <p>As students add or remove optional modules, the tool provides immediate visual feedback showing current credit totals for each level, required credits (120 per year), and colour-coded indicators (green tick for complete, amber warning for incomplete). Students can experiment with different combinations and see the impact on their overall structure instantly.</p>
+
+                <h3>Email Integration</h3>
+
+                <p>Once students have finalised their selections, they can email their module choices to themselves for future reference, making it easy to review offline, share with advisers, or use as a basis for formal module registration.</p>
+
+                <h2>Technical Architecture</h2>
+
+                <p>The tool uses a normalised data architecture that separates concerns and enables efficient maintenance. Module definitions, course structures, assessment patterns, and prerequisite rules are stored in separate JavaScript files, whilst a dedicated rendering engine handles all presentation logic. This modular approach means updating module information for a new academic year only requires editing data files, not touching the rendering code.</p>
+
+                <h3>Data Structure</h3>
+
+                <p>The system maintains four core data files. <code>modules.js</code> contains comprehensive module definitions (111 modules) including codes, names, descriptions, credits, levels, assessment patterns, and module leader information. <code>courseStructures26.js</code> defines course structures for 9 degree programmes, organised by level and semester with core/optional designations. <code>assessments.js</code> stores detailed assessment patterns with component types, weightings, and qualifying marks, whilst <code>rules.js</code> contains module prerequisites and corequisites.</p>
+
+                <h3>User Interface</h3>
+
+                <p>Built with jQuery Mobile for responsive, touch-friendly interactions, the interface features swipe gestures for revealing contextual actions, collapsible sections for semester organisation, and a colour-coded visual feedback system. The mobile-first design ensures the tool works seamlessly across devices from phones to desktop computers.</p>
+
+                <h2>Impact and Usage</h2>
+
+                <div class="impact-grid">
+                    <div class="impact-item">
+                        <span class="impact-number">6+</span>
+                        <p class="impact-label">Years in Production</p>
+                    </div>
+                    <div class="impact-item">
+                        <span class="impact-number">9</span>
+                        <p class="impact-label">Degree Programmes</p>
+                    </div>
+                    <div class="impact-item">
+                        <span class="impact-number">111</span>
+                        <p class="impact-label">Module Definitions</p>
+                    </div>
+                    <div class="impact-item">
+                        <span class="impact-number">~800</span>
+                        <p class="impact-label">Students Annually</p>
+                    </div>
+                </div>
+
+                <p>The Module Fair Planning Tool has been used in the School of Computer Science and Engineering since 2019, supporting module selection events and individual student planning. It has become an integral part of the student experience, with positive feedback highlighting how it demystifies the module selection process and empowers students to make confident, informed choices.</p>
+
+                <h2>Technology Stack</h2>
+
+                <div class="tech-stack">
+                    <span class="tech-item">JavaScript</span>
+                    <span class="tech-item">jQuery Mobile</span>
+                    <span class="tech-item">HTML5</span>
+                    <span class="tech-item">CSS3</span>
+                    <span class="tech-item">Responsive Design</span>
+                    <span class="tech-item">Touch Gestures</span>
+                    <span class="tech-item">PHP Email Backend</span>
+                    <span class="tech-item">Git Version Control</span>
+                </div>
+
+                <h2>Maintenance and Evolution</h2>
+
+                <h3>Annual Updates</h3>
+
+                <p>Each academic year, the tool is updated to reflect new modules, discontinued modules, and changes to course structures. The normalised data architecture means these updates are straightforward—editing the relevant data files without touching the presentation logic. This maintainability has been key to the tool's longevity.</p>
+
+                <h3>Recent Enhancements (2025/26)</h3>
+
+                <p>For the 2025/26 academic year, significant updates were made including adding a new BSc Creative Computing degree programme with 6 new modules, incorporating 7 additional missing modules across existing programmes, updating assessment patterns to reflect current university requirements, adding a prominent disclaimer notice about information currency, and fixing structural inconsistencies in course definitions.</p>
+
+                <h2>Future Plans</h2>
+
+                <h3>University-Wide Expansion</h3>
+
+                <p>The vision is to adapt this tool for all schools across the university, making informed module planning available to every undergraduate student. This would involve developing a generalised data schema that accommodates different course structures and assessment patterns, creating a centralised data management system for easy updates, integrating with the university's Student Information System (SITS) for real-time module availability, and building an administrative interface for non-technical staff to maintain module information.</p>
+
+                <h3>Enhanced Features</h3>
+
+                <p>Planned enhancements include prerequisite checking and validation to prevent invalid selections, timetable clash detection using live timetabling data, module popularity indicators to help students gauge demand, historical grade distributions to set realistic expectations, and integration with degree classification calculators to show how module choices might affect final awards.</p>
+
+                <h2>Lessons Learned</h2>
+
+                <p><strong>Data architecture matters:</strong> Separating data from presentation logic has been crucial for maintainability. Updates that would have taken hours can now be completed in minutes.</p>
+
+                <p><strong>Student feedback is invaluable:</strong> Regular informal feedback from students and academic advisers has driven continuous improvement. Features like swipe gestures and real-time credit tracking came directly from observing how students used early versions.</p>
+
+                <p><strong>Mobile-first works:</strong> Many students access the tool during module fairs on their phones. Designing for touch interactions from the start made the desktop experience better too, not worse.</p>
+
+                <p><strong>Transparency reduces anxiety:</strong> Students consistently report that seeing assessment patterns upfront helps them feel more confident about their choices and reduces pre-registration stress.</p>
+
+                <div class="highlight-box">
+                    <p><strong>Pedagogical Impact:</strong> Beyond the technical achievement, this tool represents a commitment to student-centred design in higher education technology. By prioritising transparency, agency, and usability, it demonstrates how thoughtful EdTech solutions can meaningfully enhance the student experience.</p>
+                </div>
+
+                <div class="external-links">
+                    <a href="https://github.com/agcolom/moduleFair" class="btn btn-secondary" target="_blank">View on GitHub</a>
+                    <a href="../index.html#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Anne-Gaelle Colom. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
