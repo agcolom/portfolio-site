@@ -300,13 +300,13 @@
 
                 <p>The University of Westminster uses SITS (Student Information Technology System) for managing student records. When the university updated their SITS implementation to use DataTables with server-side pagination, several challenges emerged. Student lists were split across multiple pages (10 students per page), requiring manual navigation through dozens of pages for large classes. For classes with 100+ students, there was a top-level navigation (groups of 100) and bottom-level navigation (pages of 10), making data extraction extremely tedious. Staff needed to access student data from three different SITS views (module lists, seminar groups, and student search results), each with different HTML structures. Creating student cards manually meant copying data, formatting images, and creating documents for potentially hundreds of students.</p>
 
-                <h2>The Solution</h2>
+                <h2>How It Works</h2>
 
-                <p>The Chrome extension automatically detects the current SITS page type and adapts extraction accordingly, navigates through DataTables pagination to collect all student records (up to 100 per group), extracts student photos, names, IDs, courses, and enrolment status, and generates professional PDF cards with 20 cards per page in landscape format. The extension includes intelligent headers showing module information, group numbers, and page numbers, and handles groups larger than 100 students by providing clear instructions for manual navigation.</p>
+                <p>The extension provides one-click PDF generation from any SITS student list page. It automatically detects the page type (module lists, seminar groups, or student search), navigates through DataTables AJAX pagination to collect all records, extracts student photos, names, IDs, courses, and enrolment status, and generates professional landscape PDFs with 20 cards per page (5×4 grid), intelligent headers, and descriptive filenames.</p>
 
-                <h2>Technical Highlights</h2>
+                <h2>Technical Implementation</h2>
 
-                <p>The extension implements a smart polling mechanism that tracks student IDs to automatically navigate through DataTables AJAX pagination while detecting when all pages have been processed, with safety limits and proper wait times to handle network latency. For large modules with two-level navigation, the extension automatically handles bottom-level pagination while providing clear instructions for manual top-level navigation. Page type detection based on document title enables specialized extraction logic for three different SITS views with varying HTML structures, handling field prefixes, column indices, and layout variations. All student photos are converted to base64 JPEG format using canvas before being embedded in the PDF, ensuring consistent format and compatibility across different image sources.</p>
+                <p>The extension implements smart polling that tracks student IDs to navigate DataTables pagination whilst detecting completion, with safety limits and proper wait times for network latency. Page type detection based on document title enables specialized extraction logic for three different SITS views with varying HTML structures. For large modules with two-level navigation, the extension handles bottom-level pagination automatically. Student photos are converted to base64 JPEG format using canvas before PDF embedding, ensuring consistent format and compatibility.</p>
 
                 <h2>Technology Stack</h2>
 
@@ -314,20 +314,11 @@
                     <span class="tech-item">JavaScript ES6+</span>
                     <span class="tech-item">Chrome Extension Manifest V3</span>
                     <span class="tech-item">Chrome Scripting API</span>
-                    <span class="tech-item">Chrome Tabs API</span>
                     <span class="tech-item">jsPDF Library</span>
                     <span class="tech-item">DataTables Detection</span>
-                    <span class="tech-item">DOM Manipulation</span>
-                    <span class="tech-item">Async/Await Patterns</span>
                     <span class="tech-item">Canvas API</span>
-                    <span class="tech-item">Base64 Encoding</span>
+                    <span class="tech-item">Async/Await Patterns</span>
                 </div>
-
-                <h2>Key Features</h2>
-
-                <p>The extension provides <strong>smart data extraction</strong> by automatically detecting the page type ("Students on Module", "Evision Module List photo retrieve", or "Student Search"), extracting module code, module name, session, and CMIS group information, and handling field prefixes while gracefully managing missing photos and incomplete data. <strong>Automatic pagination handling</strong> resets DataTables to the first page before extraction, clicks through all available pages, detects completion by tracking student IDs, and includes safety limits to prevent infinite loops.</p>
-
-                <p><strong>Professional PDF generation</strong> uses landscape A4 format with 20 cards per page (5 columns × 4 rows), intelligent headers with module info, group numbers, and page numbers, automatic photo sizing with aspect ratio preservation, smart text wrapping for long names and course titles, and descriptive filenames. The <strong>user experience</strong> features simple one-click operation from the browser toolbar, clear usage instructions, comprehensive console logging for debugging, and error handling with fallbacks for missing data.</p>
 
                 <h2>Development Journey</h2>
 
