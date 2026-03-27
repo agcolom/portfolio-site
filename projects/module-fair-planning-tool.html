@@ -225,6 +225,31 @@
 
                 <p>Once students have finalised their selections, they can email their module choices to themselves for future reference, making it easy to review offline, share with advisers, or use as a basis for formal module registration.</p>
 
+                <h2>How It Works</h2>
+
+                <p>Using the Course Planner is straightforward, with an intuitive three-step process designed to guide students through their module selection:</p>
+
+                <div style="background: #f8f9fa; border-left: 4px solid #667eea; padding: 1.5rem; margin: 2rem 0; border-radius: 4px;">
+                    <h3 style="margin-top: 0;">Step 1: Select Your Course</h3>
+                    <p>Choose your degree programme from the dropdown menu at the top of the page. The tool supports 9 different Computer Science and Engineering courses.</p>
+
+                    <h3>Step 2: View Course Structure and Build Your Selection</h3>
+                    <p>Your complete course structure appears, organised by academic level and semester. You'll see whether each module runs in Semester 1, Semester 2, or year-long—this is indicated on the left-hand side of the module on small screens, or by the physical location of the module block on larger screens.</p>
+
+                    <p><strong>To explore modules and make selections:</strong></p>
+                    <ul style="margin-left: 1.5rem; line-height: 1.8;">
+                        <li><strong>View module details:</strong> Swipe left on the module and press "…" to see the full module description, learning outcomes, prerequisites, and module leader contact details</li>
+                        <li><strong>Check assessment patterns:</strong> Swipe right on the module for a quick view of the assessment pattern showing component types, weightings, and qualifying marks</li>
+                        <li><strong>Add optional modules:</strong> Swipe left on an optional module and click "+" to add it to your selection</li>
+                        <li><strong>Remove optional modules:</strong> Swipe left on a selected module and click "−" to remove it from your selection</li>
+                    </ul>
+
+                    <p>Continue adding your chosen modules until you've reached the correct number of credits (120 per academic year). The tool provides real-time feedback with colour-coded indicators showing whether you've met the credit requirements.</p>
+
+                    <h3>Step 3: Email Your Module Choices</h3>
+                    <p>Once you're happy with your selections, scroll to the bottom of the page, enter your email address, and press the submit button. You'll receive an email containing your chosen modules for offline review, sharing with advisers, or reference during formal module registration.</p>
+                </div>
+
                 <h2>Technical Architecture</h2>
 
                 <p>The tool uses a normalised data architecture that separates concerns and enables efficient maintenance. Module definitions, course structures, assessment patterns, and prerequisite rules are stored in separate JavaScript files, whilst a dedicated rendering engine handles all presentation logic. This modular approach means updating module information for a new academic year only requires editing data files, not touching the rendering code.</p>
