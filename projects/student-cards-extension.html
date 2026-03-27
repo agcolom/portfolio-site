@@ -296,13 +296,11 @@
 
                 <p>The University of Westminster uses SITS (Student Information Technology System) for managing student records. When the university updated their SITS implementation to use DataTables with server-side pagination, several challenges emerged. Student lists were split across multiple pages (10 students per page), requiring manual navigation through dozens of pages for large classes. For classes with 100+ students, there was a top-level navigation (groups of 100) and bottom-level navigation (pages of 10), making data extraction extremely tedious. Staff needed to access student data from three different SITS views (module lists, seminar groups, and student search results), each with different HTML structures. Creating student cards manually meant copying data, formatting images, and creating documents for potentially hundreds of students.</p>
 
-                <h2>How It Works</h2>
+                <h2>Key Features</h2>
 
-                <p>The extension provides one-click PDF generation from any SITS student list page. It automatically detects the page type (module lists, seminar groups, or student search), navigates through DataTables AJAX pagination to collect all records, extracts student photos, names, IDs, courses, and enrolment status, and generates professional landscape PDFs with 20 cards per page (5×4 grid), intelligent headers, and descriptive filenames.</p>
+                <p>The extension provides <strong>smart data extraction</strong> by automatically detecting the page type ("Students on Module", "Evision Module List photo retrieve", or "Student Search"), extracting module code, module name, session, and CMIS group information, and handling field prefixes whilst gracefully managing missing photos and incomplete data. <strong>Automatic pagination handling</strong> resets DataTables to the first page before extraction, clicks through all available pages, detects completion by tracking student IDs, and includes safety limits to prevent infinite loops.</p>
 
-                <h2>Technical Implementation</h2>
-
-                <p>The extension implements smart polling that tracks student IDs to navigate DataTables pagination whilst detecting completion, with safety limits and proper wait times for network latency. Page type detection based on document title enables specialized extraction logic for three different SITS views with varying HTML structures. For large modules with two-level navigation, the extension handles bottom-level pagination automatically. Student photos are converted to base64 JPEG format using canvas before PDF embedding, ensuring consistent format and compatibility.</p>
+                <p><strong>Professional PDF generation</strong> uses landscape A4 format with 20 cards per page (5 columns × 4 rows), intelligent headers with module info, group numbers, and page numbers, automatic photo sizing with aspect ratio preservation, smart text wrapping for long names and course titles, and descriptive filenames. The <strong>user experience</strong> features simple one-click operation from the browser toolbar, clear usage instructions, comprehensive console logging for debugging, and error handling with fallbacks for missing data.</p>
 
                 <h2>Technology Stack</h2>
 
@@ -316,17 +314,9 @@
                     <span class="tech-item">Async/Await Patterns</span>
                 </div>
 
-                <h2>Development Journey</h2>
-
-                <p>This project evolved significantly based on real-world usage and university system updates. Version 1.5 added support for the "Student Search" page type, implemented enrolment status display, and fixed field prefix issues in extracted data. Version 1.6 brought a pagination overhaul that rewrote the logic to handle DataTables AJAX properly, fixed duplicate script injection causing double execution, added group/page tracking to PDF headers and filenames, updated column indices after university SITS layout changes, and improved wait times and page change detection to prevent skipped pages.</p>
-
                 <h2>Future Expansion</h2>
 
                 <p>SITS is used by approximately 70% of UK universities, representing over 100 potential institutions. Future development could include making the extension configurable for different universities' SITS customisations, adding institution-specific branding (logos, colors), supporting additional SITS page types, implementing chrome.storage for cross-page state management, creating a feedback mechanism for compatibility issues, and exploring integration with other university systems beyond SITS.</p>
-
-                <h2>Lessons Learned</h2>
-
-                <p>Understanding how university staff actually use SITS revealed edge cases (like two-level pagination) that weren't initially apparent, reinforcing that user research is essential. University systems change frequently, making adaptive selectors and detection logic crucial for longevity. AJAX pagination requires careful timing--too fast causes skipped pages, too slow frustrates users. Testing with actual university data revealed issues (duplicate injection, wrong column indices) that wouldn't appear in controlled environments. Clear usage instructions are as important as the code itself when your users are academics, not developers.</p>
 
                 <div class="highlight-box">
                     <p><strong>Want to collaborate?</strong> If your institution uses SITS and you'd like to test this extension or discuss expanding it to other universities, I'd love to hear from you!</p>
