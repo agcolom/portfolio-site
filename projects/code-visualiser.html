@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Visualiser - Anne-Gaelle Colom</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .project-detail {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #1e40af;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .project-detail h1 {
+            font-size: 2.5rem;
+            color: #1e40af;
+            margin-bottom: 1rem;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-badge {
+            background: #667eea;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .project-detail h2 {
+            font-size: 1.8rem;
+            color: #1e40af;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 0.5rem;
+        }
+
+        .project-detail h3 {
+            font-size: 1.3rem;
+            color: #555;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-detail p, .project-detail li {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .project-detail ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight-box {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .impact-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1e40af;
+            display: block;
+        }
+
+        .impact-label {
+            color: #555;
+            margin-top: 0.5rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+        }
+
+        .tech-item {
+            background: #e8f4f8;
+            color: #2980b9;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        .testimonial {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #27ae60;
+            border-radius: 4px;
+        }
+
+        .testimonial p {
+            margin-bottom: 0.5rem;
+            font-style: italic;
+            color: #555;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: #1e40af;
+            font-style: normal;
+            margin-top: 1rem;
+        }
+
+        .testimonial-role {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .external-links {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 768px) {
+            .project-detail {
+                padding: 1.5rem;
+            }
+
+            .project-detail h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1 class="logo">Anne-Gaelle Colom</h1>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../cv.html">CV</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main style="padding: 4rem 0; background: #f8f9fa;">
+        <div class="container">
+            <div class="project-detail">
+                <a href="../index.html#projects" class="back-link">← Back to Projects</a>
+
+                <h1>Code Visualiser</h1>
+
+                <div class="project-meta">
+                    <span class="meta-badge">Web Application</span>
+                    <span class="meta-badge">WISE Award Winner 2016</span>
+                    <span class="meta-badge">Multi-Language Support</span>
+                </div>
+
+                <p class="lead">An innovative web-based tool that converts written code into animated flowcharts in real-time, making programming more accessible and engaging for students. By bridging the gap between abstract programming concepts and tangible visual understanding, this tool addresses critical challenges in programming education and significantly improves student performance.</p>
+
+                <div class="external-links">
+                    <a href="http://learntocode.westminster.ac.uk" class="btn btn-secondary" target="_blank">Visit Learn to Code Website</a>
+                </div>
+
+                <h2>Measurable Impact</h2>
+
+                <div class="impact-grid">
+                    <div class="impact-item">
+                        <span class="impact-number">+15.4%</span>
+                        <p class="impact-label">Performance Improvement</p>
+                    </div>
+                    <div class="impact-item">
+                        <span class="impact-number">6</span>
+                        <p class="impact-label">Programming Languages</p>
+                    </div>
+                    <div class="impact-item">
+                        <span class="impact-number">57.6 → 66.5</span>
+                        <p class="impact-label">Average Mark Increase</p>
+                    </div>
+                    <div class="impact-item">
+                        <span class="impact-number">Real-time</span>
+                        <p class="impact-label">Code Visualisation</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <p><strong>Award-Winning Innovation:</strong> This project won the WISE Award for International Open Source Category in 2016, sponsored by Bloomberg and presented by HRH The Princess Royal. The tool demonstrates how digital innovation can transform programming education and make it more inclusive.</p>
+                </div>
+
+                <h2>The Educational Challenge</h2>
+
+                <p>Traditional programming education often proves challenging, particularly for women and students with no prior programming experience, due to its abstract nature and less inclusive classroom environments. Research and anecdotal evidence suggest that many students benefit from more concrete, visual approaches to learning code. Key challenges include:</p>
+
+                <ul>
+                    <li><strong>Abstract concepts:</strong> Programming logic can be difficult to grasp without visual representation</li>
+                    <li><strong>Debugging difficulties:</strong> Students struggle to understand why their code doesn't work as expected</li>
+                    <li><strong>Retention issues:</strong> Low confidence leads to higher dropout rates in programming courses</li>
+                    <li><strong>Limited engagement:</strong> Text-based code can be intimidating for visual learners</li>
+                    <li><strong>AI-generated code comprehension:</strong> With the rise of Generative AI, students need to understand externally generated code</li>
+                </ul>
+
+                <p>Recognising these challenges, I developed the Code Visualiser to address a critical institutional need: increasing the retention and success rates of students in programming courses at the University of Westminster.</p>
+
+                <h2>The Solution: Real-Time Code Visualisation</h2>
+
+                <p>The Code Visualiser converts written code into animated flowcharts in real-time, providing students with immediate visual feedback on program flow. Students can write or modify code and instantly see how it translates into logical flow, helping them understand control structures, conditional statements, loops, and sequential logic.</p>
+
+                <h3>Key Features</h3>
+
+                <ul>
+                    <li><strong>Real-time flowchart generation:</strong> Instant visual representation as code is written or modified</li>
+                    <li><strong>Multi-language support:</strong> Works with JavaScript, Java, C#, C++, Swift, and Python</li>
+                    <li><strong>Step-by-step execution:</strong> Students can trace program flow one step at a time</li>
+                    <li><strong>Interactive tutorials:</strong> Comprehensive learning materials integrated into the platform</li>
+                    <li><strong>Editable examples:</strong> Students can modify default code and test their own ideas</li>
+                    <li><strong>Support for key programming constructs:</strong> Conditional statements, loops, and sequential statements</li>
+                </ul>
+
+                <h2>Evidence of Impact</h2>
+
+                <p>The impact of the Code Visualiser is evident in improved performance and retention of students across multiple modules:</p>
+
+                <h3>Performance Improvements</h3>
+
+                <p>In a programming module where the tool was introduced in 2022/23, the <strong>average mark increased from 57.6 to 66.5</strong>, an improvement of approximately <strong>15.4%</strong>. This enhanced performance was maintained in 2023/24, with an average mark of 66.4, demonstrating sustained benefits.</p>
+
+                <h3>Impact of Tool Removal</h3>
+
+                <p>In another module, performance notably declined when the tool was no longer used. Average marks dropped from 60.1 to 56.7, a decrease of about <strong>5.7%</strong>. This control comparison demonstrates the significant benefits in understanding and performance directly attributable to the tool.</p>
+
+                <h3>Relevance to AI Era</h3>
+
+                <p>With the arrival of Generative AI, the ability to read and understand code written by others has become more important than ever. The Code Visualiser aids in this by providing a clear, visual representation of how code works, thereby enhancing students' ability to understand and work with externally generated code. This prepares students for real-world coding challenges where they must comprehend, debug, and modify code from various sources.</p>
+
+                <h2>Technology Stack</h2>
+
+                <div class="tech-stack">
+                    <span class="tech-item">JavaScript ES6+</span>
+                    <span class="tech-item">HTML5 Canvas</span>
+                    <span class="tech-item">Abstract Syntax Trees (AST)</span>
+                    <span class="tech-item">Parser Development</span>
+                    <span class="tech-item">Algorithm Design</span>
+                    <span class="tech-item">Responsive Design</span>
+                    <span class="tech-item">Multi-Language Parser</span>
+                </div>
+
+                <h2>Technical Challenges</h2>
+
+                <p>The primary barrier in developing the Code Visualiser was the complexity of the coding work, which I undertook as a solo developer to keep costs to a minimum. Creating a tool that accurately visualises code flow in real-time and works seamlessly with various programming languages demanded:</p>
+
+                <ul>
+                    <li><strong>Complex algorithm development:</strong> Parsing different programming languages and converting them to flowchart representations</li>
+                    <li><strong>Real-time processing:</strong> Providing instant visual feedback without lag</li>
+                    <li><strong>Multi-language support:</strong> Developing parsers for six different programming languages with different syntax rules</li>
+                    <li><strong>Visual clarity:</strong> Designing flowcharts that are clear, readable, and pedagogically effective</li>
+                    <li><strong>Animation logic:</strong> Showing step-by-step execution in an intuitive way</li>
+                </ul>
+
+                <p>Despite these hurdles, I successfully brought the project to fruition, showcasing determination and a strong commitment to enhancing programming education.</p>
+
+                <h2>What Students and Colleagues Say</h2>
+
+                <div class="testimonial">
+                    <p>"The code visualiser is a very useful tool to assist software development students with understanding conditional statements, a topic that can prove difficult for beginners to grasp. It provides an intuitive interface and design, allowing individuals to modify the default code and test out their own ideas, and displays the corresponding flowchart output accordingly."</p>
+                    <div class="testimonial-author">Fran Mowat</div>
+                    <div class="testimonial-role">1st year student, BSc Computer Science, University of Westminster</div>
+                </div>
+
+                <div class="testimonial">
+                    <p>"Learn to Code has been extremely useful for my L4 students who are learning to code. This innovative platform provides a structured and interactive learning environment for beginners and experienced students. Its user-friendly interface, comprehensive tutorials, and practical examples have significantly enhanced my students' understanding of fundamental coding concepts. The tool's real-time visualisation feature motivates students to practice and apply their skills, making a noticeable improvement in their coding proficiency, understanding and confidence. It also helps to improve my teaching material by showing real-time visual examples of code focusing on the structure. I would recommend this tool to all my colleagues and students."</p>
+                    <div class="testimonial-author">Ester Bonmati</div>
+                    <div class="testimonial-role">Module Leader of Software Development II, University of Westminster</div>
+                </div>
+
+                <div class="testimonial">
+                    <p>"This code visualiser would aid teaching new coders immensely. By presenting the students with a flowchart of a program and not just a wall of text, you teach students that coding is methodical and simple when laid out. The step feature allows lecturers to demonstrate the processes and values at every step of a program. I believe that if this tool was available when I learnt to code, I would've grasped the initial concept a lot sooner and therefore be able to gain a deeper understanding of the basics of Computer Science, a lot earlier in my coding 'life'."</p>
+                    <div class="testimonial-author">Roy Belcher</div>
+                    <div class="testimonial-role">Alumni, BSc Computer Science, University of Westminster</div>
+                </div>
+
+                <div class="testimonial">
+                    <p>"When learning to write software, one of the biggest challenges someone might face is understanding what is happening. A visual representation of the logical flow of code is one important way in which we can better understand the source code we author. The Code Visualiser is a great tool for helping to understand source code, and I hope this project will receive further development as it's a great opportunity to make code more approachable and understandable for both new and experienced software engineers."</p>
+                    <div class="testimonial-author">Dylan Schiemann</div>
+                    <div class="testimonial-role">CEO and Co-Founder Living Spec, Co-Founder SitePen, Co-creator of Dojo and Intern</div>
+                </div>
+
+                <h2>Scalability and Reach</h2>
+
+                <p>The Code Visualiser's flexible design and comprehensive Learn to Code website (http://learntocode.westminster.ac.uk) make it a scalable resource with potential to transform programming education beyond Westminster. The tool is:</p>
+
+                <ul>
+                    <li><strong>Platform-independent:</strong> Works on any device with a web browser</li>
+                    <li><strong>Language-agnostic:</strong> Supports six programming languages with architecture for adding more</li>
+                    <li><strong>Pedagogically sound:</strong> Based on research about visual learning and cognitive load theory</li>
+                    <li><strong>Already adopted beyond Westminster:</strong> Used by other institutions and independent learners</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <p><strong>Recognition and Impact:</strong> This tool exemplifies innovative use of digital technology to improve teaching and learning, earning the WISE Award in 2016. It stands as a model for other institutions seeking to enhance their programming education and create more inclusive learning environments in STEM.</p>
+                </div>
+
+                <div class="external-links">
+                    <a href="http://learntocode.westminster.ac.uk" class="btn btn-secondary" target="_blank">Try the Code Visualiser</a>
+                    <a href="../index.html#contact" class="btn btn-secondary">Get in Touch</a>
+                    <a href="../index.html#projects" class="btn btn-secondary">View More Projects</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Anne-Gaelle Colom. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
