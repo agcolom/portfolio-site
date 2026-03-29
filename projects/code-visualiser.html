@@ -180,10 +180,11 @@
                     <span class="meta-badge">Multi-Language Support</span>
                 </div>
 
-                <p class="lead">An innovative web-based tool that converts written code into animated flowcharts in real-time, making programming more accessible and engaging for students. By bridging the gap between abstract programming concepts and tangible visual understanding, this tool addresses critical challenges in programming education and significantly improves student performance.</p>
+                <p class="lead">A web-based educational tool that converts code into animated SVG flowcharts in real-time, making programming concepts visible and concrete. The application includes an integrated code editor (CodeMirror), syntax highlighting (Prism), interactive lessons, and an array visualizer, all designed to help students "see" code and understand how programs flow.</p>
 
                 <div class="external-links">
                     <a href="http://learntocode.westminster.ac.uk" class="btn btn-secondary" target="_blank">Visit Learn to Code Website</a>
+                    <a href="https://github.com/agcolom/codeVisualiser" class="btn btn-secondary" target="_blank">View on GitHub</a>
                 </div>
 
                 <h2>Measurable Impact</h2>
@@ -228,12 +229,14 @@
                 <h2>Key Features</h2>
 
                 <ul>
-                    <li><strong>Real-time flowchart generation:</strong> Instant visual representation as code is written or modified</li>
-                    <li><strong>Multi-language support:</strong> Works with JavaScript, Java, C#, C++, Swift, and Python</li>
-                    <li><strong>Step-by-step execution:</strong> Students can trace program flow one step at a time</li>
-                    <li><strong>Interactive tutorials:</strong> Comprehensive learning materials integrated into the platform</li>
-                    <li><strong>Editable examples:</strong> Students can modify default code and test their own ideas</li>
-                    <li><strong>Support for key programming constructs:</strong> Conditional statements, loops, and sequential statements</li>
+                    <li><strong>Real-time SVG flowchart generation:</strong> Automatic flowchart creation when code is saved or uploaded</li>
+                    <li><strong>Code editor with 46 themes:</strong> Built with CodeMirror and Prism syntax highlighting for customizable learning experience</li>
+                    <li><strong>Multi-language support:</strong> JavaScript, C, C++, C#, Java, Swift, Python, and pseudo-code</li>
+                    <li><strong>Interactive lessons:</strong> Built-in tutorials for if/else, for loops, while loops, do/while loops, and switch/case</li>
+                    <li><strong>Step-by-step animation:</strong> Run code fully or step through execution with visual highlighting</li>
+                    <li><strong>Array Visualiser:</strong> Separate tool for graphically representing arrays and objects in JavaScript</li>
+                    <li><strong>Download capabilities:</strong> Save flowcharts as PNG images and code as files</li>
+                    <li><strong>Bi-directional highlighting:</strong> Hover over code to highlight flowchart elements and vice versa</li>
                 </ul>
 
                 <h2>Impact on Student Learning</h2>
@@ -245,18 +248,19 @@
                 <h2>Technology Stack</h2>
 
                 <div class="tech-stack">
-                    <span class="tech-item">JavaScript ES6+</span>
-                    <span class="tech-item">HTML5 Canvas</span>
-                    <span class="tech-item">Abstract Syntax Trees (AST)</span>
-                    <span class="tech-item">Parser Development</span>
-                    <span class="tech-item">Algorithm Design</span>
-                    <span class="tech-item">Responsive Design</span>
-                    <span class="tech-item">Multi-Language Parser</span>
+                    <span class="tech-item">JavaScript</span>
+                    <span class="tech-item">SVG Graphics</span>
+                    <span class="tech-item">CodeMirror Editor</span>
+                    <span class="tech-item">Prism Syntax Highlighter</span>
+                    <span class="tech-item">Bootstrap</span>
+                    <span class="tech-item">jQuery & jQuery UI</span>
+                    <span class="tech-item">Custom Parser Development</span>
+                    <span class="tech-item">PHP</span>
                 </div>
 
                 <h2>Technical Development</h2>
 
-                <p>Developed as a solo project, the tool required complex algorithm development for parsing six different programming languages and converting them to flowchart representations, real-time processing for instant visual feedback, and animation logic to show step-by-step execution intuitively.</p>
+                <p>Developed from scratch as a solo project, the Code Visualiser required building custom parsers for six programming languages, developing algorithms to convert code constructs into SVG flowchart representations, implementing bidirectional highlighting between code and graphics, creating animation logic for step-by-step execution, and integrating multiple open-source tools (CodeMirror, Prism, Bootstrap) into a cohesive educational platform.</p>
 
                 <h2>Scalability and Reach</h2>
 
