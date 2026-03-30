@@ -211,44 +211,19 @@
 
                 <h3>Interactive Course Structure Visualisation</h3>
 
-                <p>Students select their degree programme from 9 available courses and instantly see their complete course structure organised by academic level (4, 5, 6) and semester. Core modules are clearly distinguished from optional modules, with pathway badges (e.g., "Mobile & Web Computing", "Data Science") helping students understand module specialisms.</p>
+                <p>Students select their degree programme from 9 available courses and instantly see their complete course structure organised by academic level (4, 5, 6) and semester. Core modules are clearly distinguished from optional modules, with pathway badges (e.g., "Mobile & Web Computing", "Data Science") helping students understand module specialisms. The structure clearly indicates whether each module runs in Semester 1, Semester 2, or year-long.</p>
 
                 <h3>Comprehensive Module Information</h3>
 
-                <p>Each module card displays essential details including module code, name, credits, and semester. Swiping left reveals detailed assessment patterns (coursework, exams, practicals with weightings and qualifying marks), whilst swiping right shows quick-add buttons for optional modules. Clicking "more info" opens a full module description including learning outcomes, prerequisites, and module leader contact details.</p>
+                <p>Each module card displays essential details including module code, name, credits, and semester. Students can explore modules through intuitive touch gestures: swipe left to reveal detailed assessment patterns (coursework, exams, practicals with weightings and qualifying marks) or to access quick-add/remove buttons for optional modules; swipe right for full module descriptions including learning outcomes, prerequisites, and module leader contact details.</p>
 
                 <h3>Real-Time Planning and Validation</h3>
 
-                <p>As students add or remove optional modules, the tool provides immediate visual feedback showing current credit totals for each level, required credits (120 per year), and colour-coded indicators (green tick for complete, amber warning for incomplete). Students can experiment with different combinations and see the impact on their overall structure instantly.</p>
+                <p>As students add or remove optional modules, the tool provides immediate visual feedback showing current credit totals for each level, required credits (120 per year), and colour-coded indicators (green tick for complete, amber warning for incomplete). Students can experiment with different combinations and see the impact on their overall structure instantly, helping them create balanced semesters whilst meeting all requirements.</p>
 
                 <h3>Email Integration</h3>
 
                 <p>Once students have finalised their selections, they can email their module choices to themselves for future reference, making it easy to review offline, share with advisers, or use as a basis for formal module registration.</p>
-
-                <h2>How It Works</h2>
-
-                <p>Using the Course Planner is straightforward, with an intuitive three-step process designed to guide students through their module selection:</p>
-
-                <div style="background: #f8f9fa; border-left: 4px solid #667eea; padding: 1.5rem; margin: 2rem 0; border-radius: 4px;">
-                    <h3 style="margin-top: 0;">Step 1: Select Your Course</h3>
-                    <p>Choose your degree programme from the dropdown menu at the top of the page. The tool supports 9 different Computer Science and Engineering courses.</p>
-
-                    <h3>Step 2: View Course Structure and Build Your Selection</h3>
-                    <p>Your complete course structure appears, organised by academic level and semester. You'll see whether each module runs in Semester 1, Semester 2, or year-long--this is indicated on the left-hand side of the module on small screens, or by the physical location of the module block on larger screens.</p>
-
-                    <p><strong>To explore modules and make selections:</strong></p>
-                    <ul style="margin-left: 1.5rem; line-height: 1.8;">
-                        <li><strong>View module details:</strong> Swipe left on the module and press "…" to see the full module description, learning outcomes, prerequisites, and module leader contact details</li>
-                        <li><strong>Check assessment patterns:</strong> Swipe right on the module for a quick view of the assessment pattern showing component types, weightings, and qualifying marks</li>
-                        <li><strong>Add optional modules:</strong> Swipe left on an optional module and click "+" to add it to your selection</li>
-                        <li><strong>Remove optional modules:</strong> Swipe left on a selected module and click "−" to remove it from your selection</li>
-                    </ul>
-
-                    <p>Continue adding your chosen modules until you've reached the correct number of credits (120 per academic year). The tool provides real-time feedback with colour-coded indicators showing whether you've met the credit requirements.</p>
-
-                    <h3>Step 3: Email Your Module Choices</h3>
-                    <p>Once you're happy with your selections, scroll to the bottom of the page, enter your email address, and press the submit button. You'll receive an email containing your chosen modules for offline review, sharing with advisers, or reference during formal module registration.</p>
-                </div>
 
                 <h2>Technical Architecture</h2>
 
@@ -278,12 +253,16 @@
                         <p class="impact-label">Module Definitions</p>
                     </div>
                     <div class="impact-item">
-                        <span class="impact-number">~800</span>
+                        <span class="impact-number">~500</span>
                         <p class="impact-label">Students Annually</p>
                     </div>
                 </div>
 
                 <p>The Course Planner has been used in the School of Computer Science and Engineering since 2019, supporting module selection events and individual student planning. It has become an integral part of the student experience, with positive feedback highlighting how it demystifies the module selection process and empowers students to make confident, informed choices. Many colleagues find this tool invaluable whilst discussing course options with their personal tutees, providing a shared visual reference for planning conversations. Course leaders regularly use it at open days to demonstrate programme structures to prospective students and their families, making complex degree pathways immediately accessible and understandable.</p>
+
+                <div class="highlight-box">
+                    <p><strong>Pedagogical Impact:</strong> Beyond the technical achievement, this tool represents a commitment to student-centred design in higher education technology. By prioritising transparency, agency, and usability, it demonstrates how thoughtful EdTech solutions can meaningfully enhance the student experience.</p>
+                </div>
 
                 <h2>Technology Stack</h2>
 
@@ -298,12 +277,6 @@
                     <span class="tech-item">Git Version Control</span>
                 </div>
 
-                <h2>Maintenance and Evolution</h2>
-
-                <h3>Annual Updates</h3>
-
-                <p>Each academic year, the tool is updated to reflect new modules, discontinued modules, and changes to course structures. The normalised data architecture means these updates are straightforward--editing the relevant data files without touching the presentation logic. This maintainability has been key to the tool's longevity.</p>
-
                 <h2>Future Plans</h2>
 
                 <h3>University-Wide Expansion</h3>
@@ -314,23 +287,10 @@
 
                 <p>Planned enhancements include prerequisite checking and validation to prevent invalid selections, timetable clash detection using live timetabling data, module popularity indicators to help students gauge demand, historical grade distributions to set realistic expectations, and integration with degree classification calculators to show how module choices might affect final awards.</p>
 
-                <h2>Lessons Learned</h2>
-
-                <p><strong>Data architecture matters:</strong> Separating data from presentation logic has been crucial for maintainability. Updates that would have taken hours can now be completed in minutes.</p>
-
-                <p><strong>Student feedback is invaluable:</strong> Regular informal feedback from students and academic advisers has driven continuous improvement. Features like swipe gestures and real-time credit tracking came directly from observing how students used early versions.</p>
-
-                <p><strong>Mobile-first works:</strong> Many students access the tool during module fairs on their phones. Designing for touch interactions from the start made the desktop experience better too, not worse.</p>
-
-                <p><strong>Transparency reduces anxiety:</strong> Students consistently report that seeing assessment patterns upfront helps them feel more confident about their choices and reduces pre-registration stress.</p>
-
-                <div class="highlight-box">
-                    <p><strong>Pedagogical Impact:</strong> Beyond the technical achievement, this tool represents a commitment to student-centred design in higher education technology. By prioritising transparency, agency, and usability, it demonstrates how thoughtful EdTech solutions can meaningfully enhance the student experience.</p>
-                </div>
-
                 <div class="external-links">
                     <a href="module-fair-poster.pdf" class="btn btn-secondary" target="_blank">View Poster</a>
                     <a href="../index.html#contact" class="btn btn-secondary">Get in Touch</a>
+                    <a href="../index.html#projects" class="btn btn-secondary">View More Projects</a>
                 </div>
             </div>
         </div>
