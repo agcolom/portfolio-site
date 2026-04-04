@@ -9,7 +9,7 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
     color: #4A4A4A;
-    background-color: #FFFBF5;
+    background-color: #FFF5E6;
 }
 
 .container {
@@ -20,7 +20,7 @@ body {
 
 /* Header & Navigation */
 header {
-    background-color: #FFF8F0;
+    background-color: #FFEFD5;
     box-shadow: 0 2px 4px rgba(87,30,175,0.1);
     position: sticky;
     top: 0;
@@ -60,7 +60,7 @@ nav .container {
 /* Hero Section */
 #hero {
     background: linear-gradient(135deg, #571eaf 0%, #7c3aed 100%);
-    color: #FFFBF5;
+    color: #FFF5E6;
     padding: 5rem 0 4rem 0;
     text-align: center;
     border-bottom: 3px solid #2D1B4E;
@@ -71,14 +71,14 @@ nav .container {
     margin-bottom: 1rem;
     font-weight: 600;
     letter-spacing: -0.5px;
-    color: #FFFBF5;
+    color: #FFF5E6;
 }
 
 .subtitle {
     font-size: 1.2rem;
     opacity: 0.95;
     font-weight: 400;
-    color: #FFFBF5;
+    color: #FFF5E6;
 }
 
 /* Sections */
@@ -96,7 +96,7 @@ section h2 {
 }
 
 #about {
-    background-color: #FFF8F0;
+    background-color: #FFEFD5;
 }
 
 #about p {
@@ -110,7 +110,7 @@ section h2 {
 }
 
 #projects {
-    background-color: #FFFBF5;
+    background-color: #FFF5E6;
 }
 
 /* Projects Grid */
@@ -122,12 +122,12 @@ section h2 {
 }
 
 .project-card {
-    background: #FFF8F0;
+    background: #FFEFD5;
     border-radius: 8px;
     padding: 2rem;
     box-shadow: 0 2px 4px rgba(87,30,175,0.08);
     transition: box-shadow 0.3s;
-    border: 1px solid #EBE7DC;
+    border: 1px solid #E8DABD;
 }
 
 .project-card:hover {
@@ -153,7 +153,7 @@ section h2 {
 
 .project-badge {
     background: #571eaf;
-    color: #FFFBF5;
+    color: #FFF5E6;
     padding: 0.4rem 0.9rem;
     border-radius: 4px;
     font-size: 0.8rem;
@@ -175,7 +175,7 @@ section h2 {
     padding: 1.5rem 1rem;
     background: #faf5ff;
     border-radius: 4px;
-    border: 2px solid #EBE7DC;
+    border: 2px solid #E8DABD;
 }
 
 .stat {
@@ -225,7 +225,7 @@ section h2 {
 
 .btn-primary {
     background: #571eaf;
-    color: #FFFBF5;
+    color: #FFF5E6;
 }
 
 .btn-primary:hover {
@@ -233,20 +233,20 @@ section h2 {
 }
 
 .btn-secondary {
-    background: #FFFBF5;
+    background: #FFF5E6;
     color: #571eaf;
     border: 2px solid #571eaf;
 }
 
 .btn-secondary:hover {
     background: #571eaf;
-    color: #FFFBF5;
+    color: #FFF5E6;
     border-color: #571eaf;
 }
 
 /* Skills Section */
 #skills {
-    background: #FFF8F0;
+    background: #FFEFD5;
 }
 
 .skills-grid {
@@ -310,7 +310,7 @@ section h2 {
     align-items: center;
     gap: 0.5rem;
     background: #571eaf;
-    color: #FFFBF5;
+    color: #FFF5E6;
     padding: 1rem 2rem;
     border-radius: 6px;
     text-decoration: none;
@@ -327,7 +327,7 @@ section h2 {
 /* Footer */
 footer {
     background: linear-gradient(135deg, #571eaf 0%, #7c3aed 100%);
-    color: #FFFBF5;
+    color: #FFF5E6;
     text-align: center;
     padding: 2rem 0;
 }
