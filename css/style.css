@@ -8,8 +8,8 @@
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f8f9fa;
+    color: #4A4A4A;
+    background-color: #FFFBF5;
 }
 
 .container {
@@ -20,8 +20,8 @@ body {
 
 /* Header & Navigation */
 header {
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: #FFF8F0;
+    box-shadow: 0 2px 4px rgba(87,30,175,0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -37,7 +37,7 @@ nav .container {
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #2c3e50;
+    color: #571eaf;
 }
 
 .nav-links {
@@ -48,22 +48,22 @@ nav .container {
 
 .nav-links a {
     text-decoration: none;
-    color: #555;
+    color: #4A4A4A;
     font-weight: 500;
     transition: color 0.3s;
 }
 
 .nav-links a:hover {
-    color: #667eea;
+    color: #571eaf;
 }
 
 /* Hero Section */
 #hero {
-    background: #1e40af;
-    color: white;
+    background: linear-gradient(135deg, #571eaf 0%, #7c3aed 100%);
+    color: #FFFBF5;
     padding: 5rem 0 4rem 0;
     text-align: center;
-    border-bottom: 3px solid #1e3a8a;
+    border-bottom: 3px solid #2D1B4E;
 }
 
 #hero h2 {
@@ -71,14 +71,14 @@ nav .container {
     margin-bottom: 1rem;
     font-weight: 600;
     letter-spacing: -0.5px;
-    color: white;
+    color: #FFFBF5;
 }
 
 .subtitle {
     font-size: 1.2rem;
     opacity: 0.95;
     font-weight: 400;
-    color: white;
+    color: #FFFBF5;
 }
 
 /* Sections */
@@ -89,14 +89,14 @@ section {
 section h2 {
     font-size: 2.3rem;
     margin-bottom: 2rem;
-    color: #1e40af;
+    color: #571eaf;
     text-align: center;
     font-weight: 600;
     letter-spacing: -0.5px;
 }
 
 #about {
-    background-color: #fff;
+    background-color: #FFF8F0;
 }
 
 #about p {
@@ -106,6 +106,11 @@ section h2 {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
+    color: #4A4A4A;
+}
+
+#projects {
+    background-color: #FFFBF5;
 }
 
 /* Projects Grid */
@@ -117,21 +122,21 @@ section h2 {
 }
 
 .project-card {
-    background: white;
+    background: #FFF8F0;
     border-radius: 8px;
     padding: 2rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    box-shadow: 0 2px 4px rgba(87,30,175,0.08);
     transition: box-shadow 0.3s;
-    border: 1px solid #e9ecef;
+    border: 1px solid #EBE7DC;
 }
 
 .project-card:hover {
-    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+    box-shadow: 0 4px 12px rgba(87,30,175,0.15);
 }
 
 .project-card.coming-soon {
     opacity: 0.7;
-    border: 2px dashed #ddd;
+    border: 2px dashed #c4b5e0;
 }
 
 .project-header {
@@ -143,12 +148,12 @@ section h2 {
 
 .project-header h3 {
     font-size: 1.5rem;
-    color: #1e40af;
+    color: #571eaf;
 }
 
 .project-badge {
-    background: #667eea;
-    color: white;
+    background: #571eaf;
+    color: #FFFBF5;
     padding: 0.4rem 0.9rem;
     border-radius: 4px;
     font-size: 0.8rem;
@@ -158,7 +163,7 @@ section h2 {
 }
 
 .project-description {
-    color: #555;
+    color: #4A4A4A;
     margin-bottom: 1.5rem;
     line-height: 1.8;
 }
@@ -168,9 +173,9 @@ section h2 {
     justify-content: space-around;
     margin: 1.5rem 0;
     padding: 1.5rem 1rem;
-    background: white;
+    background: #faf5ff;
     border-radius: 4px;
-    border: 2px solid #e9ecef;
+    border: 2px solid #EBE7DC;
 }
 
 .stat {
@@ -180,7 +185,7 @@ section h2 {
 .stat strong {
     display: block;
     font-size: 1.5rem;
-    color: #667eea;
+    color: #571eaf;
     margin-bottom: 0.25rem;
 }
 
@@ -192,13 +197,13 @@ section h2 {
 }
 
 .tech-tag {
-    background: #f8f9fa;
-    color: #555;
+    background: #faf5ff;
+    color: #571eaf;
     padding: 0.5rem 1rem;
     border-radius: 4px;
     font-size: 0.85rem;
     font-weight: 500;
-    border: 1px solid #dee2e6;
+    border: 1px solid #ddd0f0;
 }
 
 .project-links {
@@ -219,29 +224,29 @@ section h2 {
 }
 
 .btn-primary {
-    background: #667eea;
-    color: white;
+    background: #571eaf;
+    color: #FFFBF5;
 }
 
 .btn-primary:hover {
-    background: #5568d3;
+    background: #7c3aed;
 }
 
 .btn-secondary {
-    background: white;
-    color: #1e40af;
-    border: 2px solid #1e40af;
+    background: #FFFBF5;
+    color: #571eaf;
+    border: 2px solid #571eaf;
 }
 
 .btn-secondary:hover {
-    background: #1e40af;
-    color: white;
-    border-color: #1e40af;
+    background: #571eaf;
+    color: #FFFBF5;
+    border-color: #571eaf;
 }
 
 /* Skills Section */
 #skills {
-    background: white;
+    background: #FFF8F0;
 }
 
 .skills-grid {
@@ -252,7 +257,7 @@ section h2 {
 }
 
 .skill-category h3 {
-    color: #667eea;
+    color: #571eaf;
     margin-bottom: 1rem;
     font-size: 1.3rem;
 }
@@ -263,7 +268,7 @@ section h2 {
 
 .skill-category li {
     padding: 0.5rem 0;
-    color: #555;
+    color: #4A4A4A;
     position: relative;
     padding-left: 1.5rem;
 }
@@ -272,25 +277,25 @@ section h2 {
     content: "▸";
     position: absolute;
     left: 0;
-    color: #667eea;
+    color: #7c3aed;
 }
 
 /* Contact Section */
 #contact {
-    background: #f8f9fa;
-    color: #2c3e50;
+    background: #faf5ff;
+    color: #4A4A4A;
     text-align: center;
-    border-top: 3px solid #1e40af;
+    border-top: 3px solid #571eaf;
 }
 
 #contact h2 {
-    color: #1e40af;
+    color: #571eaf;
 }
 
 #contact p {
     font-size: 1.1rem;
     margin-bottom: 2rem;
-    color: #555;
+    color: #4A4A4A;
 }
 
 .contact-links {
@@ -304,25 +309,25 @@ section h2 {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background: #1e40af;
-    color: white;
+    background: #571eaf;
+    color: #FFFBF5;
     padding: 1rem 2rem;
     border-radius: 6px;
     text-decoration: none;
     font-weight: 600;
     transition: background 0.3s, box-shadow 0.3s;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(87,30,175,0.2);
 }
 
 .contact-btn:hover {
-    background: #1e3a8a;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    background: #7c3aed;
+    box-shadow: 0 4px 8px rgba(87,30,175,0.3);
 }
 
 /* Footer */
 footer {
-    background: #1e40af;
-    color: white;
+    background: linear-gradient(135deg, #571eaf 0%, #7c3aed 100%);
+    color: #FFFBF5;
     text-align: center;
     padding: 2rem 0;
 }
