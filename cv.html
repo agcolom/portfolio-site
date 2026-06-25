@@ -3,191 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV - Anne-Gaelle Colom</title>
+    <title>CV — Anne-Gaelle Colom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="css/style.css">
     <style>
         .cv-container {
-            max-width: 1000px;
+            max-width: 880px;
             margin: 0 auto;
-            padding: 3rem 20px;
+            padding: clamp(3rem, 6vw, 5rem) var(--gutter);
         }
 
         .cv-header {
-            text-align: center;
+            text-align: left;
             margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
         }
 
         .cv-header h1 {
-            font-size: 2.5rem;
-            color: #571eaf;
+            font-family: var(--font-display);
+            font-size: clamp(2.4rem, 5vw, 3.4rem);
+            color: var(--ink);
             margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+            font-weight: 500;
         }
 
         .cv-header .subtitle {
-            font-size: 1.3rem;
-            color: #7c3aed;
-            font-weight: 600;
+            font-family: var(--font-sans);
+            font-size: 1.05rem;
+            color: var(--ink-muted);
+            font-weight: 500;
+            letter-spacing: 0.02em;
         }
 
         .cv-section {
-            background: #FFF5E6;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(87,30,175,0.08);
-            border: 1px solid #E8DABD;
+            padding: 2.25rem 0;
+            border-bottom: 1px solid var(--border);
         }
+        .cv-section:last-of-type { border-bottom: none; }
 
         .cv-section h2 {
-            font-size: 1.8rem;
-            color: #571eaf;
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            color: var(--ink);
             margin-bottom: 1.5rem;
-            border-bottom: 3px solid #571eaf;
-            padding-bottom: 0.5rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+        }
+
+        .cv-section > ul,
+        .cv-section .bullet-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .cv-section > ul li,
+        .cv-section .bullet-list li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.6rem;
+            color: var(--ink-soft);
+            line-height: 1.6;
+        }
+        .cv-section > ul li::before,
+        .cv-section .bullet-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.65em;
+            width: 6px;
+            height: 1px;
+            background: var(--accent);
         }
 
         .position {
-            margin-bottom: 2rem;
+            margin-bottom: 1.75rem;
         }
+        .position:last-child { margin-bottom: 0; }
 
         .position-title {
+            font-family: var(--font-display);
             font-size: 1.2rem;
-            font-weight: 700;
-            color: #571eaf;
-            margin-bottom: 0.25rem;
+            font-weight: 500;
+            color: var(--ink);
+            margin-bottom: 0.2rem;
+            letter-spacing: -0.005em;
         }
 
         .position-org {
-            font-size: 1.05rem;
-            color: #4A4A4A;
-            font-weight: 600;
+            font-size: 0.95rem;
+            color: var(--ink-muted);
+            font-weight: 500;
         }
 
         .position-date {
-            color: #7c3aed;
+            color: var(--accent);
             font-weight: 600;
-            margin-bottom: 0.5rem;
-            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
         }
 
         .position-desc {
-            color: #4A4A4A;
-            line-height: 1.6;
+            color: var(--ink-soft);
+            line-height: 1.65;
             margin-top: 0.5rem;
         }
 
-        .awards-grid {
-            display: grid;
-            gap: 1rem;
-        }
-
-        .award-item {
-            padding: 1rem;
-            background: #faf5ff;
-            border-left: 4px solid #571eaf;
-            border-radius: 4px;
-        }
-
-        .award-title {
-            font-weight: 700;
-            color: #571eaf;
-            margin-bottom: 0.25rem;
-        }
-
-        .award-org {
-            color: #4A4A4A;
-            font-size: 0.9rem;
-        }
-
-        .award-year {
-            color: #7c3aed;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .skills-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        .skill-group h4 {
-            color: #571eaf;
-            margin-bottom: 0.75rem;
-            font-size: 1.1rem;
-        }
-
-        .skill-group ul {
+        .position ul {
             list-style: none;
-            padding: 0;
+            padding-left: 0;
+            margin-top: 0.6rem;
         }
-
-        .skill-group li {
-            padding: 0.4rem 0;
-            color: #4A4A4A;
+        .position ul li {
             position: relative;
-            padding-left: 1.5rem;
+            padding-left: 1.25rem;
+            margin-bottom: 0.4rem;
+            color: var(--ink-soft);
+            line-height: 1.6;
         }
-
-        .skill-group li:before {
-            content: "▸";
+        .position ul li::before {
+            content: "";
             position: absolute;
             left: 0;
-            color: #7c3aed;
+            top: 0.65em;
+            width: 6px;
+            height: 1px;
+            background: var(--accent);
         }
 
         .highlight-box {
-            background: linear-gradient(135deg, #571eaf 0%, #7c3aed 100%);
-            color: #FFEFD5;
-            padding: 2rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            text-align: center;
-            border: 3px solid #2D1B4E;
-        }
-
-        .highlight-box h3 {
-            margin-top: 0;
-            font-size: 1.5rem;
+            background: var(--surface);
+            color: var(--ink);
+            padding: 2rem 2rem;
+            border-radius: var(--radius-lg);
+            margin-bottom: 2.5rem;
+            border: 1px solid var(--border);
+            border-left: 3px solid var(--accent);
         }
 
         .highlight-box p {
-            font-size: 1.1rem;
-            margin: 0.5rem 0;
-            opacity: 0.95;
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-style: italic;
+            line-height: 1.55;
+            margin: 0 0 0.6rem;
+            color: var(--ink);
+        }
+        .highlight-box p:last-child { margin-bottom: 0; color: var(--ink-muted); font-family: var(--font-sans); font-style: normal; font-size: 0.98rem; }
+
+        .award-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+        .award-item img {
+            height: 60px;
+            width: auto;
+            border-radius: 4px;
         }
 
-        .qual-item {
-            margin-bottom: 1.5rem;
+        .cv-actions {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
         }
 
-        .qual-degree {
-            font-weight: 700;
-            color: #571eaf;
-            font-size: 1.1rem;
-        }
-
-        .qual-school {
-            color: #4A4A4A;
-            margin-top: 0.25rem;
-        }
-
-        .qual-date {
-            color: #7c3aed;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 0.25rem;
-        }
-
-        @media (max-width: 768px) {
-            .cv-header h1 {
-                font-size: 2rem;
-            }
-
-            .skills-list {
-                grid-template-columns: 1fr;
-            }
+        @media (max-width: 560px) {
+            .cv-actions { flex-direction: column; }
+            .cv-actions .btn { width: 100%; }
+            .award-item { flex-direction: column; align-items: flex-start; }
         }
     </style>
 </head>
@@ -209,7 +202,9 @@
     <main>
         <div class="cv-container">
             <div class="cv-header">
+                <span class="eyebrow">Curriculum Vitae</span>
                 <h1>Anne-Gaelle Colom</h1>
+                <p class="subtitle">Academic Leader · EdTech Strategist · London</p>
             </div>
 
             <div class="highlight-box">
@@ -219,12 +214,12 @@
 
             <div class="cv-section">
                 <h2>Key Impact</h2>
-                <ul style="list-style: disc; padding-left: 2rem; color: #4A4A4A;">
-                    <li style="margin-bottom: 0.75rem;">Designed and deployed EdTech tools used by 100+ colleagues across the university</li>
-                    <li style="margin-bottom: 0.75rem;">Built data reporting and automation systems improving efficiency and decision-making</li>
-                    <li style="margin-bottom: 0.75rem;">Led AI integration and assessment innovation across Computer Science programmes</li>
-                    <li style="margin-bottom: 0.75rem;">Delivered international conference talks on practical applications of AI in education</li>
-                    <li style="margin-bottom: 0.75rem;">Bridged strategy and implementation by developing working solutions used in real environments</li>
+                <ul>
+                    <li>Designed and deployed EdTech tools used by 100+ colleagues across the university</li>
+                    <li>Built data reporting and automation systems improving efficiency and decision-making</li>
+                    <li>Led AI integration and assessment innovation across Computer Science programmes</li>
+                    <li>Delivered international conference talks on practical applications of AI in education</li>
+                    <li>Bridged strategy and implementation by developing working solutions used in real environments</li>
                 </ul>
             </div>
 
@@ -256,9 +251,10 @@
                 <h2>Experience</h2>
 
                 <div class="position">
+                    <div class="position-date">January 2026 – Present</div>
                     <div class="position-title">Associate Director, Business Improvement Solutions</div>
-                    <div class="position-org">University of Westminster | January 2026 – Present</div>
-                    <ul style="list-style: disc; padding-left: 2rem; color: #4A4A4A; margin-top: 0.5rem;">
+                    <div class="position-org">University of Westminster</div>
+                    <ul>
                         <li>Lead digital transformation initiatives across the institution</li>
                         <li>Design and build technical solutions to improve student experience and operations</li>
                         <li>Bridge strategy and implementation through hands-on development</li>
@@ -266,26 +262,29 @@
                 </div>
 
                 <div class="position">
+                    <div class="position-date">2022 – 2026</div>
                     <div class="position-title">Assistant Head of School</div>
-                    <div class="position-org">University of Westminster | 2022 – 2026</div>
-                    <ul style="list-style: disc; padding-left: 2rem; color: #4A4A4A; margin-top: 0.5rem;">
+                    <div class="position-org">University of Westminster</div>
+                    <ul>
                         <li>Supported academic leadership, staffing, and operational strategy</li>
                     </ul>
                 </div>
 
                 <div class="position">
+                    <div class="position-date">2020 – 2026</div>
                     <div class="position-title">Director for Learning and Teaching</div>
-                    <div class="position-org">University of Westminster | 2020 – 2026</div>
-                    <ul style="list-style: disc; padding-left: 2rem; color: #4A4A4A; margin-top: 0.5rem;">
+                    <div class="position-org">University of Westminster</div>
+                    <ul>
                         <li>Led innovation in assessment, AI integration, and student engagement</li>
                         <li>Improved learning and teaching practices across the school</li>
                     </ul>
                 </div>
 
                 <div class="position">
+                    <div class="position-date">1998 – Present</div>
                     <div class="position-title">Lecturer, Senior Lecturer, Principal Lecturer</div>
-                    <div class="position-org">University of Westminster | 1998 – Present</div>
-                    <ul style="list-style: disc; padding-left: 2rem; color: #4A4A4A; margin-top: 0.5rem;">
+                    <div class="position-org">University of Westminster</div>
+                    <ul>
                         <li>Teach and lead modules in web development and software engineering</li>
                         <li>Supervise student projects and support applied learning</li>
                     </ul>
@@ -294,35 +293,37 @@
 
             <div class="cv-section">
                 <h2>Awards & Recognition</h2>
-                <ul style="list-style: disc; padding-left: 2rem; color: #4A4A4A;">
-                    <li><strong>Vice Chancellor Award</strong> (2025) - University of Westminster</li>
-                    <li><strong>Go Westminster Award</strong> (2024) - Outstanding Contribution to Our Priorities</li>
+                <ul>
+                    <li><strong>Vice Chancellor Award</strong> (2025) — University of Westminster</li>
+                    <li><strong>Go Westminster Award</strong> (2024) — Outstanding Contribution to Our Priorities</li>
                     <li><strong>Women of Westminster – STEM</strong> (2020)</li>
-                    <li style="display: flex; align-items: center; gap: 1.5rem; margin: 1.5rem 0;">
-                        <div>
-                            <strong>WISE Award</strong> (2016) - International Open Source Category, sponsored by Bloomberg, presented by HRH The Princess Royal
-                        </div>
-                        <img src="images/wise-award-winner-2016.jpg" alt="WISE Awards 2016 Winner" style="height: 60px; width: auto;">
-                    </li>
-                    <li><strong>.net Magazine Award</strong> (2011) - Innovation of the Year with jQuery Mobile Team</li>
-                    <li><strong>Outstanding Teacher Award</strong> - Multiple years (2012, 2013, 2014, 2017)</li>
+                </ul>
+                <div class="award-item">
+                    <div>
+                        <strong>WISE Award</strong> (2016) — International Open Source Category, sponsored by Bloomberg, presented by HRH The Princess Royal
+                    </div>
+                    <img src="images/wise-award-winner-2016.jpg" alt="WISE Awards 2016 Winner">
+                </div>
+                <ul>
+                    <li><strong>.net Magazine Award</strong> (2011) — Innovation of the Year with jQuery Mobile Team</li>
+                    <li><strong>Outstanding Teacher Award</strong> — Multiple years (2012, 2013, 2014, 2017)</li>
                 </ul>
             </div>
 
             <div class="cv-section">
                 <h2>Speaking & Leadership</h2>
-                <ul style="list-style: disc; padding-left: 2rem; color: #4A4A4A;">
+                <ul>
                     <li>Senior Fellow of the Higher Education Academy (SFHEA)</li>
                     <li>Non-Executive Director, Blueshift Education CIC</li>
                     <li>International speaker at Anthology/Blackboard conferences across Europe and Africa (2022–2025)</li>
                     <li>Featured speaker and panelist at EdTech conferences on AI in education</li>
-                    <li>jQuery conference speaker - Vienna, Austin, New York, Oxford (2012–2015)</li>
+                    <li>jQuery conference speaker — Vienna, Austin, New York, Oxford (2012–2015)</li>
                 </ul>
             </div>
 
             <div class="cv-section">
                 <h2>Technical Focus</h2>
-                <ul style="list-style: disc; padding-left: 2rem; color: #4A4A4A;">
+                <ul>
                     <li>Web development (JavaScript, React)</li>
                     <li>Data & reporting (Snowflake, learning analytics)</li>
                     <li>Automation (Power Automate, scripting)</li>
@@ -333,17 +334,19 @@
             <div class="cv-section">
                 <h2>Earlier Technical Contributions</h2>
                 <div class="position">
-                    <div class="position-title">At-Large Director, jQuery Foundation Board of Directors (2013–2016)</div>
-                    <ul style="list-style: disc; padding-left: 2rem; color: #4A4A4A; margin-top: 0.75rem;">
+                    <div class="position-date">2013 – 2016</div>
+                    <div class="position-title">At-Large Director, jQuery Foundation Board of Directors</div>
+                    <ul>
                         <li>Elected to jQuery Foundation Board of Directors</li>
                         <li>Provided governance and strategic direction for one of the world's most widely used JavaScript libraries</li>
                         <li>Collaborated with global open source community and leadership team</li>
                     </ul>
                 </div>
 
-                <div class="position" style="margin-top: 1.5rem;">
-                    <div class="position-title">jQuery Content Lead (2013–2016)</div>
-                    <ul style="list-style: disc; padding-left: 2rem; color: #4A4A4A; margin-top: 0.75rem;">
+                <div class="position">
+                    <div class="position-date">2013 – 2016</div>
+                    <div class="position-title">jQuery Content Lead</div>
+                    <ul>
                         <li>Managed all jQuery content receiving 24 million page views monthly</li>
                         <li>Rewrote all jQuery code examples to ensure consistency across documentation</li>
                         <li>Led content strategy and quality for jQuery documentation</li>
@@ -351,9 +354,10 @@
                     </ul>
                 </div>
 
-                <div class="position" style="margin-top: 1.5rem;">
-                    <div class="position-title">jQuery Mobile Team Member & Documentation Lead (2011–2016)</div>
-                    <ul style="list-style: disc; padding-left: 2rem; color: #4A4A4A; margin-top: 0.75rem;">
+                <div class="position">
+                    <div class="position-date">2011 – 2016</div>
+                    <div class="position-title">jQuery Mobile Team Member & Documentation Lead</div>
+                    <ul>
                         <li>Wrote API documentation from scratch for jQuery Mobile framework</li>
                         <li>Maintained jQuery Mobile website and documentation infrastructure</li>
                         <li>Conducted testing and triaged issues for mobile framework development</li>
@@ -380,9 +384,9 @@
                 </div>
             </div>
 
-            <div style="text-align: center; margin-top: 3rem;">
-                <a href="index.html#contact" class="btn btn-primary" style="margin-right: 1rem;">Get in Touch</a>
-                <a href="index.html#projects" class="btn btn-secondary">View Projects</a>
+            <div class="cv-actions">
+                <a href="index.html#contact" class="btn btn-primary">Get in touch</a>
+                <a href="index.html#projects" class="btn btn-secondary">View projects</a>
             </div>
         </div>
     </main>
