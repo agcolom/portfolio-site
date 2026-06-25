@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coding Escape Room - Anne-Gaelle Colom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .project-detail {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #FFFFFF;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #4B2A6B;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .project-detail h1 {
+            font-size: 2.5rem;
+            color: #4B2A6B;
+            margin-bottom: 1rem;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-badge {
+            background: #4B2A6B;
+            color: #FAF6F0;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .project-detail h2 {
+            font-size: 1.8rem;
+            color: #4B2A6B;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #4B2A6B;
+            padding-bottom: 0.5rem;
+        }
+
+        .project-detail h3 {
+            font-size: 1.3rem;
+            color: #3A3530;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-detail p, .project-detail li {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #3A3530;
+            margin-bottom: 1rem;
+        }
+
+        .project-detail ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-detail .lead {
+            font-size: 1.15rem;
+            line-height: 1.75;
+            color: #3A3530;
+            margin-bottom: 0.25rem;
+        }
+
+        .project-screenshot {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            border: 1px solid #E8E2D6;
+            margin: 1rem 0;
+            display: block;
+        }
+
+        .project-screenshot.narrow {
+            max-width: 360px;
+        }
+
+        .screenshot-pair {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .screenshot-pair > div {
+            min-width: 0;
+        }
+
+        .screenshot-pair .project-screenshot {
+            margin: 0 0 0.5rem;
+        }
+
+        .highlight-box {
+            background: #FAF6F0;
+            border-left: 4px solid #4B2A6B;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .impact-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: #FAF6F0;
+            border-radius: 8px;
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #4B2A6B;
+            display: block;
+        }
+
+        .impact-label {
+            color: #3A3530;
+            margin-top: 0.5rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+        }
+
+        .tech-item {
+            background: #FAF6F0;
+            color: #4B2A6B;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .benefit-card {
+            background: #FAF6F0;
+            border-left: 4px solid #4B2A6B;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .benefit-card h4 {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #4B2A6B;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .benefit-card p {
+            margin-bottom: 0;
+            font-size: 1rem;
+        }
+
+        .steps-list {
+            counter-reset: steps;
+            list-style: none;
+            margin-left: 0;
+            padding: 0;
+        }
+
+        .steps-list li {
+            counter-increment: steps;
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .steps-list li > div {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .steps-list li p:last-child {
+            margin-bottom: 0;
+        }
+
+        .steps-list li::before {
+            content: counter(steps);
+            background: #4B2A6B;
+            color: #FAF6F0;
+            font-weight: 700;
+            font-size: 0.95rem;
+            min-width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 0.1rem;
+        }
+
+        .external-links {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        .screenshot-caption {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6B6560;
+            margin-top: 0.75rem;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .project-detail {
+                padding: 1.5rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .screenshot-pair {
+                grid-template-columns: 1fr;
+            }
+
+            .project-detail h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1 class="logo">Anne-Gaelle Colom</h1>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../cv.html">CV</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main style="padding: 4rem 0; background: #FAF6F0;">
+        <div class="container">
+            <div class="project-detail">
+                <a href="../index.html#projects" class="back-link">← Back to Projects</a>
+
+                <h1>Coding Escape Room</h1>
+
+                <div class="project-meta">
+                    <span class="meta-badge">Pedagogical Design</span>
+                    <span class="meta-badge">EdTech</span>
+                    <span class="meta-badge">Gamification</span>
+                    <span class="meta-badge">Authentic Assessment</span>
+                </div>
+
+                <p class="lead">A gamified learning and assessment system for a first-year Web Development module, in which students escape by building real, working webpages. Piloted with 5 students, then deployed at scale to over 400 in Semester 2 2025–26.</p>
+
+                <h2>Impact at a Glance</h2>
+
+                <div class="impact-grid">
+                    <div class="impact-item">
+                        <span class="impact-number">400+</span>
+                        <p class="impact-label">Students in Full Deployment</p>
+                    </div>
+                    <div class="impact-item">
+                        <span class="impact-number">5</span>
+                        <p class="impact-label">Pilot Group (Semester 1)</p>
+                    </div>
+                    <div class="impact-item">
+                        <span class="impact-number">5+</span>
+                        <p class="impact-label">Weekly Escape Room Activities</p>
+                    </div>
+                    <div class="impact-item">
+                        <span class="impact-number">100</span>
+                        <p class="impact-label">Marks Auto-Scored in Practical</p>
+                    </div>
+                </div>
+
+                <h2>Context</h2>
+
+                <p>I use the Escape Room activity to prepare students for the authentic assessment of creating a web page. It provides them with an opportunity to familiarise themselves with the summative assessment format through low-stakes weekly activities — in this example, the steps to follow in web page development.</p>
+
+                <p>Students on <strong>4COSC011W Web Development</strong> (Level 4) attend a lecture introducing HTML and CSS concepts, then immediately apply what they have learnt by building an authentic webpage framed as an escape room challenge. The format was piloted with a group of 5 students before full deployment in Semester 2 2025–26 to over 400 students.</p>
+
+                <h2>Rationale</h2>
+
+                <p>HTML, CSS and JavaScript problems can be solved in many valid ways, and my goal is to encourage students to develop their own coding style through authentic assessment from the very beginning of the module. The automated checker is designed to be flexible — it rewards correct outcomes rather than prescribing a single approach, giving students the freedom to experiment and find solutions that make sense to them.</p>
+
+                <p>My goal is also to engage first-year students from the very beginning of the module through gamification, fostering autonomy in learning from the outset of their practical experience. Escape room activities are an ideal tool: students enjoy the competitive and rewarding elements brought by challenges presented in scaffolded, small and manageable steps. The format encourages them to experiment and learn from their mistakes in a low-stakes environment, building confidence alongside competence.</p>
+
+                <h2>How It Works</h2>
+
+                <ol class="steps-list">
+                    <li>
+                        <div>
+                            <p><strong>Weekly seminar escape rooms (formative):</strong> Students familiarise themselves with the format through weekly activities. Each web page development exercise is broken down into themed challenges, which are themselves broken into small and focused tasks. The automated checker validates their work in real time — showing which requirements are met and which still need attention.</p>
+                            <img src="../images/escape-room-checker.png" alt="The escape room checker showing Challenge 1 unlocked with all requirements met, and Challenge 2 locked with some requirements still to complete" class="project-screenshot">
+                            <p>On completing all challenges, students receive a unique code based on their student ID, which they submit on Blackboard to record their achievement.</p>
+                            <img src="../images/escape-room-completion.png" alt="Congratulations screen showing a student has escaped and displaying their unique code to submit on Blackboard" class="project-screenshot narrow">
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <p><strong>In-class practical adapted to the same format (summative):</strong> Following positive feedback from the pilot students, the summative in-class practical was redesigned in the same escape room style. Students receive the task brief — building a single-page website (Campus Café Day) from scratch in 90 minutes — with detailed tasks and hints structured exactly as in the weekly exercises.</p>
+                            <img src="../images/escape-room-practical.png" alt="The standalone practical interface for Campus Café Day showing the task overview, content provided, and required sections" class="project-screenshot">
+                            <p>Each section of the page is broken down into granular, actionable tasks with hints — so students are never left stuck without guidance.</p>
+                            <img src="../images/escape-room-practical-tasks_hints.png" alt="Detailed task checklist for Page Structure showing ticks and crosses for each requirement, with hints in italic below each item" class="project-screenshot">
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <p><strong>Live auto-assessment during the practical:</strong> Students can submit their work as many times as they want during the session and receive an indicative mark in real time. This lowers anxiety, gives them agency over how they spend their remaining time, and allows them to make informed decisions about which tasks to prioritise.</p>
+                            <img src="../images/escape-room-practical_feedback0.png" alt="Detailed feedback summary showing the student earned 45.5 out of 100 marks, with a breakdown by section" class="project-screenshot">
+                            <img src="../images/escape-room-practical_feedback1.png" alt="Section-level feedback for Layout and Spacing showing marks earned and lost with specific hints for each criterion" class="project-screenshot">
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <p><strong>Content validation:</strong> Students know that warnings will be issued if they attempt to submit work not related to the in-class practical assessment — the checker detects off-topic content and flags it clearly, even identifying which previous week's work it resembles.</p>
+                            <img src="../images/escape-room-practical-warning.png" alt="Content Validation Warning showing a student submitted Week 2 work instead of the Campus Café Day practical, with specific checks failed and a suspicious content detected notice" class="project-screenshot">
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <p><strong>Detailed feedback generation:</strong> When the tutor submits student work, the tool generates a detailed and consistent feedback summary — with encouragement, a breakdown of marks gained and lost across 9 criteria, areas well done, and specific areas for improvement. The tutor can review, amend, and upload this to Blackboard as a PDF.</p>
+                            <div class="screenshot-pair">
+                                <div>
+                                    <img src="../images/escape-room-practical_what_well_done.png" alt="Areas Well Done section showing marks earned per section across 8 criteria" class="project-screenshot">
+                                    <p class="screenshot-caption">What they did well</p>
+                                </div>
+                                <div>
+                                    <img src="../images/escape-room-practical_what_to_improve.png" alt="Areas for Improvement section listing marks lost per section with specific guidance" class="project-screenshot">
+                                    <p class="screenshot-caption">Where to improve</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ol>
+
+                <h2>Benefits for Learners</h2>
+
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <h4>Non-linear completion</h4>
+                        <p>Hitting a roadblock does not impede overall task completion — students can move to another challenge and return.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>Confidence and competence</h4>
+                        <p>The low-stakes weekly format lets students experiment and learn from mistakes before anything counts.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>Agency and metacognitive control</h4>
+                        <p>Students see an indicative mark during the summative practical and can choose what to work on and in what order.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>Reduced assessment anxiety</h4>
+                        <p>The summative practical uses the exact same format as the weekly seminars — the tool, the checker, and the feedback style are all familiar.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>Satisfaction and reward</h4>
+                        <p>The trigger–action–feedback loop fosters a genuine feeling of achievement at each completed challenge.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>Immediate, actionable feedback</h4>
+                        <p>Feedback is concise, specific, and tells students exactly what to fix — not just that something is wrong.</p>
+                    </div>
+                </div>
+
+                <h2>Benefits for Educators</h2>
+
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <h4>Automatic scoring at scale</h4>
+                        <p>Consistent, transparent, and automatic scoring across 400+ students, with manual moderation reserved for borderline cases.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>Learning from students</h4>
+                        <p>When students come up with original or creative solutions the educator had not anticipated, these become teaching moments to share with the class.</p>
+                    </div>
+                </div>
+
+                <h2>Design Tips</h2>
+
+                <ul>
+                    <li>Be mindful of being too prescriptive — unless the problem has a single solution, reward correct outcomes, not a specific approach.</li>
+                    <li>Provide hints that guide students rather than full solutions.</li>
+                    <li>Keep language and visuals clear and consistent across all challenges.</li>
+                    <li>Allow students to bring their own reference notes into the practical — it incentivises completing the weekly tasks.</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <p><strong>Presented at:</strong> CETI Best Practice Showcase, University of Westminster, 2026. This project was selected for the showcase as an example of innovative assessment design and student engagement practice.</p>
+                </div>
+
+                <h2>Technology</h2>
+
+                <div class="tech-stack">
+                    <span class="tech-item">HTML5 & CSS3</span>
+                    <span class="tech-item">JavaScript</span>
+                    <span class="tech-item">DOM Validation</span>
+                    <span class="tech-item">Auto-scoring</span>
+                    <span class="tech-item">PDF Feedback Generation</span>
+                    <span class="tech-item">Blackboard LMS</span>
+                    <span class="tech-item">Gamification Design</span>
+                    <span class="tech-item">Authentic Assessment</span>
+                </div>
+
+                <div class="external-links">
+                    <a href="../index.html#contact" class="btn btn-secondary">Get in Touch</a>
+                    <a href="../index.html#projects" class="btn btn-secondary">View More Projects</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Anne-Gaelle Colom. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
