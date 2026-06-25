@@ -141,6 +141,39 @@
             font-size: 0.95rem;
         }
 
+        .demo-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .demo-gallery figure {
+            margin: 0;
+        }
+
+        .demo-gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+            border: 1px solid #e0e0e0;
+        }
+
+        .demo-gallery figcaption {
+            margin-top: 0.75rem;
+            color: #6B635B;
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+
+        .demo-gallery figcaption strong {
+            display: block;
+            color: #3A3530;
+            font-weight: 600;
+            margin-bottom: 0.2rem;
+        }
+
         @media (max-width: 768px) {
             .project-detail {
                 padding: 1.5rem;
@@ -148,6 +181,10 @@
 
             .project-detail h1 {
                 font-size: 2rem;
+            }
+
+            .demo-gallery {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -239,6 +276,29 @@
                     <li><strong>Download capabilities:</strong> Save flowcharts as PNG images and code as files</li>
                     <li><strong>Bi-directional highlighting:</strong> Hover over code to highlight flowchart elements and vice versa</li>
                 </ul>
+
+                <h2>Step-by-step visualisation</h2>
+
+                <p>Students can run code in full or step through it line by line. Each step highlights the active line in the editor and the matching node in the flowchart — making control flow tangible for constructs that are often hard to picture from text alone.</p>
+
+                <div class="demo-gallery">
+                    <figure>
+                        <img src="../images/codeVisIfelse.png" alt="Code Visualiser stepping through an if/else chain that sets entry price by age, with the active condition highlighted in code and flowchart">
+                        <figcaption><strong>If / else</strong>Conditional logic with synchronized highlighting between the editor and decision diamonds.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/codeVisWhile.png" alt="Code Visualiser stepping through a while loop that collects module marks, with the loop condition highlighted">
+                        <figcaption><strong>While loop</strong>Iteration shown as the flowchart loops back to the decision node on each pass.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/codeVisNested.png" alt="Code Visualiser stepping through nested for loops with an inner if statement, highlighting the current line">
+                        <figcaption><strong>Nested loops</strong>Nested control structures rendered as layered paths in the flowchart.</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../images/codeVisMarksDemo.png" alt="Code Visualiser stepping through an else-if grade classification chain, highlighting the active branch">
+                        <figcaption><strong>Else-if chains</strong>Multi-branch decisions mapped to a cascading flowchart students can follow step by step.</figcaption>
+                    </figure>
+                </div>
 
                 <h2>Impact on Student Learning</h2>
 
