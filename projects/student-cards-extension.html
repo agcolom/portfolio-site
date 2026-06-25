@@ -126,6 +126,37 @@
             font-weight: 500;
         }
 
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.25rem;
+            margin: 2rem 0;
+        }
+
+        .benefit-card {
+            background: #FAF6F0;
+            border-left: 4px solid #4B2A6B;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .benefit-card h4 {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #4B2A6B;
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .benefit-card p {
+            margin-bottom: 0;
+        }
+
+        .benefit-card--solo {
+            margin: 2rem 0;
+        }
+
         .challenge-solution {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -181,6 +212,7 @@
                 padding: 1.5rem;
             }
 
+            .benefit-grid,
             .challenge-solution {
                 grid-template-columns: 1fr;
             }
@@ -265,31 +297,31 @@
 
                 <h3>Five Key Benefits for Student Engagement</h3>
 
-                <div class="challenge-solution" style="grid-template-columns: 1fr 1fr; margin: 2rem 0;">
-                    <div style="background: #FAF6F0; border-left: 4px solid #4B2A6B; padding: 1.5rem; border-radius: 8px;">
-                        <h4 style="color: #4B2A6B; margin-top: 0;">Recognition</h4>
-                        <p style="margin-bottom: 0;">Students participate more actively when they feel valued and recognised as individuals, not just names on a register.</p>
+                <div class="benefit-grid">
+                    <div class="benefit-card">
+                        <h4>Recognition</h4>
+                        <p>Students participate more actively when they feel valued and recognised as individuals, not just names on a register.</p>
                     </div>
-                    <div style="background: #FAF6F0; border-left: 4px solid #4B2A6B; padding: 1.5rem; border-radius: 8px;">
-                        <h4 style="color: #4B2A6B; margin-top: 0;">Belonging</h4>
-                        <p style="margin-bottom: 0;">Using students' names creates inclusive classroom environments where everyone feels they belong.</p>
-                    </div>
-                </div>
-
-                <div class="challenge-solution" style="grid-template-columns: 1fr 1fr; margin: 2rem 0;">
-                    <div style="background: #FAF6F0; border-left: 4px solid #4B2A6B; padding: 1.5rem; border-radius: 8px;">
-                        <h4 style="color: #4B2A6B; margin-top: 0;">Early Intervention</h4>
-                        <p style="margin-bottom: 0;">Personal familiarity helps tutors identify struggling learners early and provide timely support.</p>
-                    </div>
-                    <div style="background: #FAF6F0; border-left: 4px solid #4B2A6B; padding: 1.5rem; border-radius: 8px;">
-                        <h4 style="color: #4B2A6B; margin-top: 0;">Collaboration</h4>
-                        <p style="margin-bottom: 0;">Strong rapport encourages students to ask questions and seek help without hesitation.</p>
+                    <div class="benefit-card">
+                        <h4>Belonging</h4>
+                        <p>Using students' names creates inclusive classroom environments where everyone feels they belong.</p>
                     </div>
                 </div>
 
-                <div style="background: #FAF6F0; border-left: 4px solid #4B2A6B; padding: 1.5rem; border-radius: 8px; margin: 2rem 0;">
-                    <h4 style="color: #4B2A6B; margin-top: 0;">Efficiency</h4>
-                    <p style="margin-bottom: 0;">Having accessible student details reduces administrative overhead during assessments, tutorials, and one-on-one meetings.</p>
+                <div class="benefit-grid">
+                    <div class="benefit-card">
+                        <h4>Early Intervention</h4>
+                        <p>Personal familiarity helps tutors identify struggling learners early and provide timely support.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <h4>Collaboration</h4>
+                        <p>Strong rapport encourages students to ask questions and seek help without hesitation.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-card benefit-card--solo">
+                    <h4>Efficiency</h4>
+                    <p>Having accessible student details reduces administrative overhead during assessments, tutorials, and one-on-one meetings.</p>
                 </div>
 
                 <h2>The Technical Problem</h2>
