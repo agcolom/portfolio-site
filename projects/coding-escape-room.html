@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="../css/style.css">
     <style>
         .project-detail {
-            max-width: 900px;
+            max-width: 920px;
             margin: 0 auto;
             background: #FFFFFF;
-            padding: 3rem;
+            padding: clamp(1.5rem, 4vw, 3rem);
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
@@ -87,33 +87,136 @@
             margin-bottom: 0.25rem;
         }
 
-        .project-screenshot {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-            border: 1px solid #E8E2D6;
-            margin: 1rem 0;
-            display: block;
+        /* ---------- Step cards & screenshots ---------- */
+        .steps-list {
+            counter-reset: steps;
+            list-style: none;
+            margin-left: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
         }
 
-        .project-screenshot.narrow {
-            max-width: 360px;
-        }
-
-        .screenshot-pair {
+        .steps-list > li {
+            counter-increment: steps;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-            margin: 1rem 0;
+            grid-template-columns: 2.25rem 1fr;
+            gap: 1rem 1.25rem;
+            align-items: start;
+            background: #FAF6F0;
+            border: 1px solid #E8E2D6;
+            border-radius: 12px;
+            padding: 1.5rem 1.5rem 1.5rem 1.25rem;
         }
 
-        .screenshot-pair > div {
+        .steps-list > li::before {
+            content: counter(steps);
+            background: #4B2A6B;
+            color: #FAF6F0;
+            font-weight: 700;
+            font-size: 0.95rem;
+            width: 2.25rem;
+            height: 2.25rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            grid-row: 1;
+            grid-column: 1;
+        }
+
+        .step-body {
+            grid-column: 2;
             min-width: 0;
         }
 
-        .screenshot-pair .project-screenshot {
-            margin: 0 0 0.5rem;
+        .step-body > p:first-child {
+            margin-top: 0.15rem;
+        }
+
+        .step-body > p:last-child {
+            margin-bottom: 0;
+        }
+
+        .shot-figure {
+            margin: 1.25rem 0 0;
+            padding: 0;
+        }
+
+        .shot-figure img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #D8D0C0;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(20, 17, 15, 0.08);
+        }
+
+        .shot-figure a.shot-link {
+            display: block;
+            line-height: 0;
+            border-radius: 8px;
+            transition: box-shadow 200ms ease, transform 200ms ease;
+        }
+
+        .shot-figure a.shot-link:hover {
+            box-shadow: 0 6px 20px rgba(75, 42, 107, 0.18);
+            transform: translateY(-1px);
+        }
+
+        .shot-figure a.shot-link:focus-visible {
+            outline: 2px solid #4B2A6B;
+            outline-offset: 3px;
+        }
+
+        /* Tall UI captures — don't blow up to full column width */
+        .shot-figure.shot-portrait {
+            max-width: 520px;
+        }
+
+        /* Wide banners & dashboards — use full step width */
+        .shot-figure.shot-landscape {
+            max-width: 100%;
+        }
+
+        /* Text-heavy detail — full width for legibility */
+        .shot-figure.shot-detail {
+            max-width: 100%;
+        }
+
+        .shot-figure figcaption {
+            margin-top: 0.65rem;
+            font-size: 0.88rem;
+            line-height: 1.5;
+            color: #6B635B;
+        }
+
+        .shot-figure figcaption strong {
+            color: #3A3530;
+            font-weight: 600;
+        }
+
+        .screenshot-note {
+            font-size: 0.92rem;
+            color: #6B635B;
+            margin-bottom: 1.25rem;
+            padding: 0.75rem 1rem;
+            background: #F3EEE5;
+            border-radius: 6px;
+            border: 1px solid #E8E2D6;
+        }
+
+        .shot-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            margin-top: 1.25rem;
+        }
+
+        .shot-figure.shot-compact {
+            max-width: 400px;
         }
 
         .highlight-box {
@@ -193,59 +296,11 @@
             font-size: 1rem;
         }
 
-        .steps-list {
-            counter-reset: steps;
-            list-style: none;
-            margin-left: 0;
-            padding: 0;
-        }
-
-        .steps-list li {
-            counter-increment: steps;
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-            align-items: flex-start;
-        }
-
-        .steps-list li > div {
-            flex: 1;
-            min-width: 0;
-        }
-
-        .steps-list li p:last-child {
-            margin-bottom: 0;
-        }
-
-        .steps-list li::before {
-            content: counter(steps);
-            background: #4B2A6B;
-            color: #FAF6F0;
-            font-weight: 700;
-            font-size: 0.95rem;
-            min-width: 2rem;
-            height: 2rem;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            margin-top: 0.1rem;
-        }
-
         .external-links {
             display: flex;
             gap: 1rem;
             margin: 2rem 0;
             flex-wrap: wrap;
-        }
-
-        .screenshot-caption {
-            text-align: center;
-            font-size: 0.9rem;
-            color: #6B6560;
-            margin-top: 0.75rem;
-            font-style: italic;
         }
 
         @media (max-width: 768px) {
@@ -257,8 +312,23 @@
                 grid-template-columns: 1fr;
             }
 
-            .screenshot-pair {
+            .steps-list > li {
                 grid-template-columns: 1fr;
+                padding: 1.25rem;
+            }
+
+            .steps-list > li::before {
+                grid-column: 1;
+                margin-bottom: 0.25rem;
+            }
+
+            .step-body {
+                grid-column: 1;
+            }
+
+            .shot-figure.shot-portrait,
+            .shot-figure.shot-compact {
+                max-width: 100%;
             }
 
             .project-detail h1 {
@@ -323,7 +393,7 @@
 
                 <p>I use the Escape Room activity to prepare students for the authentic assessment of creating a web page. It provides them with an opportunity to familiarise themselves with the summative assessment format through low-stakes weekly activities — in this example, the steps to follow in web page development.</p>
 
-                <p>Students on <strong>4COSC011W Web Development</strong> (Level 4) attend a lecture introducing HTML and CSS concepts, then immediately apply what they have learnt by building an authentic webpage framed as an escape room challenge. The format was piloted with a group of 5 students before full deployment in Semester 2 2025–26 to over 400 students.</p>
+                <p>Students on <strong>Level 4 Web Design and Development</strong> attend a lecture introducing HTML and CSS concepts, then immediately apply what they have learnt by building an authentic webpage framed as an escape room challenge. The format was piloted with a group of 5 students before full deployment in Semester 2 2025–26 to over 400 students.</p>
 
                 <h2>Rationale</h2>
 
@@ -333,48 +403,91 @@
 
                 <h2>How It Works</h2>
 
+                <p class="screenshot-note">Screenshots are sized for comfortable reading on this page. Click any image to open it at full size.</p>
+
                 <ol class="steps-list">
                     <li>
-                        <div>
+                        <div class="step-body">
                             <p><strong>Weekly seminar escape rooms (formative):</strong> Students familiarise themselves with the format through weekly activities. Each web page development exercise is broken down into themed challenges, which are themselves broken into small and focused tasks. The automated checker validates their work in real time — showing which requirements are met and which still need attention.</p>
-                            <img src="../images/escape-room-checker.png" alt="The escape room checker showing Challenge 1 unlocked with all requirements met, and Challenge 2 locked with some requirements still to complete" class="project-screenshot">
+                            <figure class="shot-figure shot-portrait">
+                                <a class="shot-link" href="../images/escape-room-checker.png" target="_blank" rel="noopener">
+                                    <img src="../images/escape-room-checker.png" alt="The escape room checker showing Challenge 1 unlocked with all requirements met, and Challenge 2 locked with some requirements still to complete">
+                                </a>
+                                <figcaption><strong>Challenge checker</strong> — real-time validation with locked and unlocked challenges. Click to open full size.</figcaption>
+                            </figure>
                             <p>On completing all challenges, students receive a unique code based on their student ID, which they submit on Blackboard to record their achievement.</p>
-                            <img src="../images/escape-room-completion.png" alt="Congratulations screen showing a student has escaped and displaying their unique code to submit on Blackboard" class="project-screenshot narrow">
+                            <figure class="shot-figure shot-portrait shot-compact">
+                                <a class="shot-link" href="../images/escape-room-completion.png" target="_blank" rel="noopener">
+                                    <img src="../images/escape-room-completion.png" alt="Congratulations screen showing a student has escaped and displaying their unique code to submit on Blackboard">
+                                </a>
+                                <figcaption><strong>Escape complete</strong> — unique code generated from the student ID for Blackboard submission.</figcaption>
+                            </figure>
                         </div>
                     </li>
                     <li>
-                        <div>
+                        <div class="step-body">
                             <p><strong>In-class practical adapted to the same format (summative):</strong> Following positive feedback from the pilot students, the summative in-class practical was redesigned in the same escape room style. Students receive the task brief — building a single-page website (Campus Café Day) from scratch in 90 minutes — with detailed tasks and hints structured exactly as in the weekly exercises.</p>
-                            <img src="../images/escape-room-practical.png" alt="The standalone practical interface for Campus Café Day showing the task overview, content provided, and required sections" class="project-screenshot">
+                            <figure class="shot-figure shot-landscape">
+                                <a class="shot-link" href="../images/escape-room-practical.png" target="_blank" rel="noopener">
+                                    <img src="../images/escape-room-practical.png" alt="The standalone practical interface for Campus Café Day showing the task overview, content provided, and required sections">
+                                </a>
+                                <figcaption><strong>Campus Café Day brief</strong> — the summative practical uses the same interface students already know from seminars.</figcaption>
+                            </figure>
                             <p>Each section of the page is broken down into granular, actionable tasks with hints — so students are never left stuck without guidance.</p>
-                            <img src="../images/escape-room-practical-tasks_hints.png" alt="Detailed task checklist for Page Structure showing ticks and crosses for each requirement, with hints in italic below each item" class="project-screenshot">
+                            <figure class="shot-figure shot-detail">
+                                <a class="shot-link" href="../images/escape-room-practical-tasks_hints.png" target="_blank" rel="noopener">
+                                    <img src="../images/escape-room-practical-tasks_hints.png" alt="Detailed task checklist for Page Structure showing ticks and crosses for each requirement, with hints in italic below each item">
+                                </a>
+                                <figcaption><strong>Task checklist with hints</strong> — granular requirements with ticks, crosses, and italic guidance. Click to read at full size.</figcaption>
+                            </figure>
                         </div>
                     </li>
                     <li>
-                        <div>
+                        <div class="step-body">
                             <p><strong>Live auto-assessment during the practical:</strong> Students can submit their work as many times as they want during the session and receive an indicative mark in real time. This lowers anxiety, gives them agency over how they spend their remaining time, and allows them to make informed decisions about which tasks to prioritise.</p>
-                            <img src="../images/escape-room-practical_feedback0.png" alt="Detailed feedback summary showing the student earned 45.5 out of 100 marks, with a breakdown by section" class="project-screenshot">
-                            <img src="../images/escape-room-practical_feedback1.png" alt="Section-level feedback for Layout and Spacing showing marks earned and lost with specific hints for each criterion" class="project-screenshot">
+                            <div class="shot-stack">
+                                <figure class="shot-figure shot-landscape">
+                                    <a class="shot-link" href="../images/escape-room-practical_feedback0.png" target="_blank" rel="noopener">
+                                        <img src="../images/escape-room-practical_feedback0.png" alt="Detailed feedback summary showing the student earned 45.5 out of 100 marks, with a breakdown by section">
+                                    </a>
+                                    <figcaption><strong>Indicative mark summary</strong> — overall score and section breakdown during the session.</figcaption>
+                                </figure>
+                                <figure class="shot-figure shot-detail">
+                                    <a class="shot-link" href="../images/escape-room-practical_feedback1.png" target="_blank" rel="noopener">
+                                        <img src="../images/escape-room-practical_feedback1.png" alt="Section-level feedback for Layout and Spacing showing marks earned and lost with specific hints for each criterion">
+                                    </a>
+                                    <figcaption><strong>Section-level detail</strong> — criterion-by-criterion marks with specific hints. Click to open full size.</figcaption>
+                                </figure>
+                            </div>
                         </div>
                     </li>
                     <li>
-                        <div>
+                        <div class="step-body">
                             <p><strong>Content validation:</strong> Students know that warnings will be issued if they attempt to submit work not related to the in-class practical assessment — the checker detects off-topic content and flags it clearly, even identifying which previous week's work it resembles.</p>
-                            <img src="../images/escape-room-practical-warning.png" alt="Content Validation Warning showing a student submitted Week 2 work instead of the Campus Café Day practical, with specific checks failed and a suspicious content detected notice" class="project-screenshot">
+                            <figure class="shot-figure shot-landscape">
+                                <a class="shot-link" href="../images/escape-room-practical-warning.png" target="_blank" rel="noopener">
+                                    <img src="../images/escape-room-practical-warning.png" alt="Content Validation Warning showing a student submitted Week 2 work instead of the Campus Café Day practical, with specific checks failed and a suspicious content detected notice">
+                                </a>
+                                <figcaption><strong>Content validation warning</strong> — detects when submitted work matches a previous week's exercise instead of the practical brief.</figcaption>
+                            </figure>
                         </div>
                     </li>
                     <li>
-                        <div>
+                        <div class="step-body">
                             <p><strong>Detailed feedback generation:</strong> When the tutor submits student work, the tool generates a detailed and consistent feedback summary — with encouragement, a breakdown of marks gained and lost across 9 criteria, areas well done, and specific areas for improvement. The tutor can review, amend, and upload this to Blackboard as a PDF.</p>
-                            <div class="screenshot-pair">
-                                <div>
-                                    <img src="../images/escape-room-practical_what_well_done.png" alt="Areas Well Done section showing marks earned per section across 8 criteria" class="project-screenshot">
-                                    <p class="screenshot-caption">What they did well</p>
-                                </div>
-                                <div>
-                                    <img src="../images/escape-room-practical_what_to_improve.png" alt="Areas for Improvement section listing marks lost per section with specific guidance" class="project-screenshot">
-                                    <p class="screenshot-caption">Where to improve</p>
-                                </div>
+                            <div class="shot-stack">
+                                <figure class="shot-figure shot-detail">
+                                    <a class="shot-link" href="../images/escape-room-practical_what_well_done.png" target="_blank" rel="noopener">
+                                        <img src="../images/escape-room-practical_what_well_done.png" alt="Areas Well Done section showing marks earned per section across 8 criteria">
+                                    </a>
+                                    <figcaption><strong>What they did well</strong> — marks earned per section, ready for tutor review.</figcaption>
+                                </figure>
+                                <figure class="shot-figure shot-detail">
+                                    <a class="shot-link" href="../images/escape-room-practical_what_to_improve.png" target="_blank" rel="noopener">
+                                        <img src="../images/escape-room-practical_what_to_improve.png" alt="Areas for Improvement section listing marks lost per section with specific guidance">
+                                    </a>
+                                    <figcaption><strong>Where to improve</strong> — specific guidance on marks lost. Click any image to open full size.</figcaption>
+                                </figure>
                             </div>
                         </div>
                     </li>
