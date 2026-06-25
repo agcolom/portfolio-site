@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIP Action Tracking System — Anne-Gaelle Colom</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .project-detail {
+            max-width: 920px;
+            margin: 0 auto;
+            background: #FFFFFF;
+            padding: clamp(1.5rem, 4vw, 3rem);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #4B2A6B;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+
+        .project-detail h1 {
+            font-size: 2.5rem;
+            color: #4B2A6B;
+            margin-bottom: 1rem;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .meta-badge {
+            background: #4B2A6B;
+            color: #FAF6F0;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .project-detail h2 {
+            font-size: 1.8rem;
+            color: #4B2A6B;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #4B2A6B;
+            padding-bottom: 0.5rem;
+        }
+
+        .project-detail h3 {
+            font-size: 1.3rem;
+            color: #3A3530;
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-detail p, .project-detail li {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #3A3530;
+            margin-bottom: 1rem;
+        }
+
+        .project-detail ul {
+            margin-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-detail .lead {
+            font-size: 1.15rem;
+            line-height: 1.75;
+            color: #3A3530;
+            margin-bottom: 0.25rem;
+        }
+
+        .status-banner {
+            background: #F1EBF6;
+            border: 1px solid #D8CCE8;
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            margin: 1.5rem 0 2rem;
+            font-size: 0.95rem;
+            color: #3A3530;
+        }
+
+        .status-banner strong {
+            color: #4B2A6B;
+        }
+
+        .highlight-box {
+            background: #FAF6F0;
+            border-left: 4px solid #4B2A6B;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .impact-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: #FAF6F0;
+            border-radius: 8px;
+        }
+
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #4B2A6B;
+            display: block;
+        }
+
+        .impact-label {
+            color: #3A3530;
+            margin-top: 0.5rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin: 1.5rem 0;
+        }
+
+        .tech-item {
+            background: #FAF6F0;
+            color: #4B2A6B;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        .arch-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .arch-item {
+            background: #FAF6F0;
+            border-left: 4px solid #4B2A6B;
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+
+        .arch-item h4 {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #4B2A6B;
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+
+        .arch-item p {
+            margin-bottom: 0;
+            font-size: 1rem;
+        }
+
+        .steps-list {
+            counter-reset: steps;
+            list-style: none;
+            margin: 1.5rem 0 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .steps-list > li {
+            counter-increment: steps;
+            display: grid;
+            grid-template-columns: 2.25rem 1fr;
+            gap: 1rem 1.25rem;
+            align-items: start;
+            background: #FAF6F0;
+            border: 1px solid #E8E2D6;
+            border-radius: 12px;
+            padding: 1.25rem 1.25rem 1.25rem 1rem;
+        }
+
+        .steps-list > li::before {
+            content: counter(steps);
+            background: #4B2A6B;
+            color: #FAF6F0;
+            font-weight: 700;
+            font-size: 0.9rem;
+            width: 2.25rem;
+            height: 2.25rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            grid-column: 1;
+        }
+
+        .steps-list > li > div {
+            grid-column: 2;
+            min-width: 0;
+        }
+
+        .steps-list > li p {
+            margin: 0;
+            font-size: 1.02rem;
+            line-height: 1.7;
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .regulatory-table {
+            width: 100%;
+            min-width: 520px;
+            border-collapse: collapse;
+        }
+
+        .regulatory-table th {
+            background: #4B2A6B;
+            color: #FAF6F0;
+            padding: 0.75rem 1rem;
+            text-align: left;
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+
+        .regulatory-table td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid #E8E2D6;
+            font-size: 0.95rem;
+            line-height: 1.55;
+            vertical-align: top;
+            color: #3A3530;
+        }
+
+        .regulatory-table tr:nth-child(even) td {
+            background: #FAF6F0;
+        }
+
+        .roadmap-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.25rem;
+            margin: 1.5rem 0;
+        }
+
+        .roadmap-card {
+            background: #FAF6F0;
+            border: 1px solid #E8E2D6;
+            border-radius: 8px;
+            padding: 1.25rem;
+        }
+
+        .roadmap-card h4 {
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #4B2A6B;
+            margin: 0 0 0.5rem;
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .roadmap-card p {
+            margin: 0;
+            font-size: 0.98rem;
+        }
+
+        .roadmap-card.phase-two {
+            border-left: 4px solid #4B2A6B;
+        }
+
+        .external-links {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .project-detail {
+                padding: 1.5rem;
+            }
+
+            .arch-grid,
+            .roadmap-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .steps-list > li {
+                grid-template-columns: 1fr;
+                padding: 1.25rem;
+            }
+
+            .steps-list > li::before {
+                margin-bottom: 0.25rem;
+            }
+
+            .steps-list > li > div {
+                grid-column: 1;
+            }
+
+            .project-detail h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="container">
+                <h1 class="logo">Anne-Gaelle Colom</h1>
+                <ul class="nav-links">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../index.html#projects">Projects</a></li>
+                    <li><a href="../cv.html">CV</a></li>
+                    <li><a href="../index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main style="padding: 4rem 0; background: #FAF6F0;">
+        <div class="container">
+            <div class="project-detail">
+                <a href="../index.html#projects" class="back-link">← Back to Projects</a>
+
+                <h1>CIP Action Tracking System</h1>
+
+                <div class="project-meta">
+                    <span class="meta-badge">Microsoft 365 Platform</span>
+                    <span class="meta-badge">In Progress</span>
+                    <span class="meta-badge">2025–26 Reporting Cycle</span>
+                </div>
+
+                <p class="lead">A digital action tracking system for the University of Westminster's Continuous Improvement Process (CIP), built entirely within existing Microsoft 365 infrastructure at zero additional software cost. The system captures proposed improvement actions from 150+ course leaders, routes them through structured Head of School review, converts agreed actions into tracked school-level commitments, and provides a live Power BI dashboard for Quality and Standards and senior management.</p>
+
+                <p class="status-banner"><strong>Work in progress.</strong> Development is ongoing ahead of go-live for the 2025–26 reporting cycle. This page describes the system design, architecture, and intended impact.</p>
+
+                <h2>What It Delivers</h2>
+
+                <p>Each year, course leaders across the University complete CIP reports proposing specific improvement actions. This system gives those proposals a structured digital life — capturing them at source, routing them through governance, converting agreed actions into tracked commitments, and closing the loop with evidence of completion.</p>
+
+                <p>The system delivers three things the institution needed:</p>
+
+                <ul>
+                    <li><strong>Regulatory confidence</strong> — a clear, evidenced audit trail from concern identification through to agreed action and completion, directly supporting OfS Condition B3 and Ofsted inspection readiness for apprenticeship provision.</li>
+                    <li><strong>Governance structure</strong> — a dedicated reviewer app gives Heads of School a structured workflow to review, prioritise, and escalate course-level proposals, with full decision history recorded.</li>
+                    <li><strong>Strategic visibility</strong> — for the first time, senior management and Quality and Standards have live, institution-wide visibility of improvement activity — by school, college, category, and RAG status — through a Power BI dashboard.</li>
+                </ul>
+
+                <div class="highlight-box">
+                    <p><strong>Built entirely within existing M365 licences.</strong> No procurement was required. No new software was purchased. The entire system uses SharePoint, Power Automate, Power Apps, Power BI, and Outlook — all already available to the University under its existing Microsoft 365 agreement.</p>
+                </div>
+
+                <h2>Scale & Impact</h2>
+
+                <div class="impact-grid">
+                    <div class="impact-item">
+                        <span class="impact-number">150+</span>
+                        <p class="impact-label">Reporting Units in Scope</p>
+                    </div>
+                    <div class="impact-item">
+                        <span class="impact-number">900–1,500</span>
+                        <p class="impact-label">Proposed Actions per Year</p>
+                    </div>
+                    <div class="impact-item">
+                        <span class="impact-number">&lt;£100/yr</span>
+                        <p class="impact-label">Additional Software Cost</p>
+                    </div>
+                    <div class="impact-item">
+                        <span class="impact-number">~6 months</span>
+                        <p class="impact-label">Total Build Timeline</p>
+                    </div>
+                </div>
+
+                <h2>How It Works</h2>
+
+                <p>The system follows a structured improvement cycle from proposal to completion:</p>
+
+                <ol class="steps-list">
+                    <li>
+                        <div>
+                            <p><strong>Course leaders</strong> log proposed actions in a Power Apps canvas app as they complete each section of their CIP report — approximately two minutes per action.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <p><strong>Heads of School and authorised reviewers</strong> review proposals through a dedicated reviewer app, recording a governance decision on each: escalate to a school-level action, return for clarification, note as a duplicate, or decline with reason.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <p><strong>Escalated proposals</strong> automatically generate a school-level action with the source proposal as provenance. The reviewer assigns an owner, due date, priority, and RAG status.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <p><strong>Action owners</strong> update progress through the app. Heads of School monitor status, RAG ratings, and completion across all their school's actions.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <p><strong>Quality and Standards and senior management</strong> see a live Power BI dashboard with real-time visibility across all schools — RAG distribution, completion rates, actions by category, college, and academic year.</p>
+                        </div>
+                    </li>
+                </ol>
+
+                <h2>System Architecture</h2>
+
+                <div class="arch-grid">
+                    <div class="arch-item">
+                        <h4>SharePoint Lists (6)</h4>
+                        <p>Colleges, Schools, Courses, Reporting Units, Course Action Proposals, School-Level Actions. Structured hierarchy with plain text columns for Power BI compatibility alongside lookup and Person columns for app use.</p>
+                    </div>
+                    <div class="arch-item">
+                        <h4>Power Apps Canvas Apps (2)</h4>
+                        <p>Course Leader App — submit and track proposals across 5 screens. HoS Reviewer App — review proposals, manage school actions, and monitor progress across 6 screens with tabbed views and RAG/category filters.</p>
+                    </div>
+                    <div class="arch-item">
+                        <h4>Power Automate Flows (11)</h4>
+                        <p>Automated pipelines for title generation, email notifications, action creation on escalation, SLA reminders, RAG alerts, and daily DaysFromToday calculation. Covers both Course Action Proposals and School-Level Actions lifecycles.</p>
+                    </div>
+                    <div class="arch-item">
+                        <h4>Power BI Dashboard</h4>
+                        <p>Live management reporting with RAG distribution, completion rates, action volume by school and college, category breakdown, and trend analysis. Slicers synced across pages. Planned 9-page report covering all aspects of the improvement cycle.</p>
+                    </div>
+                </div>
+
+                <h2>Technical Challenges Solved</h2>
+
+                <h3>Delegation workaround</h3>
+                <p>Power Apps cannot filter SharePoint lists of more than 500 records server-side using complex conditions. The solution: load scoped collections on app start using ClearCollect with simple equality filters (which delegate correctly), then filter those collections locally in gallery Items formulas. This gives fast, accurate filtering without hitting delegation limits.</p>
+
+                <h3>People picker reliability</h3>
+                <p>The built-in Office365Users connector proved unreliable — missing staff, slow search, and inconsistent results. Instead, a Staff Directory SharePoint list was created with a Person column (PersonRef), enabling a Combobox to search names directly from SharePoint. The selected person's full Person object (including Claims, DisplayName, Email, Department, JobTitle, Picture) is captured via a variable and written to the School-Level Actions list as a properly typed Person column — enabling SharePoint's native people picker behaviour on the list itself.</p>
+
+                <h3>Power BI compatibility</h3>
+                <p>Power BI cannot read Person columns or Lookup columns from SharePoint reliably on Mac. Every column needed for reporting is duplicated as a plain text column (SchoolName, CollegeName, OwnerName, OwnerEmail) populated by Power Automate. This separation of concerns — Person/Lookup columns for app use, plain text for reporting — runs throughout the entire data architecture.</p>
+
+                <h3>Zero additional cost</h3>
+                <p>The entire system was designed to fit within the University's existing Microsoft 365 licences. Every component — SharePoint, Power Apps, Power Automate, Power BI, and Outlook — was already available. The build cost is staff time only; there is no ongoing software licence cost, no vendor dependency, and no contract to renew.</p>
+
+                <h2>Regulatory Value</h2>
+
+                <div class="table-wrap">
+                <table class="regulatory-table">
+                    <thead>
+                        <tr>
+                            <th>Framework</th>
+                            <th>How this system helps</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>OfS Condition B3</strong></td>
+                            <td>Evidences a structured, quality-assured process from concern identification to agreed action to completion — with a full audit trail</td>
+                        </tr>
+                        <tr>
+                            <td><strong>TEF</strong></td>
+                            <td>Improvement activity documented and reportable at course, school, and college level</td>
+                        </tr>
+                        <tr>
+                            <td><strong>QAA Enhancement Reviews</strong></td>
+                            <td>CIP evidenced as a genuine improvement cycle, not a paper exercise</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ofsted (Apprenticeships)</strong></td>
+                            <td>Clear audit trail from quality concern to agreed action to completion, as required for inspection readiness</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Internal Governance</strong></td>
+                            <td>Academic Board and Quality &amp; Standards Committee have live management information for the first time</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+
+                <h2>Technology Stack</h2>
+
+                <div class="tech-stack">
+                    <span class="tech-item">Microsoft SharePoint</span>
+                    <span class="tech-item">Power Apps Canvas Apps</span>
+                    <span class="tech-item">Power Automate</span>
+                    <span class="tech-item">Power BI</span>
+                    <span class="tech-item">Power Fx</span>
+                    <span class="tech-item">SharePoint REST API</span>
+                    <span class="tech-item">Microsoft 365</span>
+                    <span class="tech-item">DAX</span>
+                    <span class="tech-item">Outlook (automated email)</span>
+                </div>
+
+                <h2>Status &amp; Roadmap</h2>
+
+                <div class="roadmap-grid">
+                    <div class="roadmap-card">
+                        <h4>Phase 1 — in development</h4>
+                        <p>Full proposal-to-action workflow, automation, Head of School review apps, and the Power BI management dashboard. Targeting go-live for the 2025–26 reporting cycle.</p>
+                    </div>
+                    <div class="roadmap-card phase-two">
+                        <h4>Phase 2 — scoped</h4>
+                        <p>Replace the Word-based CIP report with a structured digital form, evidence uploads, automated PDF report generation, and year-on-year comparison reporting.</p>
+                    </div>
+                </div>
+
+                <div class="external-links">
+                    <a href="../index.html#contact" class="btn btn-secondary">Get in Touch</a>
+                    <a href="../index.html#projects" class="btn btn-secondary">View More Projects</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Anne-Gaelle Colom. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
