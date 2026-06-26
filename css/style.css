@@ -260,6 +260,40 @@ section { padding: clamp(4rem, 9vw, 7rem) 0; }
     margin: 2rem 0 1.5rem;
 }
 
+.opensource-callout {
+    background: var(--accent-tint);
+    border: 1px solid #D8CCE8;
+    border-left: 4px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 1.5rem 1.25rem;
+    margin: 2rem 0;
+}
+
+.opensource-callout h3 {
+    font-family: var(--font-sans);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+}
+
+.opensource-callout p {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    margin-bottom: 0.85rem;
+}
+
+.opensource-callout p:last-of-type {
+    margin-bottom: 0;
+}
+
+.opensource-callout a {
+    font-weight: 600;
+}
+
 #about .cv-link {
     display: inline-flex;
     align-items: center;
@@ -605,6 +639,14 @@ footer {
     #about .philosophy {
         font-size: 1.15rem;
         padding-left: 1rem;
+    }
+
+    .opensource-callout {
+        padding: 1.25rem 1rem;
+    }
+
+    .opensource-callout p {
+        font-size: 0.98rem;
     }
 
     .contact-links {
